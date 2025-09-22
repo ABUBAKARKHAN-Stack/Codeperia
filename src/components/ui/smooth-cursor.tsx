@@ -214,3 +214,14 @@ if (canHover) return null
     </motion.div>
   );
 }
+
+
+
+{/* <SmoothCursor
+            springConfig={{
+              stiffness: 180,
+              damping: 18,
+              mass: 0.6,
+              restDelta: 0.001,
+            }}
+          /> */}

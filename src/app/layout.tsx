@@ -89,14 +89,6 @@ export default function RootLayout({
         <LenisProvider>
           {children}
           <Toaster position="top-center" duration={2000} theme="system" />
-          <SmoothCursor
-            springConfig={{
-              stiffness: 180,
-              damping: 18,
-              mass: 0.6,
-              restDelta: 0.001,
-            }}
-          />
           <Analytics />
           <SpeedInsights />
         </LenisProvider>
