@@ -83,7 +83,7 @@ const DefaultCursorSVG: FC = () => {
       </defs>
     </svg>
   );
-};
+}; 
 
 export function SmoothCursor({
   cursor = <DefaultCursorSVG />,
