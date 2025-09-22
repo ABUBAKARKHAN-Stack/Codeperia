@@ -19,7 +19,7 @@ type FeatureCardProps = {
   //  isLast?: boolean;
 };
 
-const WhyTetraCard: FC<FeatureCardProps> = ({
+const WhyChooseUsCard: FC<FeatureCardProps> = ({
   id,
   title,
   description,
@@ -57,15 +57,9 @@ const WhyTetraCard: FC<FeatureCardProps> = ({
       ref={cardRef}
     >
       <SpaceIcon Icon={Icon} index={index} shouldAnimate={shouldAnimate} />
-      <CardContent
-        title={title}
-        description={description}
-        index={index}
-        shouldAnimate={shouldAnimate}
-        isInView={isInView}
-      />
+      <CardContent title={title} description={description} />
     </div>
   );
 };
 
-export default WhyTetraCard;
+export default WhyChooseUsCard;

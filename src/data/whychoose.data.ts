@@ -33,7 +33,7 @@ const whyChooseData = [
     id: 5,
     title: "Modern Tech Stacks",
     description:
-      "We leverage the latest frameworks and technologies like Next.js, Node, Docker, and more to future-proof your products.",
+      "We leverage the latest frameworks and technologies like Next.js, Node, Docker, and many more to future-proof your products.",
     icon: Code2,
   },
   {

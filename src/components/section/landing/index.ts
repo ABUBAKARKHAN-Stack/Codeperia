@@ -1,6 +1,6 @@
 import HeroSection from "./HeroSection";
 import WhatWeDoSection from "./WhatWeDoSection";
-import WhyChooseTetraCodeSection from "./WhyChooseTetraCodeSection";
+import WhyChooseUsSection from "./WhyChooseUsSection";
 import TestimonialSection from "./TestimonialSection";
 import TechStackSection from "./TechStackSection";
 import OurWorkSection from "./OurWorkSection";
@@ -10,7 +10,7 @@ import AboutUsSection from "./AboutUsSection";
 export {
   HeroSection,
   WhatWeDoSection,
-  WhyChooseTetraCodeSection,
+  WhyChooseUsSection,
   TestimonialSection,
   TechStackSection,
   OurWorkSection,

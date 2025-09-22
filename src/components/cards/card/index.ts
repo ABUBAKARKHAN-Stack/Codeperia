@@ -1,13 +1,6 @@
 import FeatureCard from "./FeatureCard/FeatureCard";
 import ProjectCard from "./ProjectCard/ProjectCard";
-import TestimonialCard from "./TestimonialCard/TestimonialCard";
 import TechStackCard from "./TechStackCard/TechStackCard";
-import WhyTetraCard from "./WhyCard/WhyTetraCard";
+import WhyChooseUsCard from "./WhyChooseUsCard/WhyChooseUsCard";
 
-export {
-  FeatureCard,
-  ProjectCard,
-  TestimonialCard,
-  TechStackCard,
-  WhyTetraCard,
-};
+export { FeatureCard, ProjectCard, TechStackCard, WhyChooseUsCard };

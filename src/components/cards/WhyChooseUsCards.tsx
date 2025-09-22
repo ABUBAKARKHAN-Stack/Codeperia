@@ -1,13 +1,13 @@
 import { whyChooseData } from "@/data/whychoose.data";
 import React from "react";
-import { WhyTetraCard } from "./card";
+import { WhyChooseUsCard } from "./card";
 
-const WhyChooseTetraCodeCards = () => {
+const WhyChooseUsCards = () => {
   return (
     <>
       {whyChooseData.map(({ description, icon, id, title }, i) => (
         <div key={id} className="flex">
-          <WhyTetraCard
+          <WhyChooseUsCard
             icon={icon}
             description={description}
             title={title}
@@ -15,11 +15,11 @@ const WhyChooseTetraCodeCards = () => {
             showOverlay={false}
             index={i}
           />
-          <div className="via-brand mx-4 hidden w-1 self-stretch bg-gradient-to-b from-transparent to-transparent md:block" />
+          <div className="via-brand mx-4 hidden w-0.5 self-stretch bg-gradient-to-b from-transparent to-transparent md:block" />
         </div>
       ))}
     </>
   );
 };
 
-export default WhyChooseTetraCodeCards;
+export default WhyChooseUsCards;

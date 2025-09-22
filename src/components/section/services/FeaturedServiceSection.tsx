@@ -44,9 +44,7 @@ function FeaturedServiceSection() {
                 </div>
               ))}
             </div>
-            <div className="hidden lg:block">
-              {/* <WebSvg /> */}
-            </div>
+            <div className="hidden lg:block">{/* <WebSvg /> */}</div>
           </div>
         </div>
       </ContainerLayout>

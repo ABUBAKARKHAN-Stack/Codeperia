@@ -14,11 +14,8 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 const Hero = () => {
   const { scrollToSection } = useScrollToSection();
 
-
-  
   return (
     <section className="relative mt-16 flex h-full min-h-screen w-full items-center overflow-hidden mask-x-from-95%">
-
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.05}
@@ -77,7 +74,7 @@ const Hero = () => {
             At{" "}
             <span className="relative inline-block px-1 font-semibold">
               {brandName}
-              <span className="absolute inset-0 -z-10 inline-block bg-primary"></span>
+              <span className="bg-primary absolute inset-0 -z-10 inline-block"></span>
             </span>
             , we craft innovative, scalable, and reliable software solutions
             that empower businesses to grow, lead, and thrive in the digital

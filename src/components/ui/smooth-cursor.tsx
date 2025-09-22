@@ -20,9 +20,9 @@ export interface SmoothCursorProps {
 }
 
 const DefaultCursorSVG: FC = () => {
-  const canHover = useMediaQuery('(hover: hover) and (pointer: fine)');
+  const canHover = useMediaQuery("(hover: hover) and (pointer: fine)");
 
-  if (canHover) return null
+  if (canHover) return null;
 
   return (
     <svg
@@ -83,7 +83,7 @@ const DefaultCursorSVG: FC = () => {
       </defs>
     </svg>
   );
-}; 
+};
 
 export function SmoothCursor({
   cursor = <DefaultCursorSVG />,
@@ -94,16 +94,15 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }: SmoothCursorProps) {
-  const canHover = useMediaQuery('(hover: hover) and (pointer: fine)');
+  const canHover = useMediaQuery("(hover: hover) and (pointer: fine)");
 
-  
   const [isMoving, setIsMoving] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
   const lastUpdateTime = useRef(Date.now());
   const previousAngle = useRef(0);
   const accumulatedRotation = useRef(0);
-if (canHover) return null
+  if (canHover) return null;
   const cursorX = useSpring(0, springConfig);
   const cursorY = useSpring(0, springConfig);
   const rotation = useSpring(0, {
@@ -215,13 +214,13 @@ if (canHover) return null
   );
 }
 
-
-
-{/* <SmoothCursor
+{
+  /* <SmoothCursor
             springConfig={{
               stiffness: 180,
               damping: 18,
               mass: 0.6,
               restDelta: 0.001,
             }}
-          /> */}
+          /> */
+}

@@ -4,14 +4,13 @@ import React from "react";
 import {
   HeroSection,
   WhatWeDoSection,
-  WhyChooseTetraCodeSection,
+  WhyChooseUsSection,
   AboutUsSection,
   // OurWorkSection,
   TestimonialSection,
   TechStackSection,
   ContactSection,
 } from "@/components/section/landing";
-import { SpaceSeparator } from "@/components/ui/space-theme-separator";
 
 const Home = () => {
   return (
@@ -19,12 +18,11 @@ const Home = () => {
       <HeroSection />
       <AboutUsSection />
       <WhatWeDoSection />
-      <WhyChooseTetraCodeSection />
+      <WhyChooseUsSection />
       {/* <OurWorkSection /> */}
       <TestimonialSection />
       <TechStackSection />
       <ContactSection />
-      <SpaceSeparator />
     </>
   );
 };
