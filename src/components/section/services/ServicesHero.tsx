@@ -1,11 +1,11 @@
 "use client";
 import { PageHeader } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
-import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useScroll } from "@/hooks/useScroll";
 import { Sparkles } from "lucide-react";
 
 const ServicesHero = () => {
-  const { scrollToSection } = useScrollToSection();
+  const { scrollToSection } = useScroll();
 
   return (
     <PageHeader

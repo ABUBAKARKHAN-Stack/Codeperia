@@ -1,4 +1,3 @@
-"use client";
 
 import React from "react";
 import {
@@ -11,6 +10,7 @@ import {
   TechStackSection,
   ContactSection,
 } from "@/components/section/landing";
+import ScrollToTopBtn from "@/components/ui/scroll-to-top-btn";
 
 const Home = () => {
   return (
@@ -23,6 +23,7 @@ const Home = () => {
       <TestimonialSection />
       <TechStackSection />
       <ContactSection />
+      <ScrollToTopBtn />
     </>
   );
 };

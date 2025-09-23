@@ -3,7 +3,6 @@ import { Logo } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger } from "@/components/ui/sheet";
 import { navLinks } from "@/data/navItems";
-import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { cn } from "@/lib/utils";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";

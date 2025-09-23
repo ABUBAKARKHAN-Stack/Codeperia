@@ -2,11 +2,11 @@
 import { PageHeader } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
 import { brandName } from "@/constants/constants";
-import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { useScroll } from "@/hooks/useScroll";
 import { MessageCircle } from "lucide-react";
 
 const ContactHeroSection = () => {
-  const { scrollToSection } = useScrollToSection();
+  const { scrollToSection } = useScroll();
 
   return (
     <PageHeader

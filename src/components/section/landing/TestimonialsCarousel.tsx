@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronLeftIcon, ChevronRightIcon, Diamond, Star } from "lucide-react";
 import React from "react";
 import {

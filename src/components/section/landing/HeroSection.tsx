@@ -1,18 +1,27 @@
 "use client";
-import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { Sparkles } from "lucide-react";
 import ContainerLayout from "../../layout/ContainerLayout";
 import { motion } from "framer-motion";
-import { brandName } from "@/constants/constants";
 import { cn } from "@/lib/utils";
 import { AnimatedHoverBtn } from "@/components/ui/animated-hover-btn";
-import { PiRocketDuotone } from "react-icons/pi";
+import { PiGridFourDuotone, PiRocketDuotone } from "react-icons/pi";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { ourStats } from "@/data/about.data";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { HighlightedBrandName } from "@/components/reusable";
+import { useRouter } from "next/navigation";
+import { useLenis } from "lenis/react";
 
 const Hero = () => {
-  const { scrollToSection } = useScrollToSection();
+  const router = useRouter()
+  const lenis = useLenis()
+
+  const handleNavigation = () => {
+    router.push('/contact')
+    setTimeout(() => {
+      const el = document.querySelector("#get-in-touch-section") as HTMLElement
+      if (el) lenis?.scrollTo(el)
+    }, 500);
+  }
 
   return (
     <section className="relative mt-16 flex h-full min-h-screen w-full items-center overflow-hidden mask-x-from-95%">
@@ -71,20 +80,27 @@ const Hero = () => {
           </motion.h1>
 
           <p className="max-w-xs text-center text-sm leading-relaxed font-normal text-white/90 min-[350px]:max-w-sm min-[350px]:text-base sm:max-w-md md:max-w-lg md:text-lg lg:text-left xl:text-xl 2xl:max-w-2xl">
-            At{" "}
-            <span className="relative inline-block px-1 font-semibold">
-              {brandName}
-              <span className="bg-primary absolute inset-0 -z-10 inline-block"></span>
-            </span>
+            At <HighlightedBrandName />
             , we craft innovative, scalable, and reliable software solutions
             that empower businesses to grow, lead, and thrive in the digital
             world.
           </p>
 
-          <div className="flex justify-center lg:justify-start">
-            <AnimatedHoverBtn icon={PiRocketDuotone}>
+          <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+            <AnimatedHoverBtn
+              onClick={handleNavigation}
+              icon={PiRocketDuotone}
+            >
               Start Your Project
             </AnimatedHoverBtn>
+            <AnimatedHoverBtn
+              variant="outline"
+              icon={PiGridFourDuotone}
+              onClick={() => router.push('/services')}
+            >
+              View Our Services
+            </AnimatedHoverBtn>
+
           </div>
 
           <div className="grid grid-cols-2 gap-4 text-purple-200/80 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-6 md:gap-8 lg:justify-start lg:gap-12">

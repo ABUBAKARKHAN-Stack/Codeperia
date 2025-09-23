@@ -66,23 +66,6 @@ export default function AboutUsSection() {
               destination, it’s the journey through the stars.
             </p>
 
-            <div className="space-y-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                {ourStats.map(({ value, label }) => (
-                  <div
-                    key={label}
-                    className="rounded-lg bg-white/5 p-4 backdrop-blur-sm"
-                  >
-                    <div className="bg-gradient-to-br from-purple-200 via-purple-600 to-purple-300 bg-clip-text text-2xl font-bold text-transparent">
-                      {value}
-                    </div>
-                    <div className="text-secondary-foreground text-sm">
-                      {label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             <Button
               size={"lg"}

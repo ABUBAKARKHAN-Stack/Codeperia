@@ -5,17 +5,20 @@ import { cn } from "@/lib/utils";
 type Props = {
   icon: ElementType;
   children: ReactNode;
+  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const AnimatedHoverBtn: FC<Props> = ({
   icon: Icon,
   children,
+  variant = "default",
   className = "",
   ...props
 }) => {
   return (
     <Button
       size="lg"
+      variant={variant}
       className={cn(
         "group overflow-hidden rounded-full !p-7 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:cursor-pointer hover:shadow-purple-500/25 md:text-lg",
         className,

@@ -103,7 +103,7 @@
   --popover: var(--card);
   --popover-foreground: var(--foreground);
 
-  --brand: var(--color-purple-600);
+  --brand: #9810fa;
   --brand-foreground: oklch(100% 0.00011 271.152);
 
   --primary: var(--brand);
