@@ -1,4 +1,4 @@
-import { PortableTextChild, TypedObject } from "sanity";
+import { PortableTextChild } from "sanity";
 
 interface IAuthor {
   name: string;
@@ -6,7 +6,7 @@ interface IAuthor {
   role: string;
 }
 
-interface IMainImage {
+interface ISanityImage {
   source: string;
   alt: string;
 }
@@ -24,7 +24,7 @@ interface IBlog {
   description: string;
   slug: string;
   publishedAt: Date;
-  mainImage: IMainImage;
+  mainImage: ISanityImage;
   body: PortableTextChild[];
   author: IAuthor;
 }
@@ -42,9 +42,13 @@ interface ErrorProps {
   reset: () => void;
 }
 
-interface ContactFormType {
-  name: string;
-  email: string;
+interface IService {
+  title:string;
+  shortDescription:string;
+  slug:string;
+  cardIcon:string;
+  serviceImage: ISanityImage;
+  body: PortableTextChild[]
 }
 
 export {
@@ -52,6 +56,7 @@ export {
   type IBlog,
   type PortableTextBlock,
   type IAuthor,
-  type IMainImage,
+  type ISanityImage,
   type ErrorProps,
+  type IService,
 };

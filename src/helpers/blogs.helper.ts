@@ -28,7 +28,7 @@ async function getPosts(preview = false) {
     });
 
     const posts = data as IBlog[];
-    return posts || [];
+    return posts ?? [];
   } catch (error) {
     console.log("Sanity Error :: ", error);
     throw error;

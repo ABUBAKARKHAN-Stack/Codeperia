@@ -27,8 +27,11 @@ export default function AboutUsSection() {
       id="about-us-section"
       className="h-full w-full overflow-hidden py-16"
     >
+
       <ContainerLayout>
-        <div className="mx-auto flex items-center gap-12 lg:grid lg:grid-cols-2">
+        <SectionHeader mainHeading={aboutUsSectionHeader.mainHeading} />
+
+        <div className="mx-auto flex items-center gap-12 mt-10">
           {/* Left Content */}
 
           <motion.div
@@ -36,20 +39,8 @@ export default function AboutUsSection() {
             transition={{ duration: 0.9 }}
             className="space-y-6 text-center lg:text-left"
           >
-            <SectionHeader mainHeading={aboutUsSectionHeader.mainHeading} />
 
-            <motion.div
-              animate={inView ? {} : { opacity: 0, x: 100 }}
-              transition={{ duration: 0.75 }}
-              className="mx-auto w-fit lg:hidden"
-            >
-              <Image
-                src={planet}
-                className="drop-shadow-[0_0_20px_rgba(168,85,247,1)]"
-                alt="software development illustration"
-                priority
-              />
-            </motion.div>
+
 
             <p className="text-base leading-relaxed md:text-lg">
               At <span className="font-semibold">{brandName}</span>, we don’t
@@ -80,19 +71,7 @@ export default function AboutUsSection() {
             </Button>
           </motion.div>
 
-          <motion.div
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
-            transition={{ duration: 0.9 }}
-            className="relative hidden lg:block"
-          >
-            <Image
-              src={planet}
-              className="mx-auto drop-shadow-[0_0_20px_rgba(168,85,247,1)]"
-              width={500}
-              height={500}
-              alt="planet image"
-            />
-          </motion.div>
+
         </div>
       </ContainerLayout>
     </section>

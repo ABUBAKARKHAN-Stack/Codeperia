@@ -1,14 +1,12 @@
 "use client";
 import { Highlighter } from "@/components/magicui/highlighter";
-import React, { FC, JSX, ReactNode, use, useEffect, useState } from "react";
+import React, { FC, JSX, ReactNode, useEffect, useState } from "react";
 import { ContainerLayout } from "../layout";
 import { cn } from "@/lib/utils";
-import Particles from "../ui/particles";
 
 type Props = {
   pageHeading: string;
   subText?: string;
-  iconElement?: JSX.Element;
   children?: ReactNode;
   className?: string;
 };
@@ -16,7 +14,6 @@ type Props = {
 const PageHeader: FC<Props> = ({
   pageHeading,
   subText,
-  iconElement,
   children,
   className,
 }) => {
@@ -26,9 +23,9 @@ const PageHeader: FC<Props> = ({
     const updateHeight = () => {
       const vh = window.innerHeight;
       if (vh < 1024) {
-        setHeaderHeight(`calc(75vh + 4.5rem)`);
+        setHeaderHeight(`calc(75vh + 4rem)`);
       } else {
-        setHeaderHeight(`calc(50vh + 4.5rem)`);
+        setHeaderHeight(`calc(50vh + 4rem)`);
       }
     };
     updateHeight();
@@ -39,10 +36,10 @@ const PageHeader: FC<Props> = ({
 
   return (
     <header
-      style={{ height: headerHeight }}
+      style={{ height: headerHeight, }}
       className={cn(
-        "z-10 bg-gradient-to-b from-[#2a0347] via-purple-900 to-[#2a0347]",
-        "pt-20",
+        "z-10 bg-gradient-to-b flex flex-col justify-center items-center from-[#2a0347] via-[#450e6e] to-[#2a0347]",
+        "pt-16",
         "relative w-full",
         className,
       )}
@@ -51,12 +48,8 @@ const PageHeader: FC<Props> = ({
         className="absolute inset-0 -z-20 opacity-25"
         style={{ backgroundImage: "url('/assets/bg-pattern.svg')" }}
       />
-      <Particles
-        particlesCount={40}
-        particlesStyles="opacity-0"
-        className="-z-10"
-      />
 
+    
       <ContainerLayout className="h-full">
         <section className="flex size-full flex-col items-center justify-center gap-y-8">
           <Highlighter
@@ -67,10 +60,7 @@ const PageHeader: FC<Props> = ({
             padding={5}
             className="font-audiowide w-fit text-center text-4xl text-wrap md:text-5xl lg:text-6xl"
           >
-            <div className="flex flex-col items-center gap-y-2">
-              {iconElement && iconElement}
-              <h1 className="w-fit">{pageHeading}</h1>
-            </div>
+            <h1 className="w-fit">{pageHeading}</h1>
           </Highlighter>
           {subText && (
             <Highlighter

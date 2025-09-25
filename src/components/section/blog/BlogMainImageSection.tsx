@@ -4,7 +4,7 @@ import { baseUrl } from "@/constants/constants";
 import { errorToast, infoToast, successToast } from "@/helpers/toasts.helper";
 import { cn } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/image";
-import { IMainImage } from "@/types/main.types";
+import { ISanityImage } from "@/types/main.types";
 import Image from "next/image";
 import React, { FC } from "react";
 import {
@@ -15,7 +15,7 @@ import {
 } from "react-icons/fa6";
 
 type Props = {
-  mainImage: IMainImage;
+  mainImage: ISanityImage;
   title: string;
   slug: string;
 };

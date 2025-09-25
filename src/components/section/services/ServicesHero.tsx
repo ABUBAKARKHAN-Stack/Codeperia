@@ -1,6 +1,7 @@
 "use client";
 import { PageHeader } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
+import { brandName } from "@/constants/constants";
 import { useScroll } from "@/hooks/useScroll";
 import { Sparkles } from "lucide-react";
 
@@ -9,7 +10,7 @@ const ServicesHero = () => {
 
   return (
     <PageHeader
-      pageHeading={`Codescription Services`}
+      pageHeading={`${brandName} Services`}
       subText="Each service is a spark, igniting new horizons in the universe of possibilities."
     >
       <Button

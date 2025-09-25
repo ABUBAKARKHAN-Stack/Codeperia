@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   HeroSection,
@@ -11,19 +10,26 @@ import {
   ContactSection,
 } from "@/components/section/landing";
 import ScrollToTopBtn from "@/components/ui/scroll-to-top-btn";
+import { SanityLive } from "@/sanity/lib/live";
+import { getServices } from "@/helpers/services.helper";
+import { ServicesProvider } from "@/context/services.context";
 
-const Home = () => {
+const Home = async () => {
+  const services = await getServices()
   return (
     <>
-      <HeroSection />
-      <AboutUsSection />
-      <WhatWeDoSection />
-      <WhyChooseUsSection />
-      {/* <OurWorkSection /> */}
-      <TestimonialSection />
-      <TechStackSection />
-      <ContactSection />
-      <ScrollToTopBtn />
+      <ServicesProvider services={services}>
+        <SanityLive />
+        <HeroSection />
+        <AboutUsSection />
+        <WhatWeDoSection />
+        <WhyChooseUsSection />
+        {/* <OurWorkSection /> */}
+        <TestimonialSection />
+        <TechStackSection />
+        <ContactSection />
+        <ScrollToTopBtn />
+      </ServicesProvider>
     </>
   );
 };

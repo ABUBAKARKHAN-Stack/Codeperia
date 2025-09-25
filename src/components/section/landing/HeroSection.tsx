@@ -20,7 +20,7 @@ const Hero = () => {
     setTimeout(() => {
       const el = document.querySelector("#get-in-touch-section") as HTMLElement
       if (el) lenis?.scrollTo(el)
-    }, 500);
+    }, 1000);
   }
 
   return (

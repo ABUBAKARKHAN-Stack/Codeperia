@@ -31,7 +31,7 @@ export const useScroll = () => {
 
   const scrollToTop = useCallback(
     () => {
-      if (lenis) lenis.scrollTo(0);
+      if (lenis) lenis.scrollTo(0,{duration:3});
     }, [lenis]
   )
 
