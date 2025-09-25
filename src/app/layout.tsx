@@ -63,9 +63,7 @@ export const metadata: Metadata = {
     "modern digital solutions",
     "scalable web apps",
   ],
-  authors: [
-    { name: "Abubakar", url: foundersSocials.abubakar.linkedin },
-  ],
+  authors: [{ name: "Abubakar", url: foundersSocials.abubakar.linkedin }],
   creator: brandName,
   publisher: brandName,
   robots: "index, follow",

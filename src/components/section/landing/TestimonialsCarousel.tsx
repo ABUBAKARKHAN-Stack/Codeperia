@@ -34,7 +34,6 @@ const TestimonialsCarousel = ({
   autoplay?: boolean;
   spaceBetween?: number;
 }) => {
-
   const css = `
 
   .carousel {
@@ -100,10 +99,10 @@ const TestimonialsCarousel = ({
           autoplay={
             autoplay
               ? {
-                delay: 2000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }
+                  delay: 2000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }
               : false
           }
           effect="coverflow"
@@ -121,16 +120,16 @@ const TestimonialsCarousel = ({
           pagination={
             showPagination
               ? {
-                clickable: true,
-              }
+                  clickable: true,
+                }
               : false
           }
           navigation={
             showNavigation
               ? {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }
               : false
           }
           className="carousel"

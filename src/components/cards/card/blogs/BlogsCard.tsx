@@ -1,6 +1,6 @@
 "use client";
 
-import { IBlog, PortableTextBlock } from "@/types/main.types";
+import { IBlog } from "@/types/main.types";
 import { Calendar, User } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Image from "next/image";
@@ -16,24 +16,7 @@ type Props = {
 };
 
 const BlogCard: FC<Props> = ({ post, priority = false }) => {
-  const { author, body, mainImage, publishedAt, slug, title, description } =
-    post;
-
-  const getTextPreview = (
-    portableTextContent: PortableTextBlock[] = [],
-  ): string => {
-    if (!portableTextContent || portableTextContent.length === 0) return "";
-
-    return (
-      portableTextContent
-        .filter((block) => block._type === "block")
-        .map(
-          (block) => block.children?.map((child) => child.text).join("") || "",
-        )
-        .join(" ")
-        .substring(0, 100) + "..."
-    );
-  };
+  const { author, mainImage, publishedAt, slug, title, description } = post;
 
   return (
     <div

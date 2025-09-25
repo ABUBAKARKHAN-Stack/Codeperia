@@ -43,12 +43,12 @@ interface ErrorProps {
 }
 
 interface IService {
-  title:string;
-  shortDescription:string;
-  slug:string;
-  cardIcon:string;
+  title: string;
+  shortDescription: string;
+  slug: string;
+  cardIcon: string;
   serviceImage: ISanityImage;
-  body: PortableTextChild[]
+  body: PortableTextChild[];
 }
 
 export {

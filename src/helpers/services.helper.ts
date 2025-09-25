@@ -1,7 +1,6 @@
 import { sanityFetch } from "@/sanity/lib/live";
 import { IService } from "@/types/main.types";
 
-
 const serviceFields = `{
     title,
     shortDescription,
@@ -15,37 +14,32 @@ const serviceFields = `{
 }`;
 
 const getServices = async () => {
-    try {
-        const { data } = await sanityFetch({
-            query: `*[_type == "service"] ${serviceFields}`,
-            perspective: "published"
-        })
-        const services = data as IService[]
-        return services ?? []
-    } catch (error) {
-        console.log("Sanity Error :: ", error);
-        throw error;
-    }
-}
-
+  try {
+    const { data } = await sanityFetch({
+      query: `*[_type == "service"] ${serviceFields}`,
+      perspective: "published",
+    });
+    const services = data as IService[];
+    return services ?? [];
+  } catch (error) {
+    console.log("Sanity Error :: ", error);
+    throw error;
+  }
+};
 
 const getService = async (slug: string) => {
-    try {
-        const { data } = await sanityFetch({
-            query: `*[_type == "service" && slug.current == $slug][0] ${serviceFields}`,
-            params: { slug }
-        })
-        if (!data) return null;
+  try {
+    const { data } = await sanityFetch({
+      query: `*[_type == "service" && slug.current == $slug][0] ${serviceFields}`,
+      params: { slug },
+    });
+    if (!data) return null;
 
-        return data as IService
+    return data as IService;
+  } catch (error) {
+    console.log("Sanity Error :: ", error);
+    throw error;
+  }
+};
 
-    } catch (error) {
-        console.log("Sanity Error :: ", error);
-        throw error;
-    }
-}
-
-export {
-    getService,
-    getServices
-}
+export { getService, getServices };

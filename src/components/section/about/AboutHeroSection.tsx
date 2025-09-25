@@ -12,11 +12,9 @@ const AboutHeroSection = () => {
   return (
     <PageHeader
       pageHeading={`About ${brandName}`}
-      subText="Our journey is just one small step, into a bigger universe of possibilities."
+      subText="Every great empire begins with a story and ours is built on innovation and code."
     >
-
-      <ScrollToSectionBtn
-        sectionId="about-our-story-section">
+      <ScrollToSectionBtn sectionId="about-our-story-section">
         Explore Who We Are <Sparkles className="size-5" />
       </ScrollToSectionBtn>
     </PageHeader>

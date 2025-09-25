@@ -12,16 +12,16 @@ import { useRouter } from "next/navigation";
 import { useLenis } from "lenis/react";
 
 const Hero = () => {
-  const router = useRouter()
-  const lenis = useLenis()
+  const router = useRouter();
+  const lenis = useLenis();
 
   const handleNavigation = () => {
-    router.push('/contact')
+    router.push("/contact");
     setTimeout(() => {
-      const el = document.querySelector("#get-in-touch-section") as HTMLElement
-      if (el) lenis?.scrollTo(el)
+      const el = document.querySelector("#get-in-touch-section") as HTMLElement;
+      if (el) lenis?.scrollTo(el);
     }, 1000);
-  }
+  };
 
   return (
     <section className="relative mt-16 flex h-full min-h-screen w-full items-center overflow-hidden mask-x-from-95%">
@@ -80,27 +80,22 @@ const Hero = () => {
           </motion.h1>
 
           <p className="max-w-xs text-center text-sm leading-relaxed font-normal text-white/90 min-[350px]:max-w-sm min-[350px]:text-base sm:max-w-md md:max-w-lg md:text-lg lg:text-left xl:text-xl 2xl:max-w-2xl">
-            At <HighlightedBrandName />
-            , we craft innovative, scalable, and reliable software solutions
-            that empower businesses to grow, lead, and thrive in the digital
-            world.
+            At <HighlightedBrandName />, we craft innovative, scalable, and
+            reliable software solutions that empower businesses to grow, lead,
+            and thrive in the digital world.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-            <AnimatedHoverBtn
-              onClick={handleNavigation}
-              icon={PiRocketDuotone}
-            >
+            <AnimatedHoverBtn onClick={handleNavigation} icon={PiRocketDuotone}>
               Start Your Project
             </AnimatedHoverBtn>
             <AnimatedHoverBtn
               variant="outline"
               icon={PiGridFourDuotone}
-              onClick={() => router.push('/services')}
+              onClick={() => router.push("/services")}
             >
               View Our Services
             </AnimatedHoverBtn>
-
           </div>
 
           <div className="grid grid-cols-2 gap-4 text-purple-200/80 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-6 md:gap-8 lg:justify-start lg:gap-12">

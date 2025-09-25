@@ -12,8 +12,8 @@ import { SanityLive } from "@/sanity/lib/live";
 import { urlFor } from "@/sanity/lib/image";
 
 export async function generateStaticParams() {
-  const services = await getServices()
-  return services.map(({ slug }) => ({ slug }))
+  const services = await getServices();
+  return services.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -24,8 +24,6 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = await getService(slug);
 
-
-
   if (!service) {
     return {
       title: "Service Not Found | " + brandName,
@@ -35,15 +33,15 @@ export async function generateMetadata({
   }
 
   const title = service.title;
-  const description = service.shortDescription || `Read ${service.title} on ${brandName}`;
+  const description =
+    service.shortDescription || `Read ${service.title} on ${brandName}`;
   const imageUrl = urlFor(service.serviceImage.source)
     .quality(85)
     .width(1200)
     .height(630)
     .format("jpg")
     .url();
-  const imageAlt = service.serviceImage.alt
-
+  const imageAlt = service.serviceImage.alt;
 
   return {
     title,
@@ -59,10 +57,10 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: imageAlt || title,
-        }
+        },
       ],
       type: "article",
-      siteName: brandName
+      siteName: brandName,
     },
     twitter: {
       title,
@@ -73,11 +71,11 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: imageAlt || title,
-        }
+        },
       ],
       card: "summary_large_image",
       site: baseUrl,
-      creator: brandName
+      creator: brandName,
     },
     alternates: {
       canonical: `${baseUrl}/services/${slug}`,
@@ -85,16 +83,15 @@ export async function generateMetadata({
   };
 }
 
-
-export default async function ServiceDetailPage({ params }: {
+export default async function ServiceDetailPage({
+  params,
+}: {
   params: Promise<{ slug: string }>;
 }) {
-
   const { slug } = await params;
-  const service = await getService(slug)
+  const service = await getService(slug);
 
   if (!service) return notFound();
-
 
   return (
     <div className="flex flex-col overflow-hidden">
@@ -103,11 +100,9 @@ export default async function ServiceDetailPage({ params }: {
       <PageHeader
         pageHeading={service.title}
         subText={service.shortDescription}
-      >
+      ></PageHeader>
 
-      </PageHeader>
-
-      <section className="w-full mt-10">
+      <section className="mt-10 w-full">
         <ContainerLayout>
           {/* <div className="flex flex-col py-20 xl:flex-row xl:justify-between xl:gap-20">
             <div className="text-[14px] lg:max-w-[700px] lg:text-[18px] xl:max-w-[600px] xl:text-[20px]">

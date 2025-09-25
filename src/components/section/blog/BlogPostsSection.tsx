@@ -1,6 +1,7 @@
 "use server";
 
 import BlogCard from "@/components/cards/card/blogs/BlogsCard";
+import { SectionHeader } from "@/components/reusable";
 import { getPosts } from "@/helpers/blogs.helper";
 import { IBlog } from "@/types/main.types";
 import { FileIcon } from "lucide-react";
@@ -33,10 +34,13 @@ const BlogPostsSection = async () => {
   }
 
   return (
-    <section className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {posts.map((post, i) => (
-        <BlogCard priority={i === 0} key={post.slug} post={post} />
-      ))}
+    <section id="blog-posts-section" className="py-16">
+      <SectionHeader mainHeading="Latest Insights" />
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {posts.map((post, i) => (
+          <BlogCard priority={i === 0} key={post.slug} post={post} />
+        ))}
+      </div>
     </section>
   );
 };

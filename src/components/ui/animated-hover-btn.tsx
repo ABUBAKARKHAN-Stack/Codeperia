@@ -5,7 +5,13 @@ import { cn } from "@/lib/utils";
 type Props = {
   icon: ElementType;
   children: ReactNode;
-  variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
+  variant?:
+    | "default"
+    | "destructive"
+    | "outline"
+    | "secondary"
+    | "ghost"
+    | "link";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const AnimatedHoverBtn: FC<Props> = ({

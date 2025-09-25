@@ -1,11 +1,9 @@
-"use client"
+"use client";
 
-import React from 'react'
+import React from "react";
 
 const GlobalErrorPage = () => {
-  return (
-    <div>GlobalErrorPage</div>
-  )
-}
+  return <div>GlobalErrorPage</div>;
+};
 
-export default GlobalErrorPage
+export default GlobalErrorPage;

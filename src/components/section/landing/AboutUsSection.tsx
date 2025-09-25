@@ -27,11 +27,10 @@ export default function AboutUsSection() {
       id="about-us-section"
       className="h-full w-full overflow-hidden py-16"
     >
-
       <ContainerLayout>
         <SectionHeader mainHeading={aboutUsSectionHeader.mainHeading} />
 
-        <div className="mx-auto flex items-center gap-12 mt-10">
+        <div className="mx-auto mt-10 flex items-center gap-12">
           {/* Left Content */}
 
           <motion.div
@@ -39,9 +38,6 @@ export default function AboutUsSection() {
             transition={{ duration: 0.9 }}
             className="space-y-6 text-center lg:text-left"
           >
-
-
-
             <p className="text-base leading-relaxed md:text-lg">
               At <span className="font-semibold">{brandName}</span>, we don’t
               just build products, we ignite galaxies of ideas. Every line of
@@ -57,7 +53,6 @@ export default function AboutUsSection() {
               destination, it’s the journey through the stars.
             </p>
 
-
             <Button
               size={"lg"}
               onClick={() => router.push("/about")}
@@ -70,8 +65,6 @@ export default function AboutUsSection() {
               </div>
             </Button>
           </motion.div>
-
-
         </div>
       </ContainerLayout>
     </section>

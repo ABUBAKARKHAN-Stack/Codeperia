@@ -1,8 +1,9 @@
+import { WhatWeDoSection } from "@/components/section/landing";
 import {
-  ContactSection,
-  WhatWeDoSection,
-} from "@/components/section/landing";
-import { FeaturedServiceSection, ServicesHero } from "@/components/section/services/";
+  FeaturedServiceSection,
+  ServicesContactSection,
+  ServicesHero,
+} from "@/components/section/services/";
 import { brandName } from "@/constants/constants";
 import { ServicesProvider } from "@/context/services.context";
 import { getServices } from "@/helpers/services.helper";
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
 };
 
 const ServicePage = async () => {
-  const services = await getServices()
+  const services = await getServices();
   return (
     <ServicesProvider services={services}>
       <SanityLive />
       <ServicesHero />
       <WhatWeDoSection />
       <FeaturedServiceSection />
-      <ContactSection forServices />
+      <ServicesContactSection />
     </ServicesProvider>
   );
 };

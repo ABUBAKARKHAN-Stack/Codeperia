@@ -12,6 +12,3 @@ export const structure: StructureResolver = (S) =>
         (item) => item.getId() && !["post", "author"].includes(item.getId()!),
       ),
     ]);
-
-
-

@@ -25,8 +25,6 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
     router.push("/contact");
   };
 
-  const isContactActive = pathname === "/contact";
-
   return (
     <SheetContent
       side="left"
@@ -34,7 +32,7 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
     >
       <SheetHeader>
         <SheetTitle className="mt-5 flex items-center">
-          <Logo className="h-20 w-auto" />
+          <Logo className="h-10 w-auto" />
         </SheetTitle>
         <SheetDescription />
       </SheetHeader>
@@ -60,8 +58,8 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
       </ul>
       <Button
         className={cn(
-          "group cursor-pointer text-base shadow-[0px_0px_10px_rgba(0,0,0,0.2)]",
-          isContactActive && "bg-purple-700/90",
+          "group w-fit scale-90 cursor-pointer text-base shadow-[0px_0px_10px_rgba(0,0,0,0.2)]",
+          "ml-2 duration-300 hover:scale-100",
         )}
         size={"lg"}
         onClick={handleCTA}
@@ -72,7 +70,6 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
             "size-5 scale-90 stroke-[2.5px]",
             "group-hover:scale-100 group-hover:rotate-180",
             "transition-all duration-200 ease-in-out",
-            isContactActive && "scale-100 rotate-180",
           )}
         />
       </Button>

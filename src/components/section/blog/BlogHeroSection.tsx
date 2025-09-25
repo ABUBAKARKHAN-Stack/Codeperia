@@ -29,7 +29,6 @@ const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
           "xsm:flex-row",
         )}
       >
-
         {/* Author */}
         <div
           className={cn(
@@ -42,10 +41,7 @@ const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
         >
           {author && (
             <div
-              className={cn(
-                "flex w-full items-center justify-center",
-                "gap-4",
-              )}
+              className={cn("flex w-full items-center justify-center", "gap-4")}
             >
               {author.source && (
                 <div className={cn("relative")}>

@@ -5,6 +5,8 @@ import { SanityLive } from "@/sanity/lib/live";
 import { BlogPostsSection } from "@/components/section/blog";
 import { Metadata } from "next";
 import { brandName } from "@/constants/constants";
+import { BookOpen } from "lucide-react";
+import ScrollToSectionBtn from "@/components/ui/scroll-to-section-btn";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -17,9 +19,12 @@ const Blog = async () => {
       <SanityLive />
       <PageHeader
         pageHeading="Insights & Stories"
-        subText="Explore our universe of ideas, guides, and stories. 
-           Stay in orbit with the latest trends and explorations."
-      />
+        subText="Our blog shares knowledge and ideas that inspire growth in the empire of technology."
+      >
+        <ScrollToSectionBtn sectionId="blog-posts-section">
+          Read Our Insights <BookOpen className="size-5" />
+        </ScrollToSectionBtn>
+      </PageHeader>
       <ContainerLayout>
         <BlogPostsSection />
       </ContainerLayout>

@@ -15,7 +15,7 @@ import { getServices } from "@/helpers/services.helper";
 import { ServicesProvider } from "@/context/services.context";
 
 const Home = async () => {
-  const services = await getServices()
+  const services = await getServices();
   return (
     <>
       <ServicesProvider services={services}>

@@ -21,7 +21,7 @@ export const useScroll = () => {
       }
 
       if (target) {
-        lenis?.scrollTo(target)
+        lenis?.scrollTo(target);
       } else {
         console.warn(`Element not found for selector: ${selector}`);
       }
@@ -29,13 +29,9 @@ export const useScroll = () => {
     [lenis],
   );
 
-  const scrollToTop = useCallback(
-    () => {
-      if (lenis) lenis.scrollTo(0,{duration:3});
-    }, [lenis]
-  )
-
-
+  const scrollToTop = useCallback(() => {
+    if (lenis) lenis.scrollTo(0, { duration: 3 });
+  }, [lenis]);
 
   return {
     scrollToSection,
