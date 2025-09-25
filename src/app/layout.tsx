@@ -83,12 +83,12 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${audiowide.variable} ${orbitron.variable} font-poppins h-full w-full min-w-screen overflow-x-hidden bg-[#2a0347] antialiased`}
       >
-        {/* <LenisProvider> */}
+        <LenisProvider>
           {children}
           <Toaster position="top-center" duration={2000} theme="system" />
           <Analytics />
           <SpeedInsights />
-        {/* </LenisProvider> */}
+        </LenisProvider>
       </body>
     </html>
   );
