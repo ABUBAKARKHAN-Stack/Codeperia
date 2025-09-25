@@ -1,25 +1,22 @@
 "use client";
 import { PageHeader } from "@/components/reusable";
 import { Button } from "@/components/ui/button";
+import ScrollToSectionBtn from "@/components/ui/scroll-to-section-btn";
 import { brandName } from "@/constants/constants";
-import { useScroll } from "@/hooks/useScroll";
 import { Sparkles } from "lucide-react";
 
 const ServicesHero = () => {
-  const { scrollToSection } = useScroll();
 
   return (
     <PageHeader
       pageHeading={`${brandName} Services`}
       subText="Each service is a spark, igniting new horizons in the universe of possibilities."
     >
-      <Button
-        size={"lg"}
-        onClick={() => scrollToSection("#what-we-do-section")}
-        className="font-orbitron bg-primary/10 rounded-full !p-6 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:cursor-pointer hover:shadow-purple-500/25"
+      <ScrollToSectionBtn
+        sectionId="what-we-do-section"
       >
         Explore Our Services <Sparkles className="size-5" />
-      </Button>
+      </ScrollToSectionBtn>
     </PageHeader>
   );
 };

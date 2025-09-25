@@ -118,7 +118,7 @@
   --accent: var(--color-purple-500);
   --accent-foreground: oklch(0.95 0.01 0);
 
-  --destructive: var(--color-red-500);
+  --destructive: #f82f32;
   --border: oklch(0.25 0.01 280);
   --input: oklch(0.2 0.015 280);
   --ring: var(--brand);

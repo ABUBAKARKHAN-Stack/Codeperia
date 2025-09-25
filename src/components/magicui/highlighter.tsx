@@ -27,6 +27,7 @@ interface HighlighterProps {
   delay?: number;
   duration?: number;
   once?: boolean;
+  justHighlighter?: boolean
 }
 
 export function Highlighter({
@@ -42,6 +43,7 @@ export function Highlighter({
   delay = 0,
   duration = 0.4,
   once = false,
+  justHighlighter = false
 }: HighlighterProps) {
   const elementRef = useRef<HTMLSpanElement>(null);
   const isInView = useInView(elementRef, {
@@ -90,24 +92,36 @@ export function Highlighter({
   ]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : {}}
-      transition={{
-        delay,
-        duration,
-        ease: "easeOut",
-      }}
-    >
-      <span
-        ref={elementRef}
-        className={cn(
-          "relative inline-block bg-transparent lg:block",
-          className,
-        )}
-      >
-        {children}
-      </span>
-    </motion.div>
+    <>
+      {
+        justHighlighter ? <span
+          ref={elementRef}
+          className={cn(
+            "relative inline-block bg-transparent lg:block",
+            className,
+          )}
+        >
+          {children}
+        </span> : <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{
+            delay,
+            duration,
+            ease: "easeOut",
+          }}
+        >
+          <span
+            ref={elementRef}
+            className={cn(
+              "relative inline-block bg-transparent lg:block",
+              className,
+            )}
+          >
+            {children}
+          </span>
+        </motion.div>
+      }
+    </>
   );
 }

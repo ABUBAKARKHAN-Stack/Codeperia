@@ -48,7 +48,7 @@ const OurStorySection = () => {
                     <div className="mb-4 flex items-center justify-center gap-4 md:justify-start">
                       <div className="relative">
                         {/* Icon */}
-                        <span className="xsm:p-3 flex items-center justify-center rounded-xl bg-white/10 p-2 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-white/20">
+                        <span className="xsm:p-3 flex items-center justify-center rounded-xl bg-white/10 p-2 backdrop-blur-sm transition-all duration-300">
                           <Icon className="xsm:size-7 size-5.5 text-white/90" />
                         </span>
 
@@ -60,7 +60,7 @@ const OurStorySection = () => {
                         <h3 className="xsm:text-3xl text-2xl font-bold tracking-tight text-white md:text-4xl xl:text-5xl">
                           {title}
                         </h3>
-                        <div className="xsm:h-1 xsm:w-20 h-0.5 w-14 origin-left transform rounded-full bg-gradient-to-r from-white via-neutral-400 to-white transition-transform duration-500 group-hover:scale-x-125" />
+                        <div className="xsm:h-1 xsm:w-20 h-0.5 w-14 origin-left transform rounded-full bg-gradient-to-r from-white via-neutral-400 to-white transition-transform duration-500" />
                       </div>
                     </div>
                   </div>

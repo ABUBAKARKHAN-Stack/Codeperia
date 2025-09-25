@@ -51,10 +51,10 @@ export async function generateMetadata(
 
   return {
     title,
-    description: description,
+    description,
     openGraph: {
       title: title,
-      description: description,
+      description,
       url: `${baseUrl}/blog/${post.slug}`,
       images: [
         {

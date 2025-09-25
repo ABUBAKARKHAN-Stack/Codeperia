@@ -107,6 +107,7 @@ const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
         <div className={cn("mx-auto w-fit")}>
           <Highlighter
             once
+            justHighlighter
             className={cn(
               "font-audiowide font-bold text-white text-shadow-black text-shadow-sm",
               "text-lg",

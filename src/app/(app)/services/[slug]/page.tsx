@@ -9,6 +9,7 @@ import { ServiceImage } from "@/components/section/services";
 import { PortableText } from "next-sanity";
 import { portableTextComponents } from "@/components/portableText/portableTextComponents";
 import { SanityLive } from "@/sanity/lib/live";
+import { urlFor } from "@/sanity/lib/image";
 
 export async function generateStaticParams() {
   const services = await getServices()
@@ -23,6 +24,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = await getService(slug);
 
+
+
   if (!service) {
     return {
       title: "Service Not Found | " + brandName,
@@ -31,9 +34,51 @@ export async function generateMetadata({
     };
   }
 
+  const title = service.title;
+  const description = service.shortDescription || `Read ${service.title} on ${brandName}`;
+  const imageUrl = urlFor(service.serviceImage.source)
+    .quality(85)
+    .width(1200)
+    .height(630)
+    .format("jpg")
+    .url();
+  const imageAlt = service.serviceImage.alt
+
+
   return {
-    title: service.title,
-    description: service.shortDescription,
+    title,
+    description,
+    keywords: service.title.split(" "),
+    publisher: brandName,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt || title,
+        }
+      ],
+      type: "article",
+      siteName: brandName
+    },
+    twitter: {
+      title,
+      description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt || title,
+        }
+      ],
+      card: "summary_large_image",
+      site: baseUrl,
+      creator: brandName
+    },
     alternates: {
       canonical: `${baseUrl}/services/${slug}`,
     },
@@ -59,7 +104,7 @@ export default async function ServiceDetailPage({ params }: {
         pageHeading={service.title}
         subText={service.shortDescription}
       >
-       
+
       </PageHeader>
 
       <section className="w-full mt-10">
