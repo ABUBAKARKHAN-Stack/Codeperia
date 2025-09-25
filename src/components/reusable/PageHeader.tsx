@@ -1,8 +1,13 @@
 "use client";
 import { Highlighter } from "@/components/magicui/highlighter";
-import React, { FC, JSX, ReactNode, useEffect, useState } from "react";
+import React, { FC, Fragment, ReactNode } from "react";
 import { ContainerLayout } from "../layout";
 import { cn } from "@/lib/utils";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { usePathname } from "next/navigation";
+import { Home, SlashIcon } from "lucide-react";
+
+
 
 type Props = {
   pageHeading: string;
@@ -17,28 +22,25 @@ const PageHeader: FC<Props> = ({
   children,
   className,
 }) => {
-  const [headerHeight, setHeaderHeight] = useState("");
 
-  useEffect(() => {
-    const updateHeight = () => {
-      const vh = window.innerHeight;
-      if (vh < 1024) {
-        setHeaderHeight(`calc(75vh + 4rem)`);
-      } else {
-        setHeaderHeight(`calc(50vh + 4rem)`);
-      }
-    };
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
+  const pathname = usePathname();
+  const pathSegments = pathname.split("/").map((path) => path === "" ? "/" : path);
 
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
+  const formatPathname = (path: string) => {
+    if (path === "/") return <span className="inline-flex gap-x-1.5 items-center"><Home className="size-4.5" /> Home</span>
+    return path.split("-").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")
+  }
+
+  const breadcrumbUrlBuilder = (index: number) => {
+    if (pathSegments[index] === '/') return '/';
+    return "/" + pathSegments.slice(1, index + 1).join('/')
+  }
+
 
   return (
     <header
-      style={{ height: headerHeight, }}
       className={cn(
-        "z-10 bg-gradient-to-b flex flex-col justify-center items-center from-[#2a0347] via-[#450e6e] to-[#2a0347]",
+        "z-10 bg-gradient-to-b min-h-screen flex flex-col justify-center items-center from-[#2a0347] via-[#450e6e] to-[#2a0347]",
         "pt-16",
         "relative w-full",
         className,
@@ -49,7 +51,6 @@ const PageHeader: FC<Props> = ({
         style={{ backgroundImage: "url('/assets/bg-pattern.svg')" }}
       />
 
-    
       <ContainerLayout className="h-full">
         <section className="flex size-full flex-col items-center justify-center gap-y-8">
           <Highlighter
@@ -57,7 +58,6 @@ const PageHeader: FC<Props> = ({
             animationDuration={500}
             once
             color="white"
-            padding={5}
             className="font-audiowide w-fit text-center text-4xl text-wrap md:text-5xl lg:text-6xl"
           >
             <h1 className="w-fit">{pageHeading}</h1>
@@ -75,6 +75,40 @@ const PageHeader: FC<Props> = ({
             </Highlighter>
           )}
           {children && children}
+          <div className="space-y-2">
+            <h5 className="text-base font-semibold text-center">Navigation:</h5>
+            <Breadcrumb>
+              <BreadcrumbList
+                className="text-base text-white font-light"
+              >
+                {
+                  pathSegments.map((p, i) => (
+                    <Fragment key={i}>
+                      <BreadcrumbItem
+                      >
+                        <BreadcrumbLink
+                          href={breadcrumbUrlBuilder(i)}
+                          className={cn(
+                            "text-base text-white hover:text-purple-300 font-normal",
+                            pathname === breadcrumbUrlBuilder(i) ? "text-purple-300" : "text-white"
+                          )}
+                        >
+                          {formatPathname(p)}
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      {
+                        i < pathSegments.length - 1 && <BreadcrumbSeparator>
+                          <SlashIcon className="-rotate-35 stroke-3" />
+                        </BreadcrumbSeparator>
+                      }
+                    </Fragment>
+                  )
+                  )
+                }
+              </BreadcrumbList>
+            </Breadcrumb>
+
+          </div>
         </section>
       </ContainerLayout>
     </header>

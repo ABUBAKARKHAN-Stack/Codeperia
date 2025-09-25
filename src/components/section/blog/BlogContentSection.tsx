@@ -26,7 +26,7 @@ const BlogContentSection = ({ body }: { body: PortableTextBlock[] }) => {
       />
 
       {body && body.length > 0 && (
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div className="max-w-none">
           <PortableText value={body} components={portableTextComponents} />
         </div>
       )}

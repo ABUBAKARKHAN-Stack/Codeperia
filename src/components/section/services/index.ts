@@ -1,0 +1,12 @@
+import ServicesHero from "./ServicesHero";
+import FeaturedServiceSection from "./FeaturedServiceSection";
+import ContactCardServices from "./ContactCardServices";
+import ServiceImage from "./ServiceImage";
+
+
+export {
+    ContactCardServices,
+    FeaturedServiceSection,
+    ServiceImage,
+    ServicesHero,
+}

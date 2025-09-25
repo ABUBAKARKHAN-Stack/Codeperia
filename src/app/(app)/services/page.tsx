@@ -2,11 +2,11 @@ import {
   ContactSection,
   WhatWeDoSection,
 } from "@/components/section/landing";
-import FeaturedServiceSection from "@/components/section/services/FeaturedServiceSection";
-import ServicesHero from "@/components/section/services/ServicesHero";
+import { FeaturedServiceSection, ServicesHero } from "@/components/section/services/";
 import { brandName } from "@/constants/constants";
 import { ServicesProvider } from "@/context/services.context";
 import { getServices } from "@/helpers/services.helper";
+import { SanityLive } from "@/sanity/lib/live";
 import { Metadata } from "next";
 import React from "react";
 
@@ -19,6 +19,7 @@ const ServicePage = async () => {
   const services = await getServices()
   return (
     <ServicesProvider services={services}>
+      <SanityLive />
       <ServicesHero />
       <WhatWeDoSection />
       <FeaturedServiceSection />

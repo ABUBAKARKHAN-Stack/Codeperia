@@ -5,6 +5,10 @@ import ContactCardServices from "@/components/section/services/ContactCardServic
 import { Metadata } from "next";
 import { baseUrl, brandName } from "@/constants/constants";
 import { getService, getServices } from "@/helpers/services.helper";
+import { ServiceImage } from "@/components/section/services";
+import { PortableText } from "next-sanity";
+import { portableTextComponents } from "@/components/portableText/portableTextComponents";
+import { SanityLive } from "@/sanity/lib/live";
 
 export async function generateStaticParams() {
   const services = await getServices()
@@ -40,7 +44,7 @@ export async function generateMetadata({
 export default async function ServiceDetailPage({ params }: {
   params: Promise<{ slug: string }>;
 }) {
-  
+
   const { slug } = await params;
   const service = await getService(slug)
 
@@ -49,12 +53,16 @@ export default async function ServiceDetailPage({ params }: {
 
   return (
     <div className="flex flex-col overflow-hidden">
+      <SanityLive />
+
       <PageHeader
         pageHeading={service.title}
         subText={service.shortDescription}
-      />
+      >
+       
+      </PageHeader>
 
-      <section className="">
+      <section className="w-full mt-10">
         <ContainerLayout>
           {/* <div className="flex flex-col py-20 xl:flex-row xl:justify-between xl:gap-20">
             <div className="text-[14px] lg:max-w-[700px] lg:text-[18px] xl:max-w-[600px] xl:text-[20px]">
@@ -80,7 +88,16 @@ export default async function ServiceDetailPage({ params }: {
 
             <ContactCardServices />
           </div> */}
-          Hello Service
+          <ServiceImage
+            serviceImage={service.serviceImage}
+            title={service.title}
+          />
+          <div>
+            <PortableText
+              value={service.body}
+              components={portableTextComponents}
+            />
+          </div>
         </ContainerLayout>
       </section>
     </div>
