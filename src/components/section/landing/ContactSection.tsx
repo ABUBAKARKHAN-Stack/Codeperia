@@ -17,7 +17,9 @@ const ContactSection = () => {
               We’d Love to Hear From You
             </h3>
             <p className="leading-relaxed text-gray-300">
-              Whether you have a question, want to share feedback, discuss a project, or simply say hello, drop us a message and we’ll get back to you shortly.
+              Whether you have a question, want to share feedback, discuss a
+              project, or simply say hello, drop us a message and we’ll get back
+              to you shortly.
             </p>
           </div>
 

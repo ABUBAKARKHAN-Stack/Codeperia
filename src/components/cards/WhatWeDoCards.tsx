@@ -14,10 +14,8 @@ const WhatWeDoCards = () => {
           <FeatureCard
             key={i}
             icon={icon}
-            showOverlay={true}
             description={shortDescription}
             title={title}
-            id={i}
             link={`/services/${slug}`}
             index={i}
           />

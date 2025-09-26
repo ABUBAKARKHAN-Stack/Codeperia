@@ -22,7 +22,7 @@ const Home = async () => {
         <SanityLive />
         <HeroSection />
         <AboutUsSection />
-        {/* <WhatWeDoSection /> */}
+        <WhatWeDoSection />
         <WhyChooseUsSection />
         {/* <OurWorkSection /> */}
         <TestimonialSection />

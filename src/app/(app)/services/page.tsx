@@ -23,7 +23,7 @@ const ServicePage = async () => {
       <SanityLive />
       <ServicesHero />
       <WhatWeDoSection />
-      <FeaturedServiceSection />
+      {/* <FeaturedServiceSection /> */}
       <ServicesContactSection />
     </ServicesProvider>
   );
