@@ -1,4 +1,5 @@
 import { brandContactInfo } from "@/constants/constants";
+import { useServices } from "@/context/services.context";
 
 const { contact, info, phone } = brandContactInfo;
 const footerData = {
@@ -14,10 +15,6 @@ const footerData = {
     {
       name: "Full Stack Development",
       link: "/services/full-stack-development",
-    },
-    {
-      name: "E-Commerce Solutions",
-      link: "/services/e-commerce",
     },
     {
       name: "UI/UX Design",

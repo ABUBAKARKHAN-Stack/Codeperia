@@ -174,7 +174,7 @@ const teamMembers = [
   {
     name: "Mansoor Shah",
     role: "Co-Founder & CEO",
-    image: "/assets/imgs/team/mansoor.jpeg",
+    image: "/assets/imgs/team/mansoor.jpg",
     socials: {
       linkedin: mansoor.linkedin,
       github: mansoor.github,

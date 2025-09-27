@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import ErrorBoundary from "@/components/ui/error-boundary";
+import { ErrorProps } from "@/types/main.types";
+import React, { FC } from "react";
 
-const GlobalErrorPage = () => {
-  return <div>GlobalErrorPage</div>;
+const GlobalErrorPage: FC<ErrorProps> = ({ error, reset }) => {
+  return <ErrorBoundary error={error} reset={reset} context="general" />;
 };
 
 export default GlobalErrorPage;

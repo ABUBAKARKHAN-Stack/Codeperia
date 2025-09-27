@@ -13,6 +13,8 @@ import {
   DatabaseIcon,
   FileTextIcon,
   BookOpenIcon,
+  BriefcaseIcon,
+  WrenchIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -27,7 +29,7 @@ interface ErrorBoundaryProps {
   homeUrl?: string;
   showHomeButton?: boolean;
   showRetryButton?: boolean;
-  context?: "blogs" | "blog" | "general";
+  context?: "blogs" | "blog" | "services" | "service" | "general";
   className?: string;
 }
 
@@ -54,62 +56,97 @@ export default function ErrorBoundary({
   const getErrorIcon = (error: Error) => {
     const errorMessage = error.message.toLowerCase();
 
-    if (context === "blog" || context === "blogs") {
-      if (errorMessage.includes("404") || errorMessage.includes("not found")) {
-        return context === "blog" ? (
-          <FileTextIcon className="size-10 text-red-400" />
-        ) : (
-          <BookOpenIcon className="size-10 text-red-400" />
-        );
+    //! Sanity CMS specific errors
+    if (
+      errorMessage.includes("sanity") ||
+      errorMessage.includes("groq") ||
+      errorMessage.includes("dataset") ||
+      errorMessage.includes("projectid")
+    ) {
+      return <DatabaseIcon className="size-10 text-red-400" />;
+    }
+
+    // Context-specific icons for not found errors
+    if (
+      errorMessage.includes("404") ||
+      errorMessage.includes("not found") ||
+      errorMessage.includes("notfound")
+    ) {
+      if (context === "blog") {
+        return <FileTextIcon className="size-10 text-red-400" />;
+      } else if (context === "blogs") {
+        return <BookOpenIcon className="size-10 text-red-400" />;
+      } else if (context === "service") {
+        return <WrenchIcon className="size-10 text-red-400" />;
+      } else if (context === "services") {
+        return <BriefcaseIcon className="size-10 text-red-400" />;
       }
     }
 
-    //! Network/Connection errors
+    //! Network/Connection errors (common with Sanity CDN)
     if (
       errorMessage.includes("fetch") ||
       errorMessage.includes("network") ||
       errorMessage.includes("econnrefused") ||
-      errorMessage.includes("connection")
+      errorMessage.includes("connection") ||
+      errorMessage.includes("cdn") ||
+      errorMessage.includes("timeout")
     ) {
       return <WifiOffIcon className="size-10 text-red-400" />;
     }
 
     //! Not found errors
-    if (errorMessage.includes("404") || errorMessage.includes("not found")) {
+    if (
+      errorMessage.includes("404") ||
+      errorMessage.includes("not found") ||
+      errorMessage.includes("notfound")
+    ) {
       return <FolderIcon className="size-10 text-red-400" />;
     }
 
-    //! Timeout errors
-    if (errorMessage.includes("timeout") || errorMessage.includes("time out")) {
+    //! Timeout errors (Sanity API timeouts)
+    if (
+      errorMessage.includes("timeout") ||
+      errorMessage.includes("time out") ||
+      errorMessage.includes("aborted")
+    ) {
       return <ClockIcon className="size-10 text-red-400" />;
     }
 
-    //! Server errors
+    //! Server errors (Sanity API or your server)
     if (
       errorMessage.includes("500") ||
+      errorMessage.includes("502") ||
+      errorMessage.includes("503") ||
       errorMessage.includes("server") ||
-      errorMessage.includes("internal")
+      errorMessage.includes("internal") ||
+      errorMessage.includes("api")
     ) {
       return <ServerIcon className="size-10 text-red-400" />;
     }
 
-    //! Database/Parse errors
+    //! Database/Parse/GROQ errors (Sanity specific)
     if (
       errorMessage.includes("parse") ||
       errorMessage.includes("json") ||
       errorMessage.includes("syntax") ||
-      errorMessage.includes("database")
+      errorMessage.includes("groq") ||
+      errorMessage.includes("query") ||
+      errorMessage.includes("schema") ||
+      errorMessage.includes("document")
     ) {
       return <DatabaseIcon className="size-10 text-red-400" />;
     }
 
-    //! Authentication/Authorization errors
+    //! Authentication/Authorization errors (Sanity permissions)
     if (
       errorMessage.includes("auth") ||
       errorMessage.includes("unauthorized") ||
       errorMessage.includes("forbidden") ||
       errorMessage.includes("401") ||
-      errorMessage.includes("403")
+      errorMessage.includes("403") ||
+      errorMessage.includes("token") ||
+      errorMessage.includes("permission")
     ) {
       return <UserIcon className="size-10 text-red-400" />;
     }
@@ -123,60 +160,134 @@ export default function ErrorBoundary({
     const contextMessages: Record<string, Record<string, string>> = {
       blogs: {
         fetch:
-          "Unable to load blog posts. Please check your internet connection.",
-        404: "No blog posts were found. Our content might be temporarily unavailable.",
+          "Unable to connect to our content management system. Please check your internet connection.",
+        404: "No blog posts found in our database. Our content might be temporarily unavailable.",
         timeout:
-          "Our blog service is taking longer than usual to load all posts.",
-        network: "We're having trouble connecting to our blog service.",
-        parse: "There's an issue with the blog posts data format.",
-        server: "Our blog server is experiencing some difficulties.",
-        auth: "You don't have permission to view these blog posts.",
-        default: "Something unexpected happened while loading the blog posts.",
+          "Our Sanity CMS is taking longer than usual to load blog posts. Please wait a moment.",
+        network: "Network connection to our content delivery system failed.",
+        parse:
+          "There's an issue with the blog data format from Sanity CMS. Our team has been notified.",
+        server:
+          "Our Sanity backend is experiencing difficulties. Please try again later.",
+        auth: "Authentication failed while accessing blog content from Sanity.",
+        groq: "There's an issue with our content query. Our development team is investigating.",
+        default:
+          "Something unexpected happened while fetching blog posts from our CMS.",
       },
       blog: {
         fetch:
-          "Unable to load this blog post. Please check your internet connection.",
-        404: "This blog post seems to have wandered off or doesn't exist.",
-        timeout: "This blog post is taking longer than usual to load.",
-        network: "We're having trouble connecting to load this blog post.",
-        parse: "There's an issue with this blog post's data format.",
-        server: "Our server is having trouble retrieving this blog post.",
-        auth: "You don't have permission to view this blog post.",
-        default: "Something unexpected happened while loading this blog post.",
+          "Unable to load this blog post from our content system. Please check your connection.",
+        404: "This blog post doesn't exist in our database or may have been unpublished.",
+        timeout:
+          "This blog post is taking longer than usual to load from Sanity CMS.",
+        network: "Network connection failed while fetching this blog post.",
+        parse:
+          "There's an issue with this blog post's data structure from Sanity CMS.",
+        server:
+          "Our content backend is having trouble retrieving this blog post.",
+        auth: "Authentication failed while accessing this blog post.",
+        groq: "There's an issue with the content query for this blog post.",
+        default:
+          "Something unexpected happened while loading this blog post from our CMS.",
+      },
+      services: {
+        fetch:
+          "Unable to load our service offerings from the content system. Please check your connection.",
+        404: "Our services catalog is not available in the database right now.",
+        timeout:
+          "Our service information is taking longer than usual to load from Sanity CMS.",
+        network:
+          "Network connection failed while fetching our service offerings.",
+        parse: "There's an issue with the services data format from our CMS.",
+        server:
+          "Our content backend is experiencing difficulties loading services.",
+        auth: "Authentication failed while accessing service information.",
+        groq: "There's an issue with our services content query.",
+        default:
+          "Something unexpected happened while loading our services from the CMS.",
+      },
+      service: {
+        fetch: "Unable to load this service details from our content system.",
+        404: "This service offering doesn't exist in our database or may have been removed.",
+        timeout:
+          "This service information is taking longer than usual to load from Sanity.",
+        network:
+          "Network connection failed while fetching this service details.",
+        parse:
+          "There's an issue with this service's data structure from Sanity CMS.",
+        server:
+          "Our backend is having trouble retrieving this service information.",
+        auth: "Authentication failed while accessing this service details.",
+        groq: "There's an issue with the content query for this service.",
+        default:
+          "Something unexpected happened while loading this service from our CMS.",
       },
       general: {
-        fetch: "Unable to load content. Please check your connection.",
-        404: "The content you're looking for was not found.",
-        timeout: "The request is taking longer than expected.",
-        network: "Network connection issue occurred.",
-        parse: "Data appears to be corrupted.",
-        server: "Server is experiencing difficulties.",
-        auth: "You don't have permission to access this content.",
-        default: "An unexpected error occurred.",
+        fetch:
+          "Unable to load content from our CMS. Please check your connection.",
+        404: "The requested content was not found in our database.",
+        timeout:
+          "Content is taking longer than expected to load from Sanity CMS.",
+        network: "Network connection to our content system failed.",
+        parse: "Content data appears to be corrupted or malformed in our CMS.",
+        server: "Our content management system is experiencing difficulties.",
+        auth: "Authentication failed while accessing content.",
+        groq: "There's an issue with our content query system.",
+        default:
+          "An unexpected error occurred while fetching content from our CMS.",
       },
     };
 
     const messages = contextMessages[context] || contextMessages.general;
-    const errorMsg = error.message.toLowerCase();
+    const errorMsg = (error?.message || "Unknown error").toLowerCase();
 
-    if (errorMsg.includes("fetch")) return messages.fetch;
-    if (errorMsg.includes("404") || errorMsg.includes("not found"))
+    if (
+      errorMsg.includes("fetch") ||
+      errorMsg.includes("network") ||
+      errorMsg.includes("cdn")
+    )
+      return messages.fetch;
+    if (
+      errorMsg.includes("404") ||
+      errorMsg.includes("not found") ||
+      errorMsg.includes("notfound")
+    )
       return messages["404"];
-    if (errorMsg.includes("timeout")) return messages.timeout;
-    if (errorMsg.includes("network") || errorMsg.includes("econnrefused"))
+    if (errorMsg.includes("timeout") || errorMsg.includes("aborted"))
+      return messages.timeout;
+    if (
+      errorMsg.includes("network") ||
+      errorMsg.includes("econnrefused") ||
+      errorMsg.includes("connection")
+    )
       return messages.network;
-    if (errorMsg.includes("parse") || errorMsg.includes("json"))
+    if (
+      errorMsg.includes("parse") ||
+      errorMsg.includes("json") ||
+      errorMsg.includes("syntax")
+    )
       return messages.parse;
     if (
+      errorMsg.includes("groq") ||
+      errorMsg.includes("query") ||
+      errorMsg.includes("sanity")
+    )
+      return messages.groq || messages.parse;
+    if (
       errorMsg.includes("500") ||
+      errorMsg.includes("502") ||
+      errorMsg.includes("503") ||
       errorMsg.includes("server") ||
-      errorMsg.includes("internal")
+      errorMsg.includes("internal") ||
+      errorMsg.includes("api")
     )
       return messages.server;
     if (
       errorMsg.includes("auth") ||
       errorMsg.includes("unauthorized") ||
-      errorMsg.includes("403")
+      errorMsg.includes("403") ||
+      errorMsg.includes("token") ||
+      errorMsg.includes("permission")
     )
       return messages.auth;
 
@@ -186,22 +297,41 @@ export default function ErrorBoundary({
   const getContextualSuggestions = (error: Error, context: string) => {
     const baseSuggestions = [
       "Check your internet connection",
-      "Refresh the page to try again",
-      "Clear your browser cache",
+      "Wait a moment and try refreshing",
+      "Clear your browser cache and cookies",
     ];
 
     const contextSuggestions: Record<string, string[]> = {
       blogs: [
         ...baseSuggestions,
-        "Try browsing other sections of our site",
-        "Check back later for new blog posts",
+        "Check if Sanity CMS is accessible",
+        "Browse our portfolio and case studies instead",
+        "Contact us if the issue persists",
       ],
       blog: [
         ...baseSuggestions,
         "Return to all blog posts",
         "Try searching for similar content",
+        "Contact us if this post should exist",
       ],
-      general: [...baseSuggestions, "Contact support if issue persists"],
+      services: [
+        ...baseSuggestions,
+        "Browse our portfolio and case studies",
+        "Contact us directly to discuss your project",
+        "Check our social media for service updates",
+      ],
+      service: [
+        ...baseSuggestions,
+        "Return to all our services",
+        "Contact us to discuss this specific service",
+        "Browse our related service offerings",
+      ],
+      general: [
+        ...baseSuggestions,
+        "Check our status page for known issues",
+        "Contact our support team",
+        "Try accessing a different page",
+      ],
     };
 
     return contextSuggestions[context] || contextSuggestions.general;
@@ -217,6 +347,8 @@ export default function ErrorBoundary({
     const contextTitles: Record<string, string> = {
       blogs: "No Blog Posts Available",
       blog: "Blog Post Not Found",
+      services: "Service Offerings Unavailable",
+      service: "Service Details Not Found",
       general: "Content Unavailable",
     };
 
@@ -227,6 +359,8 @@ export default function ErrorBoundary({
     const statusMessages: Record<string, string> = {
       blogs: "Blog Service Interrupted",
       blog: "Post Unavailable",
+      services: "Service Catalog Interrupted",
+      service: "Service Details Unavailable",
       general: "Service Interrupted",
     };
 
@@ -237,6 +371,8 @@ export default function ErrorBoundary({
     const buttonTexts: Record<string, { desktop: string; mobile: string }> = {
       blogs: { desktop: "Go Home", mobile: "Back to Home" },
       blog: { desktop: "View All Blogs", mobile: "All Blog Posts" },
+      services: { desktop: "Go Home", mobile: "Back to Home" },
+      service: { desktop: "View All Services", mobile: "All Services" },
       general: { desktop: "Go Home", mobile: "Back to Home" },
     };
 
@@ -249,6 +385,8 @@ export default function ErrorBoundary({
     const urls: Record<string, string> = {
       blogs: "/",
       blog: "/blog",
+      services: "/",
+      service: "/services",
       general: "/",
     };
 
@@ -259,9 +397,8 @@ export default function ErrorBoundary({
     setIsRetrying(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
-      router.refresh();
+      window.location.reload();
     } catch (err) {
-      console.error("Retry failed:", err);
     } finally {
       setIsRetrying(false);
     }
@@ -269,11 +406,21 @@ export default function ErrorBoundary({
 
   const handleGoHome = async () => {
     setIsNavigating(true);
+
     try {
-      router.push(getHomeUrl());
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      const targetUrl = getHomeUrl();
+      if (window.location.pathname === targetUrl) {
+        window.location.reload();
+        return;
+      }
+
+      router.push(targetUrl);
     } catch (err) {
       console.error("Navigation failed:", err);
       window.location.href = getHomeUrl();
+    } finally {
+      setIsNavigating(false);
     }
   };
 
@@ -344,12 +491,14 @@ export default function ErrorBoundary({
                     <button
                       onClick={handleGoHome}
                       disabled={isRetrying || isNavigating}
-                      className="bg-primary inline-flex flex-1 cursor-pointer items-center justify-center rounded-lg px-4 py-3 font-medium text-white transition-all hover:bg-purple-700/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-purple-700/90"
+                      className="bg-primary inline-flex flex-1 cursor-pointer items-center justify-center rounded-lg px-4 py-3 font-medium text-nowrap text-white transition-all hover:bg-purple-700/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-purple-700/90"
                     >
                       {isNavigating ? (
                         <LoaderIcon className="mr-2 size-4 animate-spin" />
                       ) : context === "blog" ? (
                         <BookOpenIcon className="mr-2 size-4" />
+                      ) : context === "service" ? (
+                        <BriefcaseIcon className="mr-2 size-4" />
                       ) : (
                         <HomeIcon className="mr-2 size-4" />
                       )}
@@ -421,6 +570,8 @@ export default function ErrorBoundary({
                       <LoaderIcon className="mr-2 size-4 animate-spin" />
                     ) : context === "blog" ? (
                       <BookOpenIcon className="mr-2 size-4" />
+                    ) : context === "service" ? (
+                      <BriefcaseIcon className="mr-2 size-4" />
                     ) : (
                       <HomeIcon className="mr-2 size-4" />
                     )}
@@ -435,25 +586,6 @@ export default function ErrorBoundary({
               </div>
             </div>
           </div>
-
-          {/* Development error details */}
-          {process.env.NODE_ENV === "development" && (
-            <details className="mx-auto mt-6 max-w-2xl rounded-lg border border-amber-400/20 bg-amber-400/5 p-4 backdrop-blur-sm">
-              <summary className="cursor-pointer text-sm font-medium text-amber-300">
-                Development Info
-              </summary>
-              <div className="mt-3 rounded bg-black/20 p-3">
-                <pre className="overflow-auto font-mono text-xs text-amber-200/80">
-                  {error.stack || error.message}
-                </pre>
-                {error.digest && (
-                  <p className="mt-2 text-xs text-amber-300/60">
-                    Error ID: {error.digest}
-                  </p>
-                )}
-              </div>
-            </details>
-          )}
         </div>
       </ContainerLayout>
     </main>

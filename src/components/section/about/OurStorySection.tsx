@@ -1,7 +1,6 @@
 "use client";
 import { ContainerLayout } from "@/components/layout";
 import { SectionHeader } from "@/components/reusable";
-import Particles from "@/components/ui/particles";
 import { storyItems } from "@/data/about.data";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
@@ -91,11 +90,6 @@ const OurStorySection = () => {
                         <div className="relative z-10 transform transition-all duration-500 group-hover:scale-105">
                           <SVG className="size-full drop-shadow-2xl" />
                         </div>
-                        <Particles
-                          particlesCount={20}
-                          particlesStyles="size-[6px] opacity-5"
-                          className="absolute inset-0 z-10 overflow-hidden rounded-full"
-                        />
                       </div>
                     </div>
                   </div>
