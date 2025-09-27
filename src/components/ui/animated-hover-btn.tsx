@@ -1,6 +1,8 @@
+"use client";
 import React, { FC, ReactNode, ElementType } from "react";
-import { Button } from "./button";
+import { buttonVariants } from "./button";
 import { cn } from "@/lib/utils";
+import { motion, MotionProps } from "framer-motion";
 
 type Props = {
   icon: ElementType;
@@ -12,7 +14,8 @@ type Props = {
     | "secondary"
     | "ghost"
     | "link";
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+  MotionProps;
 
 export const AnimatedHoverBtn: FC<Props> = ({
   icon: Icon,
@@ -22,20 +25,44 @@ export const AnimatedHoverBtn: FC<Props> = ({
   ...props
 }) => {
   return (
-    <Button
-      size="lg"
-      variant={variant}
+    <motion.button
+      type="button"
       className={cn(
-        "group overflow-hidden rounded-full !p-7 text-base font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:cursor-pointer hover:shadow-purple-500/25 md:text-lg",
+        buttonVariants({ variant, size: "lg" }),
+        "flex cursor-pointer items-center gap-2 overflow-hidden rounded-full !p-7 text-base font-semibold text-white shadow-lg md:text-lg",
         className,
       )}
+      initial="rest"
+      animate="rest"
+      whileHover="hover"
+      whileTap={{ scale: [1, 0.9, 1] }}
       {...props}
     >
       {children}
-      <div className="relative">
-        <Icon className="size-5 -translate-y-0 opacity-100 transition-all duration-300 ease-in-out group-hover:-translate-y-20 group-hover:scale-0 group-hover:opacity-0" />
-        <Icon className="absolute inset-0 size-5 translate-y-20 scale-0 opacity-0 transition-all duration-300 ease-in-out group-hover:-translate-y-0 group-hover:scale-105 group-hover:opacity-100" />
+
+      <div className="relative h-5 w-5">
+        <motion.div
+          variants={{
+            rest: { y: 0, opacity: 1, scale: 1 },
+            hover: { y: -20, opacity: 0, scale: 0.8 },
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <Icon className="size-5" />
+        </motion.div>
+
+        <motion.div
+          variants={{
+            rest: { y: 20, opacity: 0, scale: 0.8 },
+            hover: { y: 0, opacity: 1, scale: 1.05 },
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <Icon className="size-5" />
+        </motion.div>
       </div>
-    </Button>
+    </motion.button>
   );
 };

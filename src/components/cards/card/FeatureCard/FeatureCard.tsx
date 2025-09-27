@@ -50,7 +50,6 @@ const FeatureCard: FC<FeatureCardProps> = ({
           type: "spring",
           stiffness: 150,
           damping: 25,
-          animationDelay: {delay: index * 0.1}
         }}
         style={{
           boxShadow:

@@ -2,8 +2,24 @@
 
 import { ContactForm, SectionHeader } from "@/components/reusable";
 import ContainerLayout from "@/components/layout/ContainerLayout";
+import { useEffect } from "react";
+import { useLenis } from "lenis/react";
 
 const ContactSection = () => {
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      if (hash === "#get-in-touch-section") {
+        const el = document.querySelector(hash) as HTMLElement;
+        if (el) {
+          lenis?.scrollTo(el);
+        }
+      }
+    }
+  }, [lenis]);
+
   return (
     <section
       id="get-in-touch-section"
