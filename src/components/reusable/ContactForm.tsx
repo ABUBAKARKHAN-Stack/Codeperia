@@ -34,7 +34,6 @@ const ContactForm = ({ forServices = false }) => {
     "Web Development",
     "App Development",
     "Full Stack Development",
-    "E-Commerce Solutions",
     "UI/UX Design",
     "DevOps & Automation",
   ];

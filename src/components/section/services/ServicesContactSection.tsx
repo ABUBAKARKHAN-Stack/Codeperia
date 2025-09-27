@@ -1,11 +1,13 @@
 import { ContainerLayout } from "@/components/layout";
-import { ContactForm, SectionHeader } from "@/components/reusable";
+import { ContactForm, MailLink, SectionHeader } from "@/components/reusable";
+import { brandContactInfo } from "@/constants/constants";
 import React from "react";
 
 const ServicesContactSection = () => {
+  const { contact, info, phone } = brandContactInfo;
   return (
     <section
-      id="get-in-touch-section"
+      id="service-contact-section"
       className="h-full w-full py-16 text-white"
     >
       <ContainerLayout>
@@ -20,6 +22,11 @@ const ServicesContactSection = () => {
               Select a service and tell us more about your project. Our team
               will get back to you with tailored solutions.
             </p>
+            <div className="space-y-2.5">
+              <MailLink showIcon mail={info} />
+              <MailLink showIcon mail={contact} />
+              <MailLink showIcon mail={phone} forTel />
+            </div>
           </div>
 
           {/* Right form  */}

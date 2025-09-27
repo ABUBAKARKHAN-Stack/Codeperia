@@ -3,7 +3,6 @@ import {
   ContactSection,
   FAQSection,
   SecondaryCtaSection,
-  SupportHighlightSection,
 } from "@/components/section/contact";
 import { brandName } from "@/constants/constants";
 import { Metadata } from "next";
@@ -14,16 +13,15 @@ export const metadata: Metadata = {
   description: `Connect with ${brandName} to discuss your project or get support. Reach our team, explore FAQs, and let’s build innovative software solutions together.`,
 };
 
-function page() {
+function ContactPage() {
   return (
-    <div>
+    <>
       <ContactHeroSection />
       <ContactSection />
-      <SupportHighlightSection />
       <SecondaryCtaSection />
       <FAQSection />
-    </div>
+    </>
   );
 }
 
-export default page;
+export default ContactPage;

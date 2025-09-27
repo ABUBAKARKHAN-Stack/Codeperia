@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     id: 3,
-    username: "John Doe",
+    username: "Alex De Mario",
     feedback: "UI/UX design was top-notch. My users love the new interface.",
     date: "2025-08-14",
     time: "6:50 PM",

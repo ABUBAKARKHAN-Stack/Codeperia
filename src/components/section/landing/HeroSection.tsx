@@ -76,11 +76,9 @@ const Hero = () => {
             and thrive in the digital world.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
+          <div className="flex flex-col flex-wrap justify-center gap-3 sm:flex-row lg:justify-start">
             <PrimaryCtaBtn
-              onClick={() =>
-                router.push("/contact#get-in-touch-section", { scroll: false })
-              }
+              onClick={() => router.push("/contact#get-in-touch-section")}
               icon={PiRocketDuotone}
             >
               Start Your Project

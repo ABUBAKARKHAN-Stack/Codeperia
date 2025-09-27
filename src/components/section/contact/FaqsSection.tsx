@@ -59,16 +59,14 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`group overflow-hidden rounded-2xl border border-gray-300 shadow-sm`}
+              className={`group bg-accent overflow-hidden rounded-2xl shadow-sm`}
             >
               <button
-                className={`flex w-full cursor-pointer justify-between ${openIndex === index ? "bg-white/10 text-white hover:bg-white/10" : "cursor-pointer group-hover:bg-gray-50 group-hover:text-black"} items-center px-6 py-4 text-left text-lg font-medium transition-colors`}
+                className={`group-hover:bg-accent/50 flex w-full cursor-pointer items-center justify-between px-6 py-4 text-left text-lg font-medium transition-colors`}
                 onClick={() => toggleFAQ(index)}
               >
                 {faq.question}
-                <span
-                  className={`text-white ${openIndex === index ? "group-hover:text-white" : "group-hover:text-black"} `}
-                >
+                <span className={`text-white`}>
                   {openIndex === index ? <FaMinus /> : <FaPlus />}
                 </span>
               </button>
@@ -83,7 +81,7 @@ export default function FAQSection() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
                     <div
-                      className={`${openIndex === index ? "bg-white" : null} px-6 py-4 text-neutral-900`}
+                      className={`${openIndex === index ? "bg-purple-100" : null} px-6 py-4 text-neutral-900`}
                     >
                       {faq.answer}
                     </div>

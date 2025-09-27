@@ -1,3 +1,6 @@
+import { brandContactInfo } from "@/constants/constants";
+
+const { contact, info, phone } = brandContactInfo;
 const footerData = {
   servicesLinks: [
     {
@@ -34,9 +37,10 @@ const footerData = {
   ],
 
   contactLink: [
-    // { name: "Contact Us", link: "/contact" },
-    // { name: "tetracode@gmail.com", link: "mailto:tetracode@gmail.com" },
-    // { name: "00000000000", link: "tel:0000000000" },
+    { name: "Contact Us", link: "/contact" },
+    { name: info, link: `mailto:${info}` },
+    { name: contact, link: `mailto:${contact}` },
+    { name: phone, link: `tel:${phone}` },
   ],
 };
 

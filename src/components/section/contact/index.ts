@@ -1,13 +1,6 @@
 import { ContactSection } from "../landing";
 import ContactHeroSection from "./ContactHero";
-import FAQSection from "./Faq";
-import SupportHighlightSection from "./SupportHighlightSection";
+import FAQSection from "./FaqsSection";
 import SecondaryCtaSection from "./SecondaryCtaSection";
 
-export {
-  ContactHeroSection,
-  FAQSection,
-  ContactSection,
-  SupportHighlightSection,
-  SecondaryCtaSection,
-};
+export { ContactHeroSection, FAQSection, ContactSection, SecondaryCtaSection };

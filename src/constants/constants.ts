@@ -18,20 +18,36 @@ const foundersSocials = {
     github: "https://github.com/ABUBAKARKHAN-Stack",
     x: "https://x.com/abubakar_stacky",
   },
-  awais: {
-    linkedin: "https://www.linkedin.com/in/awais-tahir-6a2898333",
-    github: "https://github.com/iawais-dev",
-    x: "",
+  ubaid: {
+    linkedin: "https://www.linkedin.com/in/sardar-ubaid-51b593375",
+    github: "https://github.com/SardarUbaidullah",
+    x: "#",
+  },
+  mansoor: {
+    linkedin: "https://www.linkedin.com/in/themansoorshah ",
+    github: "https://www.linkedin.com/in/themansoorshah",
+    x: "#",
   },
 };
 
 const brandSocials = {
-  upwork:
-    "https://www.upwork.com/freelancers/~012cf1f5ceb37cd2b9?mp_source=share",
   instagram: "https://www.instagram.com/codescription",
   facebook: "https://www.facebook.com/profile.php?id=61581297981686",
   linkedin: "https://www.linkedin.com/in/codescription-real",
   x: "https://x.com/codescripion",
 };
 
-export { brandName, baseUrl, toastBaseStyling, foundersSocials, brandSocials };
+const brandContactInfo = {
+  contact: "contact@codeperia.com",
+  info: "info@codeperia.com",
+  phone: "+92 328 7099399",
+};
+
+export {
+  brandName,
+  baseUrl,
+  toastBaseStyling,
+  foundersSocials,
+  brandSocials,
+  brandContactInfo,
+};

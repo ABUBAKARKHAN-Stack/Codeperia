@@ -4,7 +4,7 @@ import {
   MissionLeaderIllustration,
   VisionInnovationIllustration,
 } from "@/components/ui/illustrations";
-import { brandName } from "@/constants/constants";
+import { brandName, foundersSocials } from "@/constants/constants";
 import {
   Handshake,
   Lightbulb,
@@ -148,4 +148,39 @@ const values = [
   },
 ];
 
-export { aboutUsSectionHeader, ourStats, storyItems, values };
+const { abubakar, mansoor, ubaid } = foundersSocials;
+
+const teamMembers = [
+  {
+    name: "Sardar Ubaid",
+    role: "Co-Founder & CEO",
+    image: "/assets/imgs/team/ubaid.jpg",
+    socials: {
+      linkedin: ubaid.linkedin,
+      x: ubaid.x,
+      github: ubaid.github,
+    },
+  },
+  {
+    name: "Abubakar Aijaz",
+    role: "Co-Founder & CEO",
+    image: "/assets/imgs/team/abubakar.jpg",
+    socials: {
+      linkedin: abubakar.linkedin,
+      github: abubakar.github,
+      x: abubakar.x,
+    },
+  },
+  {
+    name: "Mansoor Shah",
+    role: "Co-Founder & CEO",
+    image: "/assets/imgs/team/mansoor.jpeg",
+    socials: {
+      linkedin: mansoor.linkedin,
+      github: mansoor.github,
+      x: mansoor.x,
+    },
+  },
+];
+
+export { aboutUsSectionHeader, ourStats, storyItems, values, teamMembers };

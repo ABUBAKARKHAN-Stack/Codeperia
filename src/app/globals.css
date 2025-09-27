@@ -145,6 +145,6 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-purple-400 selection:text-purple-100;
   }
 }

@@ -1,25 +1,13 @@
 "use client";
 
-import { ContactForm, SectionHeader } from "@/components/reusable";
+import { ContactForm, MailLink, SectionHeader } from "@/components/reusable";
 import ContainerLayout from "@/components/layout/ContainerLayout";
-import { useEffect } from "react";
-import { useLenis } from "lenis/react";
+import { Mail } from "lucide-react";
+import { brandContactInfo } from "@/constants/constants";
+import Link from "next/link";
 
 const ContactSection = () => {
-  const lenis = useLenis();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash === "#get-in-touch-section") {
-        const el = document.querySelector(hash) as HTMLElement;
-        if (el) {
-          lenis?.scrollTo(el);
-        }
-      }
-    }
-  }, [lenis]);
-
+  const { contact, info, phone } = brandContactInfo;
   return (
     <section
       id="get-in-touch-section"
@@ -37,6 +25,11 @@ const ContactSection = () => {
               project, or simply say hello, drop us a message and we’ll get back
               to you shortly.
             </p>
+            <div className="space-y-2.5">
+              <MailLink showIcon mail={info} />
+              <MailLink showIcon mail={contact} />
+              <MailLink showIcon mail={phone} forTel />
+            </div>
           </div>
 
           <div className="w-full rounded-2xl border border-white/5 bg-purple-500/5 p-8 shadow-2xl backdrop-blur-3xl lg:max-w-2xl">

@@ -9,7 +9,6 @@ import {
   TechStackSection,
   ContactSection,
 } from "@/components/section/landing";
-import ScrollToTopBtn from "@/components/ui/scroll-to-top-btn";
 import { SanityLive } from "@/sanity/lib/live";
 import { getServices } from "@/helpers/services.helper";
 import { ServicesProvider } from "@/context/services.context";
@@ -28,7 +27,6 @@ const Home = async () => {
         <TestimonialSection />
         <TechStackSection />
         <ContactSection />
-        <ScrollToTopBtn />
       </ServicesProvider>
     </>
   );

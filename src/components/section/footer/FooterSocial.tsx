@@ -11,7 +11,7 @@ import React from "react";
 import { brandSocials } from "@/constants/constants";
 
 const FooterSocial = () => {
-  const { instagram, facebook, upwork, x, linkedin } = brandSocials;
+  const { instagram, facebook, x, linkedin } = brandSocials;
   const socialLinks = [
     {
       icon: <LinkedinIcon className="text-foreground size-5" />,
@@ -32,11 +32,6 @@ const FooterSocial = () => {
       icon: <InstagramIcon className="text-foreground size-5" />,
       link: instagram,
       label: "Instagram",
-    },
-    {
-      icon: <FaUpwork className="text-foreground size-5" />,
-      link: upwork,
-      label: "UpWork",
     },
   ];
 
