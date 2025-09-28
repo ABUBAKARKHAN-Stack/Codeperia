@@ -1,6 +1,5 @@
 import { WhatWeDoSection } from "@/components/section/landing";
 import {
-  FeaturedServiceSection,
   ServicesContactSection,
   ServicesHero,
 } from "@/components/section/services/";

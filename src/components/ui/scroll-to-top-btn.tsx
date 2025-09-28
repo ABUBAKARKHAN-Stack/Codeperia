@@ -11,7 +11,7 @@ const ScrollToTopBtn = () => {
   const [showButton, setShowButton] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShow = window.scrollY >= window.innerHeight / 2;
+      const shouldShow = window.scrollY >= (window.innerHeight / 2);
       setShowButton((prev) => (prev !== shouldShow ? shouldShow : prev));
     };
     window.addEventListener("scroll", handleScroll);
@@ -32,7 +32,7 @@ const ScrollToTopBtn = () => {
         >
           <Button
             size="icon"
-            className="cursor-pointer rounded-full"
+            className="cursor-pointer rounded-full shadow-[0px_0px_10px_rgba(0,0,0,0.5)]"
             onClick={() => scrollToTop()}
           >
             <FaArrowUp />

@@ -62,11 +62,15 @@ const ContactForm = ({ forServices = false }) => {
   const onSubmit = async (data: z.infer<typeof schema>) => {
     setIsSubmitting(true);
     try {
-      await fetch("/api/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      if (!response.ok) {
+        errorToast("Unable to send your message. Please try again later.");
+        return;
+      }
       form.reset();
       successToast("Your message has been sent successfully!");
     } catch (error) {
@@ -144,22 +148,22 @@ const ContactForm = ({ forServices = false }) => {
                   <SelectContent>
                     {forServices
                       ? servicesItems.map((service, i) => (
-                          <SelectItem key={i} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))
+                        <SelectItem key={i} value={service}>
+                          {service}
+                        </SelectItem>
+                      ))
                       : subjects.map((subject, i) => (
-                          <SelectItem
-                            key={i}
-                            value={subject}
-                            disabled={
-                              subject === "Career / Jobs" ||
-                              subject === "Buy Ready-Made Project"
-                            }
-                          >
-                            {subject}
-                          </SelectItem>
-                        ))}
+                        <SelectItem
+                          key={i}
+                          value={subject}
+                          disabled={
+                            subject === "Career / Jobs" ||
+                            subject === "Buy Ready-Made Project"
+                          }
+                        >
+                          {subject}
+                        </SelectItem>
+                      ))}
                   </SelectContent>
                 </Select>
                 <FormMessage />

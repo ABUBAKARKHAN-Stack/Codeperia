@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import fs from "fs";
 import path from "path";
+import { brandName } from "@/constants/constants";
 
 export const size = {
   width: 1200,
@@ -33,7 +34,7 @@ export default async function OpengraphImage() {
       >
         <img
           src={base64Image}
-          alt="Codescription - OG"
+          alt={`${brandName} - OG`}
           width={1200}
           height={630}
           style={{
