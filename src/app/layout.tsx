@@ -71,6 +71,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
+ openGraph: {
+  siteName: brandName,
+  url: baseUrl
+ }
 };
 
 export default function RootLayout({

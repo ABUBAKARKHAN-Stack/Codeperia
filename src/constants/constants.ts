@@ -1,5 +1,5 @@
 const brandName = "Codeperia";
-const baseUrl = "https://codescription-development.vercel.app";
+const baseUrl = "https://codeperia.vercel.app";
 
 const toastBaseStyling = {
   borderRadius: "0.5rem",
