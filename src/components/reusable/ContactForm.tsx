@@ -74,6 +74,7 @@ const ContactForm = ({ forServices = false }) => {
       form.reset();
       successToast("Your message has been sent successfully!");
     } catch (error) {
+      console.log("Contact Form",error);  
       errorToast("Unable to send your message. Please try again later.");
     } finally {
       setIsSubmitting(false);

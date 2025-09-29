@@ -1,4 +1,3 @@
-import { ContainerLayout } from "@/components/layout";
 import { PageHeader } from "@/components/reusable";
 import { formatDate } from "@/lib/formatDate";
 import { urlFor } from "@/sanity/lib/image";
@@ -19,8 +18,7 @@ type Props = {
 const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
   return (
     <PageHeader pageHeading={title || "Blog Unavailable"}>
-      {/* <ContainerLayout className={cn("space-y-6 p-0")}> */}
-      {/* <div className="space-y-6"> */}
+
       {/* Author & Date Row */}
       <div
         className={cn(
@@ -116,8 +114,6 @@ const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
           </Highlighter>
         </div>
       )}
-      {/* </div> */}
-      {/* </ContainerLayout> */}
     </PageHeader>
   );
 };

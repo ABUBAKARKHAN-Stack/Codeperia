@@ -83,7 +83,7 @@ const PageHeader: FC<Props> = ({
               once
               justHighlighter
               color="rgba(255,255,255,0.05)"
-              className="font-audiowide w-fit max-w-[500px] p-2 text-center text-base font-light tracking-wider text-wrap text-white/85"
+              className="font-audiowide w-fit max-w-[525px] p-2 text-center text-base font-light tracking-wider text-wrap text-white/85"
             >
               <span className="w-fit">{subText}</span>
             </Highlighter>

@@ -28,8 +28,8 @@ export const serviceType = defineType({
           .error("Service description is required")
           .min(50)
           .error("Description must be at least 50 characters long")
-          .max(100)
-          .error("Description must not exceed 100 characters"),
+          .max(150)
+          .error("Description must not exceed 150 characters"),
     }),
     defineField({
       name: "slug",

@@ -96,7 +96,7 @@ export function SmoothCursor({
 }: SmoothCursorProps) {
   const canHover = useMediaQuery("(hover: hover) and (pointer: fine)");
 
-  const [isMoving, setIsMoving] = useState(false);
+  const [_isMoving, setIsMoving] = useState(false);
   const lastMousePos = useRef<Position>({ x: 0, y: 0 });
   const velocity = useRef<Position>({ x: 0, y: 0 });
   const lastUpdateTime = useRef(Date.now());

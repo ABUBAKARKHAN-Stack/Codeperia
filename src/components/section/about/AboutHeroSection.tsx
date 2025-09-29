@@ -1,13 +1,10 @@
 "use client";
 import { PageHeader } from "@/components/reusable";
-import { Button } from "@/components/ui/button";
 import ScrollToSectionBtn from "@/components/ui/scroll-to-section-btn";
 import { brandName } from "@/constants/constants";
-import { useScroll } from "@/hooks/useScroll";
 import { Sparkles } from "lucide-react";
 
 const AboutHeroSection = () => {
-  const { scrollToSection } = useScroll();
 
   return (
     <PageHeader

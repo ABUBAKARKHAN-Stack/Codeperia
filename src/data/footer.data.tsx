@@ -1,5 +1,4 @@
 import { brandContactInfo } from "@/constants/constants";
-import { useServices } from "@/context/services.context";
 
 const { contact, info, phone } = brandContactInfo;
 const footerData = {

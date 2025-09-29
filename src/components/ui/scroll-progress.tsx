@@ -4,7 +4,6 @@ import React from "react";
 import { useScroll, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-type Props = {};
 
 const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();

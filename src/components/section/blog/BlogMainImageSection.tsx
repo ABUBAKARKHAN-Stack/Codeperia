@@ -1,7 +1,7 @@
 "use client";
 import Particles from "@/components/ui/particles";
 import { baseUrl } from "@/constants/constants";
-import { errorToast, infoToast, successToast } from "@/helpers/toasts.helper";
+import { errorToast,  successToast } from "@/helpers/toasts.helper";
 import { cn } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/image";
 import { ISanityImage } from "@/types/main.types";
