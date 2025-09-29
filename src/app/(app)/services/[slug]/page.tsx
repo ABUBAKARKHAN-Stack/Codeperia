@@ -38,8 +38,8 @@ export async function generateMetadata({
     service.shortDescription || `Read ${service.title} on ${brandName}`;
   const imageUrl = urlFor(service.serviceImage.source)
     .quality(85)
-    // .width(1200)
-    // .height(630)
+    .width(1200)
+    .height(630)
     .format("jpg")
     .url();
   const imageAlt = service.serviceImage.alt;
@@ -55,8 +55,8 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          // width: 1200,
-          // height: 630,
+          width: 1200,
+          height: 630,
           alt: imageAlt || title,
         },
       ],
@@ -69,8 +69,8 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          // width: 1200,
-          // height: 630,
+          width: 1200,
+          height: 630,
           alt: imageAlt || title,
         },
       ],
