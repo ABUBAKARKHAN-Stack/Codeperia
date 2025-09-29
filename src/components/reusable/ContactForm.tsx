@@ -148,22 +148,22 @@ const ContactForm = ({ forServices = false }) => {
                   <SelectContent>
                     {forServices
                       ? servicesItems.map((service, i) => (
-                        <SelectItem key={i} value={service}>
-                          {service}
-                        </SelectItem>
-                      ))
+                          <SelectItem key={i} value={service}>
+                            {service}
+                          </SelectItem>
+                        ))
                       : subjects.map((subject, i) => (
-                        <SelectItem
-                          key={i}
-                          value={subject}
-                          disabled={
-                            subject === "Career / Jobs" ||
-                            subject === "Buy Ready-Made Project"
-                          }
-                        >
-                          {subject}
-                        </SelectItem>
-                      ))}
+                          <SelectItem
+                            key={i}
+                            value={subject}
+                            disabled={
+                              subject === "Career / Jobs" ||
+                              subject === "Buy Ready-Made Project"
+                            }
+                          >
+                            {subject}
+                          </SelectItem>
+                        ))}
                   </SelectContent>
                 </Select>
                 <FormMessage />

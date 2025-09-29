@@ -23,6 +23,7 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
 
   const handleCTA = () => {
     router.push("/contact");
+    setOpen(false);
   };
 
   return (
@@ -36,7 +37,7 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
         </SheetTitle>
         <SheetDescription />
       </SheetHeader>
-      <ul className="mt-10 ml-2 flex flex-col space-y-3 px-3 py-5 text-white">
+      <ul className="mt-10 ml-2 flex flex-col space-y-4 px-3 py-5 text-white">
         {navLinks.map(({ href, name, icon: Icon }) => {
           const isActive = pathname === href || pathname.startsWith(href + "/");
           return (
@@ -44,35 +45,34 @@ const MobileMenu: FC<Props> = ({ pathname, setOpen }) => {
               <Link
                 href={href}
                 className={cn(
-                  "hover:text-primary flex items-center gap-3 transition-colors",
-                  isActive && "text-primary font-medium",
+                  "flex w-full items-center gap-3 rounded-md bg-white/10 px-4 py-2 text-xl font-semibold text-white transition-colors hover:bg-white/20",
+                  isActive && "bg-primary font-medium hover:bg-purple-700/90",
                 )}
                 onClick={() => setOpen(false)}
               >
-                <Icon size={20} />
+                <Icon size={24} />
                 {name}
               </Link>
             </li>
           );
         })}
-      </ul>
-      <Button
-        className={cn(
-          "group w-fit scale-90 cursor-pointer text-base shadow-[0px_0px_10px_rgba(0,0,0,0.2)]",
-          "ml-2 duration-300 hover:scale-100",
-        )}
-        size={"lg"}
-        onClick={handleCTA}
-      >
-        Get in Touch
-        <ChevronRight
+        <Button
           className={cn(
-            "size-5 scale-90 stroke-[2.5px]",
-            "group-hover:scale-100 group-hover:rotate-180",
-            "transition-all duration-200 ease-in-out",
+            "group w-full cursor-pointer !py-6 text-xl shadow-[0px_0px_10px_rgba(0,0,0,0.2)]",
           )}
-        />
-      </Button>
+          size={"lg"}
+          onClick={handleCTA}
+        >
+          Get in Touch
+          <ChevronRight
+            className={cn(
+              "size-7 scale-90 stroke-[2.5px]",
+              "group-hover:scale-100 group-hover:rotate-180",
+              "transition-all duration-200 ease-in-out",
+            )}
+          />
+        </Button>
+      </ul>
     </SheetContent>
   );
 };

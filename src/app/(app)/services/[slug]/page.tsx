@@ -14,24 +14,23 @@ import Link from "next/link";
 
 type Params = {
   params: Promise<{ slug: string }>;
-}
+};
 
 export async function generateStaticParams() {
   const services = await getServices();
   return services.map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: Params, _parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Params,
+  _parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params;
   const service = await getService(slug);
 
-  
-
   if (!service) {
     return {
-      title: "Service Not Found | " + brandName,
+      title: "Service Not Found",
       description: "The requested service does not exist.",
       robots: { index: false },
     };
@@ -45,7 +44,7 @@ export async function generateMetadata({
     .format("jpg")
     .url();
   const imageAlt = service.serviceImage.alt;
-  const servicesBaseUrl = `${baseUrl}/services/${slug}`
+  const servicesBaseUrl = `${baseUrl}/services/${slug}`;
 
   return {
     title,

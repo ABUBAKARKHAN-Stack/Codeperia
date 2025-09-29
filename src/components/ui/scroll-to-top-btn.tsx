@@ -11,7 +11,7 @@ const ScrollToTopBtn = () => {
   const [showButton, setShowButton] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      const shouldShow = window.scrollY >= (window.innerHeight / 2);
+      const shouldShow = window.scrollY >= window.innerHeight / 2;
       setShowButton((prev) => (prev !== shouldShow ? shouldShow : prev));
     };
     window.addEventListener("scroll", handleScroll);

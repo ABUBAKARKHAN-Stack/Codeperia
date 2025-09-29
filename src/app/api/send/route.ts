@@ -2,16 +2,14 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-
 export async function POST(req: Request) {
   try {
     const { name, email, message, service } = await req.json();
 
-
     const { data, error } = await resend.emails.send({
       from: "Codeperia <info@codeperia.com>",
-      to: "info@codeperia.com",          
-      replyTo: email,                    
+      to: "info@codeperia.com",
+      replyTo: email,
       subject: "New Message from Client",
       html: `
       <div class="bg-gray-100 p-6 font-sans text-gray-800">
@@ -31,7 +29,6 @@ export async function POST(req: Request) {
 
       `,
     });
-
 
     if (error) {
       return Response.json({ error }, { status: 400 });

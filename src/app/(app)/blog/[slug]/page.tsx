@@ -33,7 +33,7 @@ export async function generateMetadata(
 
   if (!post) {
     return {
-      title: `Blog not found | ${brandName}`,
+      title: "Blog not found",
       description: "Sorry, this blog post does not exist.",
       robots: { index: false },
     };

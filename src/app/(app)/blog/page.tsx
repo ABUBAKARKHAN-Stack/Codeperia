@@ -4,13 +4,19 @@ import React from "react";
 import { SanityLive } from "@/sanity/lib/live";
 import { BlogPostsSection } from "@/components/section/blog";
 import { Metadata } from "next";
-import { brandName } from "@/constants/constants";
+import { baseUrl, brandName } from "@/constants/constants";
 import { BookOpen } from "lucide-react";
 import ScrollToSectionBtn from "@/components/ui/scroll-to-section-btn";
 
 export const metadata: Metadata = {
   title: "Blog",
   description: `Read expert insights, tutorials, and updates on software development, web technologies, and IT trends from ${brandName}`,
+  openGraph: {
+    url: `${baseUrl}/blog`,
+  },
+  alternates: {
+    canonical: `${baseUrl}/blog`,
+  },
 };
 
 const Blog = async () => {

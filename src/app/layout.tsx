@@ -57,13 +57,26 @@ export const metadata: Metadata = {
   },
   keywords: [
     "tech startup",
+    "codeperia",
+    "digital tech agency",
     "software development",
     "custom web applications",
+    "ui-ux",
+    "ui",
+    "ux",
+    "devops and automation",
+    "devops",
+    "automation",
     "tech agency",
     "modern digital solutions",
     "scalable web apps",
+    "scalable mobile apps",
   ],
-  authors: [{ name: "Abubakar", url: foundersSocials.abubakar.linkedin }],
+  authors: [
+    { name: "Abubakar Aijaz", url: foundersSocials.abubakar.linkedin },
+    { name: "Sardar Ubaid", url: foundersSocials.ubaid.linkedin },
+    { name: "Mansoor Shah", url: foundersSocials.mansoor.linkedin },
+  ],
   creator: brandName,
   publisher: brandName,
   robots: "index, follow",
@@ -71,10 +84,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: baseUrl,
   },
- openGraph: {
-  siteName: brandName,
-  url: baseUrl
- }
+  openGraph: {
+    siteName: brandName,
+    url: baseUrl,
+  },
 };
 
 export default function RootLayout({

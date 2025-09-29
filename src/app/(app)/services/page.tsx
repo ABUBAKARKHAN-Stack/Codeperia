@@ -3,7 +3,7 @@ import {
   ServicesContactSection,
   ServicesHero,
 } from "@/components/section/services/";
-import { brandName } from "@/constants/constants";
+import { baseUrl, brandName } from "@/constants/constants";
 import { ServicesProvider } from "@/context/services.context";
 import { getServices } from "@/helpers/services.helper";
 import { SanityLive } from "@/sanity/lib/live";
@@ -13,6 +13,12 @@ import React from "react";
 export const metadata: Metadata = {
   title: `Services`,
   description: `Explore ${brandName}'s services including web development, app development, full stack development and e-commerce solutions, UI/UX design, and DevOps automation.`,
+  openGraph: {
+    url: `${baseUrl}/services`,
+  },
+  alternates: {
+    canonical: `${baseUrl}/services`,
+  },
 };
 
 const ServicePage = async () => {

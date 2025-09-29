@@ -10,7 +10,7 @@ type Props = {
 
 const ServiceImage: FC<Props> = ({ serviceImage, title }) => {
   return (
-    <div className="relative w-full aspect-[21/9]">
+    <div className="relative aspect-[21/9] w-full">
       <Image
         src={urlFor(serviceImage.source)
           .auto("format")
@@ -21,7 +21,6 @@ const ServiceImage: FC<Props> = ({ serviceImage, title }) => {
         fill
         className="object-cover"
         priority
-
       />
     </div>
   );
