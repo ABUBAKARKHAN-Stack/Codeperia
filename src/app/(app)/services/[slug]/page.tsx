@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { PageHeader } from "@/components/reusable";
 import { ContainerLayout } from "@/components/layout";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import { baseUrl, brandName } from "@/constants/constants";
 import { getService, getServices } from "@/helpers/services.helper";
 import { ServiceImage } from "@/components/section/services";
@@ -12,6 +12,10 @@ import { urlFor } from "@/sanity/lib/image";
 import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
 import Link from "next/link";
 
+type Params = {
+  params: Promise<{ slug: string }>;
+}
+
 export async function generateStaticParams() {
   const services = await getServices();
   return services.map(({ slug }) => ({ slug }));
@@ -19,11 +23,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: Params, _parent: ResolvingMetadata): Promise<Metadata> {
   const { slug } = await params;
   const service = await getService(slug);
+
+  
 
   if (!service) {
     return {
@@ -41,6 +45,7 @@ export async function generateMetadata({
     .format("jpg")
     .url();
   const imageAlt = service.serviceImage.alt;
+  const servicesBaseUrl = `${baseUrl}/services/${slug}`
 
   return {
     title,
@@ -60,6 +65,7 @@ export async function generateMetadata({
       ],
       type: "article",
       siteName: brandName,
+      url: servicesBaseUrl,
     },
     twitter: {
       title,
@@ -77,7 +83,7 @@ export async function generateMetadata({
       creator: brandName,
     },
     alternates: {
-      canonical: `${baseUrl}/services/${slug}`,
+      canonical: servicesBaseUrl,
     },
   };
 }

@@ -16,7 +16,7 @@ export default async function OpengraphImage() {
     "public",
     "assets",
     "imgs",
-    "main-og.png",
+    "codeperia-main-og.png",
   );
   const imageBuffer = fs.readFileSync(imagePath);
   const base64Image = `data:image/png;base64,${imageBuffer.toString("base64")}`;
