@@ -7,7 +7,7 @@ type Props = { mail: string; forTel?: boolean; showIcon?: boolean };
 const MailLink: FC<Props> = ({ mail, forTel = false, showIcon = false }) => {
   return (
     <Link
-      href={`mailto:${mail}`}
+      href={forTel ? `tel:${mail}` : `mailto:${mail}`}
       passHref
       className="flex items-center gap-x-4 text-purple-300"
     >
