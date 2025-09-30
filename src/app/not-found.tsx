@@ -3,7 +3,7 @@ import { brandName } from "@/constants/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Page not found | ${brandName}`,
+  title: `Page not found`,
   description: `Oops! This page doesn’t exist. Return to the homepage to continue exploring ${brandName}.`,
   robots: { index: false },
 };

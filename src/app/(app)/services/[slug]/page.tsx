@@ -16,6 +16,8 @@ type Params = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const services = await getServices();
   return services.map(({ slug }) => ({ slug }));

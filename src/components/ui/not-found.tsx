@@ -1,6 +1,5 @@
 "use client";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import Particles from "@/components/ui/particles";
 import { useRouter } from "next/navigation";
 import { ArrowLeftCircle, Home } from "lucide-react";
 import { AnimatedHoverBtn } from "./animated-hover-btn";
