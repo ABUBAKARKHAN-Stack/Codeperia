@@ -18,7 +18,7 @@ const DesktopNav: FC<Props> = ({ pathname }) => {
   const router = useRouter();
 
   const handleCTA = () => {
-    router.push("/contact");
+    router.push("/contact#get-in-touch-section");
   };
 
   return (
