@@ -46,7 +46,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
             className={cn(
-              "text-2xl min-[320px]:text-3xl min-[450px]:text-4xl sm:text-5xl md:text-6xl lg:text-left xl:text-7xl 2xl:text-8xl",
+              "text-2xl min-[320px]:text-3xl min-[450px]:text-4xl sm:text-5xl md:text-6xl lg:text-left lg:text-7xl 2xl:text-8xl",
               "font-audiowide relative text-center leading-tight font-bold tracking-wide text-wrap uppercase sm:leading-tight md:leading-tight",
             )}
           >
