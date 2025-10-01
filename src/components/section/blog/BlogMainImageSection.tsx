@@ -1,7 +1,7 @@
 "use client";
 import Particles from "@/components/ui/particles";
 import { baseUrl } from "@/constants/constants";
-import { errorToast,  successToast } from "@/helpers/toasts.helper";
+import { errorToast, successToast } from "@/helpers/toasts.helper";
 import { cn } from "@/lib/utils";
 import { urlFor } from "@/sanity/lib/image";
 import { ISanityImage } from "@/types/main.types";
@@ -65,20 +65,17 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
       {mainImage && (
         <div className="group relative mb-12">
           {/* Responsive Aspect Ratio Wrapper */}
-          <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
+          <div className="relative w-full aspect-[21/9]">
             <Image
-              src={urlFor(mainImage.source)
-                .width(1920)
-                .quality(85)
-                .format("webp")
-                .url()}
+              src={
+                urlFor(mainImage.source)
+                  .auto("format")
+                  .fit("max")
+                  .quality(100)
+                  .url()
+              }
               alt={mainImage.alt || title}
               fill
-              sizes="
-                             (max-width: 640px) 100vw,   
-                             (max-width: 1024px) 90vw,  
-                             1200px  
-                           "
               className="object-cover"
               priority
             />
