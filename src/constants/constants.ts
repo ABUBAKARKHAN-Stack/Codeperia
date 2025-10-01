@@ -31,10 +31,10 @@ const foundersSocials = {
 };
 
 const brandSocials = {
-  instagram: "https://www.instagram.com/codescription",
-  facebook: "https://www.facebook.com/profile.php?id=61581297981686",
-  linkedin: "https://www.linkedin.com/in/codescription-real",
-  x: "https://x.com/codescripion",
+  instagram: "https://www.instagram.com/codeperia",
+  facebook: "https://web.facebook.com/people/CodePeria/61581253827191/",
+  linkedin: "https://www.linkedin.com/company/codeperia",
+  x: "https://x.com/codeperia",
 };
 
 const brandContactInfo = {
