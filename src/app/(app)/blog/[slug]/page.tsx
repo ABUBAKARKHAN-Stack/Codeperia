@@ -44,7 +44,7 @@ export async function generateMetadata(
   const imageUrl = urlFor(post.mainImage.source)
     .quality(85)
     .width(1200)
-    .height(630)
+    .fit("clip")
     .format("jpg")
     .url();
   const authorName = post.author.name;

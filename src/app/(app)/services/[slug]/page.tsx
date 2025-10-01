@@ -43,6 +43,8 @@ export async function generateMetadata(
     service.shortDescription || `Read ${service.title} on ${brandName}`;
   const imageUrl = urlFor(service.serviceImage.source)
     .quality(85)
+    .width(1200)
+    .fit("clip")
     .format("jpg")
     .url();
   const imageAlt = service.serviceImage.alt;

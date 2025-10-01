@@ -67,12 +67,11 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
           {/* Responsive Aspect Ratio Wrapper */}
           <div className="relative w-full aspect-[21/9]">
             <Image
-              src={
-                urlFor(mainImage.source)
-                  .auto("format")
-                  .fit("max")
-                  .quality(100)
-                  .url()
+              src={urlFor(mainImage.source)
+                .auto("format")
+                .fit("max")
+                .quality(100)
+                .url()
               }
               alt={mainImage.alt || title}
               fill

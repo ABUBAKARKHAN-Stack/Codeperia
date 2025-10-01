@@ -28,7 +28,7 @@ const BlogCard: FC<Props> = ({ post, priority = false }) => {
       }}
     >
       {/* Post Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative aspect-[21/9] overflow-hidden">
         {mainImage?.source && (
           <Image
             src={urlFor(mainImage.source).format("webp").url()}
@@ -36,7 +36,6 @@ const BlogCard: FC<Props> = ({ post, priority = false }) => {
             priority={priority}
             fill
             className="object-cover transition-transform duration-700 ease-out hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             loading={priority ? "eager" : "lazy"}
           />
         )}
