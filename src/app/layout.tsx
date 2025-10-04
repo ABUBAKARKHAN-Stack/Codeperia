@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "We are a forward-thinking tech startup helping businesses build modern, scalable, and user-friendly digital solutions. From custom web applications to innovative software products, we combine creativity, technology, and strategy to drive growth and success.",
   icons: {
     icon: [
+      {url: "/assets/favicons/favicon.ico", type: "image/png"},
       { url: "/assets/favicons/favicon.svg", type: "image/svg+xml" },
       {
         url: "/assets/favicons/favicon-32X32.png",
