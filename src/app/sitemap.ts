@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return [
         // Home Page sitemap
         {
-            url: baseUrl,
+            url: `${baseUrl}/`,
             lastModified: new Date(),
             priority: 1,
             changeFrequency: "daily"
