@@ -18,6 +18,7 @@ type Props = {
   subText?: string;
   children?: ReactNode;
   className?: string;
+  mainHeadingClassName?: string
 };
 
 const PageHeader: FC<Props> = ({
@@ -25,6 +26,7 @@ const PageHeader: FC<Props> = ({
   subText,
   children,
   className,
+  mainHeadingClassName
 }) => {
   const pathname = usePathname();
   const pathSegments = pathname
@@ -35,7 +37,7 @@ const PageHeader: FC<Props> = ({
     if (path === "/")
       return (
         <span className="inline-flex items-center gap-x-1.5">
-          <Home className="size-4.25" /> Home
+          <Home className="size-4.25 xsm:block hidden" /> Home
         </span>
       );
     return path
@@ -71,7 +73,10 @@ const PageHeader: FC<Props> = ({
             once
             justHighlighter
             color="white"
-            className="font-audiowide w-fit text-center text-4xl text-wrap md:text-5xl lg:text-6xl"
+            className={cn(
+              "font-audiowide w-fit text-center text-4xl text-wrap md:text-5xl lg:text-6xl",
+              mainHeadingClassName
+            )}
           >
             <h1 className="w-fit">{pageHeading}</h1>
           </Highlighter>
@@ -98,7 +103,7 @@ const PageHeader: FC<Props> = ({
                       <BreadcrumbLink
                         href={breadcrumbUrlBuilder(i)}
                         className={cn(
-                          "text-[15px] font-normal text-white hover:text-purple-300",
+                          "text-sm font-normal truncate max-w-[100px]  text-white hover:text-purple-300",
                           pathname === breadcrumbUrlBuilder(i)
                             ? "text-purple-300"
                             : "text-white",

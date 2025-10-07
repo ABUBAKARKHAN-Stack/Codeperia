@@ -64,6 +64,7 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
     <>
       {mainImage && (
         <div className="group relative mb-12">
+
           {/* Responsive Aspect Ratio Wrapper */}
           <div className="relative w-full aspect-[21/9]">
             <Image
@@ -89,11 +90,20 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
             )}
           />
 
-          {/* Hover Purplish Overlay */}
+          {/* Blackish Overlay On Hover */}
           <div
             className={cn(
               "absolute inset-0 z-10",
-              "group-hover:bg-purple-500/25 group-hover:backdrop-blur-lg",
+              "bg-black/50 opacity-0",
+              "transition-all group-hover:opacity-100 duration-200 ease-linear",
+            )}
+          />
+
+          {/* Hover Purplish Overlay */}
+          <div
+            className={cn(
+              "absolute inset-0 z-20",
+              "group-hover:bg-purple-500/30 group-hover:backdrop-blur-lg",
               "transition-all duration-200 ease-linear",
             )}
           />
@@ -101,7 +111,7 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
           {/* Particles  */}
           <Particles
             className={cn(
-              "absolute inset-0 z-10",
+              "absolute inset-0 z-20",
               "opacity-0 group-hover:opacity-100",
               "transition-all duration-200 ease-linear",
             )}
@@ -111,7 +121,7 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
           {/* Share Options */}
           <div
             className={cn(
-              "absolute inset-0 z-10",
+              "absolute inset-0 z-20",
               "flex flex-col items-center justify-center gap-y-6",
               "opacity-0 group-hover:opacity-100",
               "transition-all duration-300 ease-in-out",

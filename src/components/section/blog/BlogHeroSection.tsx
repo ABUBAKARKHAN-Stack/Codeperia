@@ -17,7 +17,10 @@ type Props = {
 
 const BlogHeroSection: FC<Props> = ({ author, role, publishedAt, title }) => {
   return (
-    <PageHeader pageHeading={title || "Blog Unavailable"}>
+    <PageHeader
+      pageHeading={title || "Blog Unavailable"}
+      mainHeadingClassName="lg:text-5xl text-wrap md:text-4xl text-3xl"
+    >
 
       {/* Author & Date Row */}
       <div
