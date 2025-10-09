@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: `${baseUrl}/about`,
   },
   alternates: {
-    canonical: `${baseUrl}/services`,
+    canonical: `${baseUrl}/about`,
   },
 };
 
