@@ -48,7 +48,7 @@ export async function generateMetadata(
     .format("jpg")
     .url();
   const imageAlt = service.serviceImage.alt;
-  const servicesBaseUrl = `${baseUrl}/services/${slug}`;
+  const servicesBaseUrl = `/services/${slug}`;
 
   return {
     title,

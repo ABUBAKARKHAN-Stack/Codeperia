@@ -12,10 +12,11 @@ export const metadata: Metadata = {
   title: "Contact",
   description: `Connect with ${brandName} to discuss your project or get support. Reach our team, explore FAQs, and let’s build innovative software solutions together.`,
   openGraph: {
-    url: `${baseUrl}/contact`,
+    url: '/contact',
+    images: { url: "opengraph-image" }
   },
   alternates: {
-    canonical: `${baseUrl}/contact`,
+    canonical: '/contact',
   },
 };
 

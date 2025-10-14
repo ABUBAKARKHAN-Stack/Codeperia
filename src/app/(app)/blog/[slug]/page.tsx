@@ -53,9 +53,9 @@ export async function generateMetadata(
     title,
     description,
     openGraph: {
-      title: title,
+      title,
       description,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `/blog/${post.slug}`,
       images: [
         {
           url: imageUrl,
@@ -78,7 +78,7 @@ export async function generateMetadata(
       site: baseUrl,
     },
     alternates: {
-      canonical: `${baseUrl}/blog/${post.slug}`,
+      canonical: `/blog/${post.slug}`,
     },
     publisher: brandName,
     creator: authorName,

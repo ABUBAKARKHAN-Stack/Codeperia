@@ -7,6 +7,7 @@ import { baseUrl, brandName, foundersSocials } from "@/constants/constants";
 import { Toaster } from "sonner";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { LenisProvider } from "@/context/LenisContext";
+import path from "path";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -27,6 +28,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: {
     default: `${brandName} | Software Development Company`,
     template: `%s | ${brandName}`,
@@ -88,6 +90,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: brandName,
     url: baseUrl,
+    images: { url: "opengraph-image" }
   },
 };
 

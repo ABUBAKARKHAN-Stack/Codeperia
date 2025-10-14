@@ -12,10 +12,11 @@ export const metadata: Metadata = {
   title: "About",
   description: `Discover ${brandName}, our story, mission, and vision. Learn how we began, our guiding principles, and our commitment to shaping the future with innovative software solutions.`,
   openGraph: {
-    url: `${baseUrl}/about`,
+    url: '/about',
+    images: { url: "opengraph-image" }
   },
   alternates: {
-    canonical: `${baseUrl}/about`,
+    canonical: '/about',
   },
 };
 

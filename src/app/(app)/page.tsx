@@ -13,22 +13,25 @@ import { SanityLive } from "@/sanity/lib/live";
 import { getServices } from "@/helpers/services.helper";
 import { ServicesProvider } from "@/context/services.context";
 import { Metadata } from "next";
-import { baseUrl, brandName } from "@/constants/constants";
+import { brandName } from "@/constants/constants";
 
 
 export const metadata: Metadata = {
   title: `${brandName} | Software Development Company`,
   description: "We are a forward-thinking tech startup creating modern, scalable web and software solutions that combine creativity, technology, and strategy for success.",
   openGraph: {
-    url: `${baseUrl}/`,
+    url: '/',
+    images: { url: "opengraph-image" }
   },
   alternates: {
-    canonical: `${baseUrl}/`,
-  },
+    canonical: '/'
+  }
 };
 
 const Home = async () => {
   const services = await getServices();
+
+
   return (
     <>
       <ServicesProvider services={services}>
