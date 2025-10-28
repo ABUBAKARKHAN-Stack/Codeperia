@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   description: "We are a forward-thinking tech startup creating modern, scalable web and software solutions that combine creativity, technology, and strategy for success.",
   openGraph: {
     url: '/',
-    images: { url: "opengraph-image" }
+    images: { url: "opengraph-image" },
+    siteName: brandName
   },
   alternates: {
     canonical: '/'

@@ -61,6 +61,11 @@ export const metadata: Metadata = {
   keywords: [
     "tech startup",
     "codeperia",
+    "codeperi",
+    "codeper",
+    "codepe",
+    "codep",
+    "code",
     "digital tech agency",
     "software development",
     "custom web applications",
