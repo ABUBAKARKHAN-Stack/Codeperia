@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   title: "Blog",
   description: `Read expert insights, tutorials, and updates on software development, web technologies, and IT trends from ${brandName}`,
   openGraph: {
-    url: '/blog',
-    images: { url: "opengraph-image" }
+    url: "/blog",
+    images: { url: "opengraph-image" },
   },
   alternates: {
-    canonical: '/blog',
+    canonical: "/blog",
   },
 };
 

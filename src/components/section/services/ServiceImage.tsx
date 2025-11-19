@@ -16,8 +16,7 @@ const ServiceImage: FC<Props> = ({ serviceImage, title }) => {
           .auto("format")
           .fit("max")
           .quality(100)
-          .url()
-        }
+          .url()}
         alt={serviceImage.alt || title}
         fill
         className="object-cover"

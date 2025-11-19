@@ -4,12 +4,12 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 async function sendNotificationEmail({ name, email, service, message }: any) {
-    return resend.emails.send({
-        from: "Codeperia <info@codeperia.com>",
-        to: "info@codeperia.com",
-        replyTo: email,
-        subject: "New Client Inquiry - Codeperia",
-        html: `
+  return resend.emails.send({
+    from: "Codeperia <info@codeperia.com>",
+    to: "info@codeperia.com",
+    replyTo: email,
+    subject: "New Client Inquiry - Codeperia",
+    html: `
       <div style="background:#f9fafb;padding:30px;font-family:Segoe UI,Arial,Helvetica,sans-serif;color:#2d2d2d;">
         <div style="max-width:620px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06);overflow:hidden;">
           
@@ -38,16 +38,15 @@ async function sendNotificationEmail({ name, email, service, message }: any) {
         </div>
       </div>
     `,
-    });
+  });
 }
 
-
 async function sendAutoReply({ name, email }: any) {
-    return resend.emails.send({
-        from: "Codeperia <info@codeperia.com>",
-        to: email,
-        subject: "We've received your inquiry — Codeperia",
-        html: `
+  return resend.emails.send({
+    from: "Codeperia <info@codeperia.com>",
+    to: email,
+    subject: "We've received your inquiry — Codeperia",
+    html: `
       <div style="background:#f9fafb;padding:30px;font-family:Segoe UI,Arial,Helvetica,sans-serif;color:#2d2d2d;">
         <div style="max-width:620px;margin:0 auto;background:#fff;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.06);overflow:hidden;">
           
@@ -84,12 +83,7 @@ async function sendAutoReply({ name, email }: any) {
         </div>
       </div>
     `,
-    });
+  });
 }
 
-
-
-export {
-    sendAutoReply,
-    sendNotificationEmail
-}
+export { sendAutoReply, sendNotificationEmail };

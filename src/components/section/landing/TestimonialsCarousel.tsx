@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ChevronLeftIcon, ChevronRightIcon, Diamond, Star, Trash } from "lucide-react";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  Diamond,
+  Star,
+  Trash,
+} from "lucide-react";
 import React from "react";
 import {
   Autoplay,
@@ -37,8 +43,8 @@ const TestimonialsCarousel = ({
   autoplay?: boolean;
   spaceBetween?: number;
 }) => {
-  const { adminView } = useAdminView()
-  const { reviews } = useReviews()
+  const { adminView } = useAdminView();
+  const { reviews } = useReviews();
 
   const { formatDate, formatTime } = useFormatted({
     dateOptions: {
@@ -53,12 +59,11 @@ const TestimonialsCarousel = ({
     },
   });
 
-  console.log('hey');
-  
+  console.log("hey");
 
   const handleDelete = (id: string) => {
     console.log("Deleted ID");
-  }
+  };
 
   return (
     <motion.div
@@ -83,10 +88,10 @@ const TestimonialsCarousel = ({
           autoplay={
             autoplay
               ? {
-                delay: 2000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }
+                  delay: 2000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }
               : false
           }
           effect="coverflow"
@@ -104,23 +109,27 @@ const TestimonialsCarousel = ({
           pagination={
             showPagination
               ? {
-                clickable: true,
-              }
+                  clickable: true,
+                }
               : false
           }
           navigation={
             showNavigation
               ? {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }
               : false
           }
           className="carousel"
           modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
         >
           {reviews.map((item) => {
-            const reviewDate = formatDate(item.reviewedAt || item._createdAt, undefined, "en-CA");
+            const reviewDate = formatDate(
+              item.reviewedAt || item._createdAt,
+              undefined,
+              "en-CA",
+            );
             const reviewTime = formatTime(item.reviewedAt || item._createdAt);
 
             return (
@@ -146,8 +155,7 @@ const TestimonialsCarousel = ({
 
                 {/* Admin Actions  */}
                 {adminView && (
-                  <div className="absolute z-50 inset-y-0 right-2 top-2.5">
-
+                  <div className="absolute inset-y-0 top-2.5 right-2 z-50">
                     {/* Edit Button */}
 
                     {/* <button
@@ -157,11 +165,11 @@ const TestimonialsCarousel = ({
                     </button> */}
 
                     {/* Delete Testimonials Modal */}
-                    <DeleteTestimonialsModal onDelete={() => handleDelete(item._id)} />
-
+                    <DeleteTestimonialsModal
+                      onDelete={() => handleDelete(item._id)}
+                    />
                   </div>
                 )}
-
 
                 {/* Hover effect */}
                 <div
@@ -221,7 +229,7 @@ const TestimonialsCarousel = ({
                 {/* Bottom gradient fade */}
                 <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-8 rounded-b-2xl bg-gradient-to-t from-black/[0.15] via-black/[0.05] to-transparent" />
               </SwiperSlide>
-            )
+            );
           })}
           {showNavigation && (
             <div>

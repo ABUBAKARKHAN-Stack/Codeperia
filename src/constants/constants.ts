@@ -43,7 +43,7 @@ const brandContactInfo = {
   phone: "+92 328 7099399",
 };
 
- const testimonialsCSS = `
+const testimonialsCSS = `
 
   .carousel {
     width: 100%;
@@ -92,5 +92,5 @@ export {
   foundersSocials,
   brandSocials,
   brandContactInfo,
-  testimonialsCSS
+  testimonialsCSS,
 };

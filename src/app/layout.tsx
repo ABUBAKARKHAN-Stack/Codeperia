@@ -96,7 +96,7 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: brandName,
     url: baseUrl,
-    images: { url: "opengraph-image" }
+    images: { url: "opengraph-image" },
   },
 };
 

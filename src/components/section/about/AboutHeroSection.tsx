@@ -5,7 +5,6 @@ import { brandName } from "@/constants/constants";
 import { Sparkles } from "lucide-react";
 
 const AboutHeroSection = () => {
-
   return (
     <PageHeader
       pageHeading={`About ${brandName}`}

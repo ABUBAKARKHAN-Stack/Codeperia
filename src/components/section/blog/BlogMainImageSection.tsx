@@ -64,16 +64,14 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
     <>
       {mainImage && (
         <div className="group relative mb-12">
-
           {/* Responsive Aspect Ratio Wrapper */}
-          <div className="relative w-full aspect-[21/9]">
+          <div className="relative aspect-[21/9] w-full">
             <Image
               src={urlFor(mainImage.source)
                 .auto("format")
                 .fit("max")
                 .quality(100)
-                .url()
-              }
+                .url()}
               alt={mainImage.alt || title}
               fill
               className="object-cover"
@@ -95,7 +93,7 @@ const BlogMainImageSection: FC<Props> = ({ mainImage, title, slug }) => {
             className={cn(
               "absolute inset-0 z-10",
               "bg-black/50 opacity-0",
-              "transition-all group-hover:opacity-100 duration-200 ease-linear",
+              "transition-all duration-200 ease-linear group-hover:opacity-100",
             )}
           />
 

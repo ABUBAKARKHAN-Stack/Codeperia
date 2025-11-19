@@ -20,7 +20,7 @@ export default async function OpengraphImage() {
   );
 
   console.log(imagePath);
-  
+
   const imageBuffer = fs.readFileSync(imagePath);
   const base64Image = `data:image/png;base64,${imageBuffer.toString("base64")}`;
 

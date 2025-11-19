@@ -11,21 +11,19 @@ const reviewFields = `{
     _createdAt,
     reviewedAt
 }
-`
+`;
 const getReviews = async () => {
-    try {
-        const { data } = await sanityFetch({
-            query: `*[_type == "review" && approved == true]  ${reviewFields}`,
-            perspective: "published",
-        });
-        const reviews = data as IReview[];
-        return reviews ?? [];
-    } catch (error) {
-        console.log("Sanity Error :: ", error);
-        throw error;
-    }
+  try {
+    const { data } = await sanityFetch({
+      query: `*[_type == "review" && approved == true]  ${reviewFields}`,
+      perspective: "published",
+    });
+    const reviews = data as IReview[];
+    return reviews ?? [];
+  } catch (error) {
+    console.log("Sanity Error :: ", error);
+    throw error;
+  }
 };
 
-export {
-    getReviews
-}
+export { getReviews };

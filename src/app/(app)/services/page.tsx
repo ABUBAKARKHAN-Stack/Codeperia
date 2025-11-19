@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   title: `Services`,
   description: `Explore ${brandName}'s services including web development, app development, full stack development and e-commerce solutions, UI/UX design, and DevOps automation.`,
   openGraph: {
-    url: '/services',
-    images: { url: "opengraph-image" }
+    url: "/services",
+    images: { url: "opengraph-image" },
   },
   alternates: {
-    canonical: '/services',
+    canonical: "/services",
   },
 };
 

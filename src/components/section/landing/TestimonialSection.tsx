@@ -6,7 +6,6 @@ import { SectionHeader } from "@/components/reusable";
 import { TestimonialsCarousel } from "./TestimonialsCarousel";
 
 const TestimonialSection = () => {
-
   return (
     <section id="testimonials" className="h-full w-full py-16">
       <ContainerLayout>

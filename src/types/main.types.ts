@@ -57,8 +57,8 @@ interface IReview {
   feedback: string;
   rating: number;
   approved: boolean;
-  reviewedAt:string;
-  _createdAt: string
+  reviewedAt: string;
+  _createdAt: string;
 }
 
 export {
@@ -69,5 +69,5 @@ export {
   type ISanityImage,
   type ErrorProps,
   type IService,
-  type IReview
+  type IReview,
 };

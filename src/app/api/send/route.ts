@@ -1,8 +1,5 @@
 import { sendAutoReply, sendNotificationEmail } from "@/helpers/emails.helpers";
 
-
-
-
 export async function POST(req: Request) {
   try {
     const { name, email, message, service } = await req.json();

@@ -17,23 +17,23 @@ import { brandName } from "@/constants/constants";
 import { getReviews } from "@/helpers/review.helper";
 import { ReviewsProvider } from "@/context/reviews.content";
 
-
 export const metadata: Metadata = {
   title: `${brandName} | Software Development Company`,
-  description: "We are a forward-thinking tech startup creating modern, scalable web and software solutions that combine creativity, technology, and strategy for success.",
+  description:
+    "We are a forward-thinking tech startup creating modern, scalable web and software solutions that combine creativity, technology, and strategy for success.",
   openGraph: {
-    url: '/',
+    url: "/",
     images: { url: "opengraph-image" },
-    siteName: brandName
+    siteName: brandName,
   },
   alternates: {
-    canonical: '/'
-  }
+    canonical: "/",
+  },
 };
 
 const Home = async () => {
   const services = await getServices();
-  const reviews = await getReviews()
+  const reviews = await getReviews();
 
   return (
     <>

@@ -18,7 +18,8 @@ type Props = {
   subText?: string;
   children?: ReactNode;
   className?: string;
-  mainHeadingClassName?: string
+  mainHeadingClassName?: string;
+  showBreadCrumb?: boolean;
 };
 
 const PageHeader: FC<Props> = ({
@@ -26,7 +27,8 @@ const PageHeader: FC<Props> = ({
   subText,
   children,
   className,
-  mainHeadingClassName
+  mainHeadingClassName,
+  showBreadCrumb = true,
 }) => {
   const pathname = usePathname();
   const pathSegments = pathname
@@ -37,7 +39,7 @@ const PageHeader: FC<Props> = ({
     if (path === "/")
       return (
         <span className="inline-flex items-center gap-x-1.5">
-          <Home className="size-4.25 xsm:block hidden" /> Home
+          <Home className="xsm:block hidden size-4.25" /> Home
         </span>
       );
     return path
@@ -75,7 +77,7 @@ const PageHeader: FC<Props> = ({
             color="white"
             className={cn(
               "font-audiowide w-fit text-center text-4xl text-wrap md:text-5xl lg:text-6xl",
-              mainHeadingClassName
+              mainHeadingClassName,
             )}
           >
             <h1 className="w-fit">{pageHeading}</h1>
@@ -93,35 +95,40 @@ const PageHeader: FC<Props> = ({
               <span className="w-fit">{subText}</span>
             </Highlighter>
           )}
-          <div className="space-y-2">
-            <h5 className="text-center text-base font-semibold">Navigation:</h5>
-            <Breadcrumb>
-              <BreadcrumbList className="text-base font-light text-white">
-                {pathSegments.map((p, i) => (
-                  <Fragment key={i}>
-                    <BreadcrumbItem>
-                      <BreadcrumbLink
-                        href={breadcrumbUrlBuilder(i)}
-                        className={cn(
-                          "text-sm font-normal truncate max-w-[100px]  text-white hover:text-purple-300",
-                          pathname === breadcrumbUrlBuilder(i)
-                            ? "text-purple-300"
-                            : "text-white",
-                        )}
-                      >
-                        {formatPathname(p)}
-                      </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    {i < pathSegments.length - 1 && (
-                      <BreadcrumbSeparator>
-                        <SlashIcon className="size-3.5 -rotate-35 stroke-3" />
-                      </BreadcrumbSeparator>
-                    )}
-                  </Fragment>
-                ))}
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
+          {showBreadCrumb && (
+            <div className="space-y-2">
+              <h5 className="text-center text-base font-semibold">
+                Navigation:
+              </h5>
+              <Breadcrumb>
+                <BreadcrumbList className="text-base font-light text-white">
+                  {pathSegments.map((p, i) => (
+                    <Fragment key={i}>
+                      <BreadcrumbItem>
+                        <BreadcrumbLink
+                          href={breadcrumbUrlBuilder(i)}
+                          className={cn(
+                            "max-w-[100px] truncate text-sm font-normal text-white hover:text-purple-300",
+                            pathname === breadcrumbUrlBuilder(i)
+                              ? "text-purple-300"
+                              : "text-white",
+                          )}
+                        >
+                          {formatPathname(p)}
+                        </BreadcrumbLink>
+                      </BreadcrumbItem>
+                      {i < pathSegments.length - 1 && (
+                        <BreadcrumbSeparator>
+                          <SlashIcon className="size-3.5 -rotate-35 stroke-3" />
+                        </BreadcrumbSeparator>
+                      )}
+                    </Fragment>
+                  ))}
+                </BreadcrumbList>
+              </Breadcrumb>
+            </div>
+          )}
+
           {children && children}
         </section>
       </ContainerLayout>

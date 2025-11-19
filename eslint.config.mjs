@@ -19,9 +19,9 @@ const eslintConfig = [
       "react-hooks/rules-of-hooks": "off",
       "@next/next/no-img-element": "off",
       "@typescript-eslint/no-empty-object-type": "off",
-      "react-hooks/exhaustive-deps": "off"
-    }
-  })
+      "react-hooks/exhaustive-deps": "off",
+    },
+  }),
 ];
 
 export default eslintConfig;
