@@ -43,6 +43,48 @@ const brandContactInfo = {
   phone: "+92 328 7099399",
 };
 
+ const testimonialsCSS = `
+
+  .carousel {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px !important;
+  }
+  
+  .carousel .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 280px;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #fff !important;
+    opacity: 0.5 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1 !important;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000 !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+  }
+
+`;
+
 export {
   brandName,
   baseUrl,
@@ -50,4 +92,5 @@ export {
   foundersSocials,
   brandSocials,
   brandContactInfo,
+  testimonialsCSS
 };

@@ -14,6 +14,8 @@ import { getServices } from "@/helpers/services.helper";
 import { ServicesProvider } from "@/context/services.context";
 import { Metadata } from "next";
 import { brandName } from "@/constants/constants";
+import { getReviews } from "@/helpers/review.helper";
+import { ReviewsProvider } from "@/context/reviews.content";
 
 
 export const metadata: Metadata = {
@@ -31,20 +33,22 @@ export const metadata: Metadata = {
 
 const Home = async () => {
   const services = await getServices();
-
+  const reviews = await getReviews()
 
   return (
     <>
       <ServicesProvider services={services}>
-        <SanityLive />
-        <HeroSection />
-        <AboutUsSection />
-        <WhatWeDoSection />
-        <WhyChooseUsSection />
-        {/* <OurWorkSection /> */}
-        <TestimonialSection />
-        <TechStackSection />
-        <ContactSection />
+        <ReviewsProvider reviews={reviews}>
+          <SanityLive />
+          <HeroSection />
+          <AboutUsSection />
+          <WhatWeDoSection />
+          <WhyChooseUsSection />
+          {/* <OurWorkSection /> */}
+          <TestimonialSection />
+          <TechStackSection />
+          <ContactSection />
+        </ReviewsProvider>
       </ServicesProvider>
     </>
   );

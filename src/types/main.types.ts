@@ -51,6 +51,16 @@ interface IService {
   body: PortableTextChild[];
 }
 
+interface IReview {
+  _id: string;
+  clientName: string;
+  feedback: string;
+  rating: number;
+  approved: boolean;
+  reviewedAt:string;
+  _createdAt: string
+}
+
 export {
   TechStackTabs,
   type IBlog,
@@ -59,4 +69,5 @@ export {
   type ISanityImage,
   type ErrorProps,
   type IService,
+  type IReview
 };
