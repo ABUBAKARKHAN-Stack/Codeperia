@@ -8,8 +8,13 @@ import {
 } from "@/data/testimonials.data";
 import { SectionHeader } from "@/components/reusable";
 import { TestimonialsCarousel } from "./TestimonialsCarousel";
+import { useAdminView } from "@/context/adminview.conext";
 
 const TestimonialSection = () => {
+
+
+  
+
   return (
     <section id="testimonials" className="h-full w-full py-16">
       <ContainerLayout>

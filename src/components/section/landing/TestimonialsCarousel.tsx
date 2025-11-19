@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ChevronLeftIcon, ChevronRightIcon, Diamond, Star } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, Delete, Diamond, Edit, Star, Trash } from "lucide-react";
 import React from "react";
 import {
   Autoplay,
@@ -16,6 +16,9 @@ import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import { cn } from "@/lib/utils";
+import { useAdminView } from "@/context/adminview.conext";
+import { Button } from "@/components/ui/button";
+import { MdRemove } from "react-icons/md";
 
 const TestimonialsCarousel = ({
   items,
@@ -34,6 +37,7 @@ const TestimonialsCarousel = ({
   autoplay?: boolean;
   spaceBetween?: number;
 }) => {
+  const { adminView } = useAdminView()
   const css = `
 
   .carousel {
@@ -99,10 +103,10 @@ const TestimonialsCarousel = ({
           autoplay={
             autoplay
               ? {
-                  delay: 2000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
               : false
           }
           effect="coverflow"
@@ -120,16 +124,16 @@ const TestimonialsCarousel = ({
           pagination={
             showPagination
               ? {
-                  clickable: true,
-                }
+                clickable: true,
+              }
               : false
           }
           navigation={
             showNavigation
               ? {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }
               : false
           }
           className="carousel"
@@ -155,6 +159,30 @@ const TestimonialsCarousel = ({
             >
               {/* overlay */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.15] via-transparent to-transparent opacity-60" />
+
+              {/* Admin Actions  */}
+              {adminView && (
+                <div className="absolute z-50 inset-y-0 right-2 top-2.5">
+                  <div className="flex items-center gap-x-1.5">
+
+                    {/* Edit Button */}
+                    <button
+                      className="transition-transform duration-150 hover:scale-110 hover:opacity-80 cursor-pointer"
+                    >
+                      <Edit className="text-white size-5" />
+                    </button>
+
+                    {/* Delete Button */}
+                    <button
+                      className="transition-transform duration-150 hover:scale-110 hover:opacity-80 cursor-pointer"
+                    >
+                      <Trash className="text-red-500 size-5" />
+                    </button>
+
+                  </div>
+                </div>
+              )}
+
 
               {/* Hover effect */}
               <div

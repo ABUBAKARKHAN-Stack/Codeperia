@@ -8,6 +8,7 @@ import { Toaster } from "sonner";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { LenisProvider } from "@/context/LenisContext";
 import path from "path";
+import { AdminViewProvider } from "@/context/adminview.conext";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -110,10 +111,12 @@ export default function RootLayout({
         className={`${poppins.variable} ${audiowide.variable} ${orbitron.variable} font-poppins h-full w-full min-w-screen overflow-x-hidden bg-[#2a0347] antialiased`}
       >
         <LenisProvider>
-          {children}
-          <Toaster position="top-center" duration={2000} theme="system" />
-          <Analytics />
-          <SpeedInsights />
+          <AdminViewProvider>
+            {children}
+            <Toaster position="top-center" duration={2000} theme="system" />
+            <Analytics />
+            <SpeedInsights />
+          </AdminViewProvider>
         </LenisProvider>
       </body>
     </html>
