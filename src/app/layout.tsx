@@ -7,7 +7,6 @@ import { baseUrl, brandName, foundersSocials } from "@/constants/constants";
 import { Toaster } from "sonner";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { LenisProvider } from "@/context/LenisContext";
-import path from "path";
 import { AdminViewProvider } from "@/context/adminview.conext";
 
 const poppins = Poppins({
