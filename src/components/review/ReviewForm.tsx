@@ -46,6 +46,7 @@ const ReviewForm = () => {
                 const errorData = await resp.json().catch(() => null);
                 errorToast(errorData?.message || "Failed to submit review");
             }
+            form.reset()
             successToast("Review Added!");
         } catch (error: any) {
             errorToast(error.message || "An unexpected error occurred");
