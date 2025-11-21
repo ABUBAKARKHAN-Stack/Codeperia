@@ -17,8 +17,8 @@ import {
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { PiStar } from "react-icons/pi";
-// import { createReview } from "@/helpers/review.helper";
 import { errorToast, successToast } from "@/helpers/toasts.helper";
+import { useAdminView } from "@/context/adminview.conext";
 
 const ReviewForm = () => {
     const form = useForm({
@@ -30,6 +30,7 @@ const ReviewForm = () => {
         },
     });
 
+    const { adminView } = useAdminView();
     const isSubmitting = form.formState.isSubmitting;
 
     const onSubmit = async (data: z.infer<typeof reviewSchema>) => {
@@ -39,7 +40,7 @@ const ReviewForm = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({ ...data, ...(adminView && { approved: true }) }),
             });
 
             if (!resp.ok) {
@@ -47,7 +48,7 @@ const ReviewForm = () => {
                 errorToast(errorData?.message || "Failed to submit review");
             }
             form.reset()
-            successToast("Review Added!");
+            successToast("Review Added Successfully!");
         } catch (error: any) {
             errorToast(error.message || "An unexpected error occurred");
         }

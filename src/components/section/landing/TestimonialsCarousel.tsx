@@ -6,9 +6,7 @@ import {
   ChevronRightIcon,
   Diamond,
   Star,
-  Trash,
 } from "lucide-react";
-import React from "react";
 import {
   Autoplay,
   EffectCoverflow,
@@ -59,11 +57,6 @@ const TestimonialsCarousel = ({
     },
   });
 
-  console.log("hey");
-
-  const handleDelete = (id: string) => {
-    console.log("Deleted ID");
-  };
 
   return (
     <motion.div
@@ -88,10 +81,10 @@ const TestimonialsCarousel = ({
           autoplay={
             autoplay
               ? {
-                  delay: 2000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }
+                delay: 2000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }
               : false
           }
           effect="coverflow"
@@ -109,16 +102,16 @@ const TestimonialsCarousel = ({
           pagination={
             showPagination
               ? {
-                  clickable: true,
-                }
+                clickable: true,
+              }
               : false
           }
           navigation={
             showNavigation
               ? {
-                  nextEl: ".swiper-button-next",
-                  prevEl: ".swiper-button-prev",
-                }
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }
               : false
           }
           className="carousel"
@@ -166,8 +159,9 @@ const TestimonialsCarousel = ({
 
                     {/* Delete Testimonials Modal */}
                     <DeleteTestimonialsModal
-                      onDelete={() => handleDelete(item._id)}
+                      reviewId={item._id}
                     />
+
                   </div>
                 )}
 

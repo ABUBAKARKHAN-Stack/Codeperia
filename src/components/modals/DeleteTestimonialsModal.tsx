@@ -1,4 +1,6 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,16 +12,47 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
-import { Trash } from "lucide-react";
+import { Loader2, Trash } from "lucide-react";
+import { errorToast, successToast } from "@/helpers/toasts.helper";
 
 type Props = {
-  onDelete: () => void;
+  reviewId: string;
 };
 
-const DeleteTestimonialsModal = ({ onDelete }: Props) => {
+const DeleteTestimonialsModal = ({ reviewId }: Props) => {
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleDelete = async () => {
+    try {
+      setIsDeleting(true)
+      const resp = await fetch("/api/review", {
+        body: JSON.stringify({ reviewId }),
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+
+      if (!resp.ok) {
+        const errorData = await resp.json().catch(() => null);
+        errorToast(errorData?.message || "Failed to delete review");
+      }
+
+      successToast("Review Aeleted Successfully!")
+      setIsOpen(false)
+
+    } catch (error: any) {
+      setIsDeleting(false)
+      errorToast(error.message || "An unexpected error occurred");
+    } finally {
+      setIsDeleting(false)
+    }
+  };
+
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}  >
+      <DialogTrigger onClick={() => setIsOpen(true)} >
         <Button size="icon" variant="destructive" className="cursor-pointer">
           <Trash className="size-4.5" />
         </Button>
@@ -38,9 +71,26 @@ const DeleteTestimonialsModal = ({ onDelete }: Props) => {
           <DialogClose>
             <Button variant="outline">Cancel</Button>
           </DialogClose>
-          <Button variant="destructive" className="px-4" onClick={onDelete}>
-            Delete
+          <Button
+            type="submit"
+            disabled={isDeleting}
+            className="hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50 px-4"
+            onClick={handleDelete}
+            variant={"destructive"}
+          >
+            {isDeleting ? (
+              <div className="flex items-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" />
+                <span>Submitting...</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Trash className="h-4 w-4" />
+                <span>Delete Review</span>
+              </div>
+            )}
           </Button>
+
         </DialogFooter>
       </DialogContent>
     </Dialog>
