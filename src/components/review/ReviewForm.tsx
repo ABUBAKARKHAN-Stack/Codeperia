@@ -17,6 +17,8 @@ import {
 import { Button } from "../ui/button";
 import { Loader2 } from "lucide-react";
 import { PiStar } from "react-icons/pi";
+// import { createReview } from "@/helpers/review.helper";
+import { errorToast, successToast } from "@/helpers/toasts.helper";
 
 const ReviewForm = () => {
     const form = useForm({
@@ -30,13 +32,31 @@ const ReviewForm = () => {
 
     const isSubmitting = form.formState.isSubmitting;
 
-    const onSubmit = (data: z.infer<typeof reviewSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof reviewSchema>) => {
+        try {
+            const resp = await fetch("/api/review", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!resp.ok) {
+                const errorData = await resp.json().catch(() => null);
+                errorToast(errorData?.message || "Failed to submit review");
+            }
+            successToast("Review Added!");
+        } catch (error: any) {
+            errorToast(error.message || "An unexpected error occurred");
+        }
     };
+
 
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+
                 {/* Client Name Field */}
                 <div className="space-y-2">
                     <FormField
@@ -96,6 +116,7 @@ const ReviewForm = () => {
                                         className="border-2 border-purple-500"
                                         type="number"
                                         {...field}
+                                        value={field.value as number}
                                     />
                                 </FormControl>
                                 <FormMessage />

@@ -1,5 +1,7 @@
 import { sanityFetch } from "@/sanity/lib/live";
+import { reviewSchema } from "@/schema/review.schema";
 import { IReview } from "@/types/main.types";
+import z from "zod";
 
 const reviewFields = `{
     _id,
@@ -26,4 +28,20 @@ const getReviews = async () => {
   }
 };
 
-export { getReviews };
+// const createReview = async (data: z.infer<typeof reviewSchema>) => {
+//   try {
+
+   
+//     console.log(resp);
+
+
+//   } catch (error) {
+//     console.log("Error Creating Review :: ", error);
+//     throw error;
+//   }
+// }
+
+export {
+  getReviews,
+  // createReview
+};

@@ -6,6 +6,7 @@ export const reviewSchema = z.object({
     .min(1, { error: "Client Name cannot be empty." }),
 
   rating: z
+    .coerce
     .number({ error: "Rating is required." })
     .min(1, { error: "Rating must be at least 1." })
     .max(5, { error: "Rating cannot exceed 5." }),
