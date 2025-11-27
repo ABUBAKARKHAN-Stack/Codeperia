@@ -72,45 +72,7 @@ const ProjectCard: FC<Props> = ({
         `,
       }}
     >
-      {/* Animated Glass Layers */}
-      <motion.div
-        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100"
-        style={{
-          background: `
-            radial-gradient(circle at 30% 20%, rgba(192, 132, 252, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%)
-          `,
-        }}
-        animate={{
-          opacity: isHovered ? 1 : 0,
-        }}
-        transition={{ duration: 0.6 }}
-      />
-
-      {/* Floating Particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-purple-400/30 blur-sm"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0, 1, 0],
-              scale: [0.8, 1.2, 0.8],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
-
+     
       <ProjectImage
         projectImage={projectImage}
         title={title}
