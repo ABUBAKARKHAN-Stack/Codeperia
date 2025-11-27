@@ -1,90 +1,105 @@
 import React from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
-import { ExternalLink, Eye, Github, Globe, Search } from "lucide-react";
+import { Globe, Sparkles, ExternalLink, Code } from "lucide-react";
 
 interface ProjectOverlayProps {
   showOverlay: boolean;
   isHovered: boolean;
   githubLink?: string;
   liveLink?: string;
-  link: string;
+  title?: string;
 }
 
 export const ProjectOverlay: React.FC<ProjectOverlayProps> = React.memo(
-  ({ showOverlay, isHovered, githubLink, liveLink, link }) => (
+  ({ showOverlay, isHovered, liveLink, title }) => (
     <AnimatePresence mode="wait">
       {showOverlay && isHovered && (
         <motion.div
           key="project-overlay"
-          className="absolute inset-0 z-30 flex flex-col items-center justify-center rounded-xl"
-          initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+          className="absolute inset-0 z-30 flex flex-col items-center justify-center rounded-3xl"
+          initial={{ opacity: 0 }}
           animate={{
             opacity: isHovered ? 1 : 0,
-            backdropFilter: isHovered ? "blur(6px)" : "blur(0px)", // ✅ add actual blur
           }}
-          exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+          exit={{ opacity: 0 }}
           transition={{
             duration: 0.4,
             ease: [0.4, 0, 0.2, 1],
           }}
           style={{
-            background: isHovered
-              ? "radial-gradient(circle at 50% 50%, oklch(0.10 0.01 280 / 0.75), oklch(0.14 0.015 280 / 0.85), oklch(0.10 0.01 280 / 0.95))"
-              : "transparent",
+            background: `
+              radial-gradient(circle at 50% 50%, 
+                rgba(168, 85, 247, 0.95) 0%,
+                rgba(147, 51, 234, 0.85) 30%,
+                rgba(126, 34, 206, 0.75) 70%,
+                rgba(107, 33, 168, 0.65) 100%
+              )
+            `,
           }}
         >
           <motion.div
-            className="flex gap-4"
-            initial={{ scale: 0, y: 30, opacity: 0 }}
+            className="flex flex-col items-center gap-6 text-center"
+            initial={{ scale: 0.8, y: 20, opacity: 0 }}
             animate={{
-              scale: isHovered ? 1 : 0,
-              y: isHovered ? 0 : 30,
+              scale: isHovered ? 1 : 0.8,
+              y: isHovered ? 0 : 20,
               opacity: isHovered ? 1 : 0,
             }}
             transition={{
               type: "spring",
               stiffness: 300,
               damping: 20,
-              delay: 0.15,
+              delay: 0.1,
             }}
           >
-            {githubLink && (
-              <Link
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.75_0.12_295)]/70 bg-gradient-to-br from-[oklch(0.95_0.03_295)] to-[oklch(0.88_0.05_295)] text-[oklch(0.22_0.06_295)] shadow-md transition-all duration-300 hover:shadow-xl hover:shadow-[oklch(0.65_0.22_295)]/40"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Github className="size-6 transition-transform duration-300 group-hover/btn:scale-110" />
-              </Link>
-            )}
-
-            {liveLink && (
-              <Link
-                href={liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group/btn flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.75_0.12_295)]/70 bg-gradient-to-br from-[oklch(0.95_0.03_295)] to-[oklch(0.88_0.05_295)] text-[oklch(0.22_0.06_295)] shadow-md transition-all duration-300 hover:border-[oklch(0.65_0.22_295)]/60 hover:shadow-xl hover:shadow-[oklch(0.65_0.22_295)]/40"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Globe className="size-6 transition-transform duration-300 group-hover/btn:scale-110" />
-              </Link>
-            )}
-
-            <Link
-              href={link}
-              className="group/btn flex h-14 w-14 items-center justify-center rounded-2xl border border-[oklch(0.75_0.12_295)]/70 bg-gradient-to-br from-[oklch(0.95_0.03_295)] to-[oklch(0.88_0.05_295)] text-[oklch(0.22_0.06_295)] shadow-md transition-all duration-300 hover:border-[oklch(0.65_0.22_295)]/60 hover:shadow-xl hover:shadow-[oklch(0.65_0.22_295)]/40"
-              onClick={(e) => e.stopPropagation()}
+            {/* Project Icon */}
+            <motion.div
+              animate={{
+                rotate: [0, 5, -5, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
-              <Search className="size-6 transition-transform duration-300 group-hover/btn:scale-110" />
-            </Link>
+              <Sparkles className="size-8 text-white/90" />
+            </motion.div>
+
+            {/* Live Link Button */}
+            {liveLink && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Link
+                  href={liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/30 bg-white/20 backdrop-blur-xl text-white font-semibold shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 hover:bg-white/30 transition-all duration-300 hover:scale-105"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Globe className="size-5" />
+                  <span>Explore Live</span>
+                  <ExternalLink className="size-4 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                </Link>
+              </motion.div>
+            )}
+          </motion.div>
+
+          {/* Floating CodePria Text */}
+          <motion.div
+            className="absolute bottom-6 flex items-center gap-2 text-white/50 text-sm font-mono"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Code className="size-4" />
+            <span>Developed By CodePria</span>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
-  ),
+  )
 );
 
 ProjectOverlay.displayName = "ProjectOverlay";

@@ -1,4 +1,6 @@
 import ComingSoonSection from "@/components/section/portfolio/ComingSoonSection";
+import Portfolio from "@/components/section/portfolio/Portfolio";
+import PortfolioHeroSection from "@/components/section/portfolio/PortfolioHero";
 import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -8,7 +10,8 @@ export const metadata: Metadata = {
 const PortfolioPage = () => {
   return (
     <>
-      <ComingSoonSection />
+      <PortfolioHeroSection />
+      <Portfolio />
     </>
   );
 };

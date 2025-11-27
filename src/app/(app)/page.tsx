@@ -8,6 +8,7 @@ import {
   TestimonialSection,
   TechStackSection,
   ContactSection,
+  OurWorkSection,
 } from "@/components/section/landing";
 import { SanityLive } from "@/sanity/lib/live";
 import { getServices } from "@/helpers/services.helper";
@@ -44,7 +45,7 @@ const Home = async () => {
           <AboutUsSection />
           <WhatWeDoSection />
           <WhyChooseUsSection />
-          {/* <OurWorkSection /> */}
+          <OurWorkSection />
           <TestimonialSection />
           <TechStackSection />
           <ContactSection />

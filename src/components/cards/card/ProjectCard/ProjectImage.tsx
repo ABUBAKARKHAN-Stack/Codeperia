@@ -1,70 +1,77 @@
 import React from "react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import { LucideIcon } from "lucide-react";
-import { ProjectBadges } from "./ProjectBadges";
 
 interface ProjectImageProps {
   projectImage?: string;
   title: string;
-  icon: LucideIcon;
   index: number;
   isHovered: boolean;
-  category?: string;
-  starred?: boolean;
-  year?: string;
 }
 
 export const ProjectImage: React.FC<ProjectImageProps> = React.memo(
-  ({
-    projectImage,
-    title,
-    icon: Icon,
-    index,
-    isHovered,
-    category,
-    starred,
-    year,
-  }) => (
+  ({ projectImage, title, index, isHovered }) => (
     <motion.div
-      className="relative z-[2] h-48 w-full overflow-hidden rounded-t-xl"
+      className="relative z-0 h-full w-full overflow-hidden"
       initial={{ opacity: 0, scale: 1.1 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        delay: index * 0.15 + 0.3,
+        delay: index * 0.15 + 0.2,
         duration: 0.8,
         ease: [0.4, 0, 0.2, 1],
       }}
     >
-      <ProjectBadges category={category} starred={starred} year={year} />
-
       {projectImage ? (
         <div className="relative h-full w-full">
           <Image
             src={projectImage}
             alt={title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-all duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Glass Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/20 to-purple-900/60" />
         </div>
       ) : (
-        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[oklch(0.16_0.015_280)] via-[oklch(0.2_0.015_280)] to-[oklch(0.18_0.01_280)]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,oklch(0.65_0.22_295,0.2),transparent_70%)]" />
-          <Icon className="relative z-10 size-16 stroke-[1] text-[oklch(0.75_0.1_290)]/90" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.12_0.01_280)]/30 to-transparent" />
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-purple-900/50 to-pink-900/30">
+          {/* Animated Glass Placeholder */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10 backdrop-blur-sm" />
+          
+          {/* Floating Logo Effect */}
+          <motion.div
+            className="relative"
+            animate={{ 
+              y: [0, -10, 0],
+              rotateY: [0, 180, 360]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          >
+            <div className="text-5xl font-bold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent">
+              {title}
+            </div>
+          </motion.div>
+
+          {/* Glass Shine */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+            animate={{ x: isHovered ? ["-100%", "200%"] : "-100%" }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+          />
         </div>
       )}
 
-      {/* Animated cosmic overlay */}
+      {/* Purple Hover Glow */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-[oklch(0.65_0.22_295)]/60 via-[oklch(0.75_0.1_280)]/30 to-transparent opacity-0"
+        className="absolute inset-0 bg-gradient-to-t from-purple-500/40 via-purple-400/20 to-transparent opacity-0"
         animate={{ opacity: isHovered ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       />
     </motion.div>
-  ),
+  )
 );
 
 ProjectImage.displayName = "ProjectImage";

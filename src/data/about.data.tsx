@@ -20,9 +20,9 @@ const aboutUsSectionHeader = {
 };
 
 const ourStats = [
-  { value: "1.5+", label: "Years Experience" },
+  { value: "2+", label: "Years Experience" },
   { value: "99%", label: "Success Rate" },
-  { value: "5+", label: "Projects" },
+  { value: "7+", label: "Projects" },
   { value: "24/7", label: "Support" },
 ];
 

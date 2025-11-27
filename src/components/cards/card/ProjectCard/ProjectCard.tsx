@@ -2,24 +2,15 @@
 
 import React, { FC, useCallback, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { LucideIcon } from "lucide-react";
 import { ProjectImage } from "./ProjectImage";
 import { ProjectOverlay } from "./ProjectOverlay";
 import { ProjectContent } from "./ProjectContent";
 
 type Props = {
   projectImage?: string;
-  projectTech?: string[];
-  githubLink?: string;
-  liveLink?: string;
-  starred?: boolean;
-  year?: string;
-  category?: string;
+  liveLink: string;
   id: number;
   title: string;
-  description: string;
-  icon: LucideIcon;
-  link?: string;
   showOverlay?: boolean;
   index?: number;
   width?: string;
@@ -28,90 +19,122 @@ type Props = {
 
 const ProjectCard: FC<Props> = ({
   projectImage,
-  projectTech = [],
-  githubLink,
   liveLink,
-  starred = false,
-  year,
-  category,
   index = 0,
   height,
   width,
-  id,
   title,
-  description,
-  icon: Icon,
-  link = "#",
   showOverlay = true,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-
   const cardRef = useRef(null);
-
-  const isInView = useInView(cardRef, {
-    once: true,
-    margin: "-100px",
-  });
+  const isInView = useInView(cardRef, { once: true, margin: "-50px" });
 
   const handleMouseEnter = useCallback(() => setIsHovered(true), []);
   const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
   return (
     <motion.div
-      className={`group relative cursor-pointer rounded-xl ${width ?? "w-full"} ${height ?? "h-[400px]"} flex flex-col overflow-hidden bg-transparent backdrop-blur-sm`}
+      className={`group relative cursor-pointer rounded-3xl ${width ?? "w-full"} ${height ?? "h-[360px]"} flex flex-col overflow-hidden border border-white/20 backdrop-blur-2xl`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       ref={cardRef}
-      initial={{ opacity: 0, y: 50, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      initial={{ opacity: 0, y: 60, rotateX: 15 }}
+      animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
       whileHover={{
-        y: -12,
-        scale: 1.03,
-        rotateX: -2,
-        boxShadow: [
-          "0 10px 30px rgba(168,85,247,0.3), 0 0 20px rgba(139,92,246,0.2)",
-          "0 20px 60px rgba(168,85,247,0.4), 0 0 40px rgba(139,92,246,0.3), 0 0 0 1px rgba(196,181,253,0.1)",
-        ],
+        y: -20,
+        scale: 1.05,
+        rotateY: 5,
+        borderColor: "rgba(192, 132, 252, 0.4)",
       }}
       transition={{
         type: "spring",
-        stiffness: 100,
-        damping: 20,
-        mass: 0.9,
+        stiffness: 120,
+        damping: 18,
+        mass: 0.8,
         delay: index * 0.15,
       }}
       style={{
-        boxShadow:
-          "0 8px 25px rgba(168,85,247,0.15), 0 3px 10px rgba(0,0,0,0.3)",
-        willChange: "transform, opacity",
+        background: `
+          linear-gradient(135deg, 
+            rgba(168, 85, 247, 0.15) 0%,
+            rgba(139, 92, 246, 0.1) 30%,
+            rgba(124, 58, 237, 0.05) 70%,
+            rgba(147, 51, 234, 0.1) 100%
+          )
+        `,
+        boxShadow: `
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+          0 20px 40px rgba(168, 85, 247, 0.15),
+          0 8px 25px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.05)
+        `,
       }}
-      layout={false}
     >
+      {/* Animated Glass Layers */}
+      <motion.div
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100"
+        style={{
+          background: `
+            radial-gradient(circle at 30% 20%, rgba(192, 132, 252, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%)
+          `,
+        }}
+        animate={{
+          opacity: isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.6 }}
+      />
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(8)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-purple-400/30 blur-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0, 1, 0],
+              scale: [0.8, 1.2, 0.8],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+
       <ProjectImage
         projectImage={projectImage}
         title={title}
-        icon={Icon}
         index={index}
         isHovered={isHovered}
-        category={category}
-        starred={starred}
-        year={year}
       />
 
       <ProjectOverlay
         showOverlay={showOverlay}
         isHovered={isHovered}
-        githubLink={githubLink}
         liveLink={liveLink}
-        link={link}
       />
 
-      <ProjectContent
-        title={title}
-        description={description}
-        projectTech={projectTech}
-        index={index}
-        isInView={isInView}
+      {/* Glass Reflection Effect */}
+      <motion.div
+        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 pointer-events-none"
+        style={{
+          background: `linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%)`,
+          mask: `linear-gradient(white, transparent 70%)`,
+        }}
+        animate={{
+          opacity: isHovered ? 0.3 : 0,
+        }}
+        transition={{ duration: 0.4 }}
       />
     </motion.div>
   );
