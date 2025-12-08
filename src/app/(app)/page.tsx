@@ -45,7 +45,7 @@ const Home = async () => {
           <AboutUsSection />
           <WhatWeDoSection />
           <WhyChooseUsSection />
-          <OurWorkSection />
+          {/* <OurWorkSection /> */}
           <TestimonialSection />
           <TechStackSection />
           <ContactSection />
