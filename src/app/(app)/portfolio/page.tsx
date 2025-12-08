@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 const PortfolioPage = () => {
   return (
     <>
-      <PortfolioHeroSection />
-      <Portfolio />
+      <ComingSoonSection />
     </>
   );
 };
