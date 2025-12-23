@@ -5,7 +5,16 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "Our Innovative Projects Are Coming Soon!",
+  openGraph: {
+    url: "/portfolio",
+    images: { url: "opengraph-image" },
+  },
+  alternates: {
+    canonical: "/portfolio"
+  }
 };
+
+
 
 const PortfolioPage = () => {
   return (
