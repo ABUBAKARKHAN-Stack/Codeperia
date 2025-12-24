@@ -16,7 +16,8 @@ type Params = {
   params: Promise<{ slug: string }>;
 };
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const services = await getServices();
