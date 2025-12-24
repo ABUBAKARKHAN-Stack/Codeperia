@@ -17,7 +17,7 @@ type Params = {
 };
 
 // export const dynamicParams = false;
-export const revalidate = 60;
+// export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const services = await getServices();
