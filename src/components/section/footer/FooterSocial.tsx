@@ -4,7 +4,7 @@ import {
   InstagramIcon,
   LinkedinIcon,
 } from "lucide-react";
-import { FaUpwork, FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 import Link from "next/link";
 import React from "react";

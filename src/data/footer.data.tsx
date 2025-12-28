@@ -21,7 +21,7 @@ const footerData = {
     },
     {
       name: "DevOps & Automation",
-      link: "/services/devops-automation",
+      link: "/services/devops-and-automation",
     },
   ],
   companyLinks: [
