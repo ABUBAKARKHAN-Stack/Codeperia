@@ -148,7 +148,7 @@ const values = [
   },
 ];
 
-const { abubakar, mansoor, ubaid } = foundersSocials;
+const { abubakar, ubaid } = foundersSocials;
 
 const teamMembers = [
   {
@@ -169,16 +169,6 @@ const teamMembers = [
       linkedin: abubakar.linkedin,
       github: abubakar.github,
       x: abubakar.x,
-    },
-  },
-  {
-    name: "Mansoor Shah",
-    role: "Co-Founder & CEO",
-    image: "/assets/imgs/team/mansoor.jpg",
-    socials: {
-      linkedin: mansoor.linkedin,
-      github: mansoor.github,
-      x: mansoor.x,
     },
   },
 ];

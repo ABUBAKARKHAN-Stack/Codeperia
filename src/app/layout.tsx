@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { baseUrl, brandName, foundersSocials } from "@/constants/constants";
 import { Toaster } from "sonner";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import { LenisProvider } from "@/context/LenisContext";
 import { AdminViewProvider } from "@/context/adminview.conext";
 
@@ -61,11 +60,6 @@ export const metadata: Metadata = {
   keywords: [
     "tech startup",
     "codeperia",
-    "codeperi",
-    "codeper",
-    "codepe",
-    "codep",
-    "code",
     "digital tech agency",
     "software development",
     "custom web applications",
@@ -83,7 +77,6 @@ export const metadata: Metadata = {
   authors: [
     { name: "Abubakar Aijaz", url: foundersSocials.abubakar.linkedin },
     { name: "Sardar Ubaid", url: foundersSocials.ubaid.linkedin },
-    { name: "Mansoor Shah", url: foundersSocials.mansoor.linkedin },
   ],
   creator: brandName,
   publisher: brandName,

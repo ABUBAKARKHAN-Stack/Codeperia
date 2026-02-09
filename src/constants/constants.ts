@@ -23,11 +23,6 @@ const foundersSocials = {
     github: "https://github.com/SardarUbaidullah",
     x: "#",
   },
-  mansoor: {
-    linkedin: "https://www.linkedin.com/in/themansoorshah ",
-    github: "https://www.linkedin.com/in/themansoorshah",
-    x: "#",
-  },
 };
 
 const brandSocials = {
@@ -40,7 +35,7 @@ const brandSocials = {
 const brandContactInfo = {
   contact: "contact@codeperia.com",
   info: "info@codeperia.com",
-  phone: "+92 328 7099399",
+  phone: "+92 371 3711615",
 };
 
 const testimonialsCSS = `
