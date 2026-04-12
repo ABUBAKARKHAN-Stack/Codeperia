@@ -15,7 +15,7 @@ export default async function OpengraphImage() {
     process.cwd(),
     "public",
     "assets",
-    "t-solutionz-og.png",
+    "cp-og-image.png",
   );
 
   const imageBuffer = fs.readFileSync(imagePath);
