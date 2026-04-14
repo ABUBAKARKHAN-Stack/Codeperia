@@ -1,0 +1,104 @@
+Project: T-Solutionz
+
+Description: Modern web application for a software development company. Showcases portfolio projects, service offerings, and handles client inquiries through an integrated contact system. Built with Next.js and headless CMS architecture.
+
+Tech Stack:
+
+* Frontend: Next.js 16, React 19, TypeScript
+* Backend: Next.js App Router, Server Actions
+* CMS: Sanity (headless content management)
+* Database: Sanity Studio (managed)
+* Styling: Tailwind CSS 4, Motion (Animations)
+* Forms: React Hook Form + Zod validation
+* Email: Resend API (transactional emails)
+* Analytics: Vercel Analytics, Speed Insights
+* Icons: Lucide React (with custom Icon Mapper)
+* UI Feedback: Sonner (toast notifications)
+
+Architecture:
+
+Next.js 16 App Router with server and client components. Headless CMS architecture using Sanity for content management. Application state is managed via React Context (Portfolio and Service state) provided at the root layout level. Component architecture is strictly modular, separating layout, sections, shared utilities, and UI primitives. Live content updates are handled via Sanity Live integration.
+
+Repository Overview:
+
+* /app — Page routes, layouts, and server actions (email.actions.ts, sitemap.ts, manifest.ts)
+* /components — UI components organized into layout, sections, shared, and ui primitives
+* /lib — Functional utilities (Sanity client, Resend integration, Icon Mapper, email templates)
+* /sanity — Headless CMS configuration, schema types, and live preview logic
+* /context — React Context providers for global Portfolio and Service data
+* /helpers — Data fetching logic using GROQ queries (portfolio.helper, service.helper)
+* /types — Centralized TypeScript interfaces (portfolio, service, shared)
+* /constants — Application-wide constants (APP_NAME, BASE_URL, navigation links)
+* /schemas — Zod validation schemas for forms and data integrity
+* /providers — Root providers bundling UI feedback and global layout elements
+* /public — Static brand assets, favicons, and images
+* /data — Static data for the application
+
+Key Modules / Services:
+
+* Portfolio Management — Fetches and manages project data from Sanity via GROQ, supporting detail views and filtering
+* Service Showcase — Global service data management with a dedicated context provider for app-wide access
+* Email Service — Automated contact form processing via Server Actions using the Resend API
+* CMS Studio — Fully integrated Sanity Studio mounted at /cms/studio for real-time content editing
+* Icon Mapping Service — A centralized mapper in /lib to dynamically render Lucide icons from CMS strings
+* SEO & Discovery — Dynamic sitemap, manifest, and robots generation based on CMS content and app constants
+
+Important Directories:
+
+* /app/(APP) — Main application route group container for public-facing pages
+* /components/layout — Structural components like Navbar, Footer, and Page wrappers
+* /components/sections — Feature-specific page blocks (Hero, Services, Contact)
+* /components/shared — Reusable logical components (AnimatedSection, Icon Rendering)
+* /components/ui — Base design system primitives (Buttons, Inputs, Cards)
+* /sanity/schemaTypes — CMS data models for portfolios, services, authors, and sections
+* /lib/email-templates — Reach HTML templates for transactional and notification emails
+
+Common Development Tasks:
+
+* Local Development — Run `npm run dev` to start the development environment.
+* Updating Content — Edit data via the local studio or Sanity Cloud; update GROQ helpers in `/helpers` for new fields.
+* Component Creation — Use the established modular hierarchy; primitives go to `ui`, page blocks go to `sections`.
+* Forms — Define a Zod schema in `/schemas`, implement React Hook Form, and process via a Server Action in `/app/actions`.
+* Icon Updates — When adding icons to the CMS, ensure they are registered in the `iconsMap` within `lib/icon-mapper.ts`.
+
+Performance Guidelines:
+
+* Parallel Data Fetching — Always use `Promise.allSettled` for concurrent CMS queries in server layouts and pages.
+* Asset Optimization — Utilize `next/image` combined with Sanity's image URL builder for automated optimization.
+* Hybrid Rendering — Default to Server Components; isolate client logic to the smallest possible leaf components.
+* Styling Utilities — Leverage global classes like `.glass`, `.hover-lift`, and `.section-padding` for consistent, performant UI.
+
+Coding Conventions:
+
+* Use TypeScript strict mode for all files across the repository
+* Strictly use path alias @/* for all internal imports
+* Maintain Server Component priority; only add "use client" for interactivity
+* Centralize all strings, URLs, and navigation data in the `/constants` directory
+* Global state must be wrapped within `PortfolioContextProvider` and `ServiceContextProvider`
+* Typographical hierarchy: `font-inter` for body, `font-playfair` for all headings (h1-h6)
+* Metadata must be exported from all route files for robust SEO
+
+AI Development Guidelines:
+
+* Always prioritize existing shadcn/ui primitives and Tailwind utility classes
+* Never create standard API routes; use Server Actions for all backend logic
+* Define and export TypeScript interfaces in the `/types` directory before implementing new features
+* Pass dynamic icon strings through the `getIconByName` helper for consistent rendering
+* Ensure animations use the `motion` (framer-motion) library for scroll triggers and transitions
+* Pages within `(APP)` must respect the layouts provided by `AppLayout` and `RootProvider`
+* Follow the Zod-first validation pattern for all data mutation and form handling
+* Keep file contents concise; extract sub-components when logic exceeds 150-200 lines
+
+Environment:
+
+Required Environment Variables:
+NEXT_PUBLIC_SANITY_PROJECT_ID — Unique identifier for the Sanity project
+NEXT_PUBLIC_SANITY_DATASET — Targeted Sanity dataset (typically 'production')
+NEXT_PUBLIC_SANITY_API_VERSION — Current GROQ API version
+NEXT_SANITY_API_TOKEN — Secure token for write operations and private data access
+RESEND_API_KEY — API key for the Resend transactional email service
+
+External Services:
+Sanity Cloud — Headless CMS and content backend
+Resend — SMTP and transactional email delivery
+Vercel — CI/CD hosting, performance monitoring, and analytics
