@@ -1,4 +1,4 @@
-export const APP_NAME = "T-Solutionz";
+export const APP_NAME = "Codeperia";
 export const ALTERNATE_NAME = ["T Solutions", "T-Solutions", "TSolutions"];
 export const BASE_URL = "https://t-solutionz.com";
 export const TAGLINE = "Transforming Ideas Into Scalable Systems";
