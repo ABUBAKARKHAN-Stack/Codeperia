@@ -10,13 +10,13 @@ import { APP_NAME, BASE_URL, TAGLINE } from "@/constants/app.constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About T-Solutionz",
+  title: "About Codeperia",
 
   description:
-    "Learn about T-Solutionz, a scalable software development agency building high-performance web applications and enterprise systems.",
+    "Learn about Codeperia, a scalable software development agency building high-performance web applications and enterprise systems.",
 
   keywords: [
-    "About T-Solutionz",
+    "About Codeperia",
     "Scalable Software Development Agency",
     "Technology Partner for Businesses",
   ],
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     siteName: APP_NAME,
-    title: `About T-Solutionz | ${TAGLINE}`,
+    title: `About Codeperia | ${TAGLINE}`,
     description:
-      "Discover how T-Solutionz engineers scalable software systems, enterprise applications, and growth-driven digital solutions for modern businesses.",
+      "Discover how Codeperia engineers scalable software systems, enterprise applications, and growth-driven digital solutions for modern businesses.",
     url: `${BASE_URL}/about`,
     images: { url: "opengraph-image" },
     type: "website",

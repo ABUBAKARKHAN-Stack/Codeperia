@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: `Software Development Services | ${APP_NAME}` },
 
   description:
-    "T-Solutionz delivers full-stack and mobile apps, AI systems, e-commerce platforms, DevOps, cloud, and SEO solutions for lasting digital growth and business impact.",
+    "Codeperia delivers full-stack and mobile apps, AI systems, e-commerce platforms, DevOps, cloud, and SEO solutions for lasting digital growth and business impact.",
 
   keywords: [
     "Software Development Services",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: APP_NAME,
     title: `Software Development Services | ${APP_NAME}`,
     description:
-      "T-Solutionz delivers full-stack and mobile application development, AI systems and intelligent automation, scalable e-commerce platforms, DevOps & cloud infrastructure, and SEO-driven digital growth solutions engineered for performance and long-term business impact.",
+      "Codeperia delivers full-stack and mobile application development, AI systems and intelligent automation, scalable e-commerce platforms, DevOps & cloud infrastructure, and SEO-driven digital growth solutions engineered for performance and long-term business impact.",
     url: `${BASE_URL}/services`,
     images: { url: "opengraph-image" },
     type: "website",

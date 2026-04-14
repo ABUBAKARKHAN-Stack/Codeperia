@@ -1,4 +1,4 @@
-Project: T-Solutionz
+Project: Codeperia
 
 Description: Modern web application for a software development company. Showcases portfolio projects, service offerings, and handles client inquiries through an integrated contact system. Built with Next.js and headless CMS architecture.
 

@@ -8,11 +8,11 @@ import { contactInfo, socials } from "@/constants/navigation.constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact T-Solutionz",
+  title: "Contact Codeperia",
   description:
-    "Get in touch with T-Solutionz, a scalable software agency. Discuss your project, explore solutions, and build high-performance systems.",
+    "Get in touch with Codeperia, a scalable software agency. Discuss your project, explore solutions, and build high-performance systems.",
   keywords: [
-    "Contact T-Solutionz",
+    "Contact Codeperia",
     "Software Development Inquiry",
     "Digital Solutions Contact",
     "Scalable Systems Consultation",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     siteName: APP_NAME,
-    title: `Contact T-Solutionz | ${TAGLINE}`,
+    title: `Contact Codeperia | ${TAGLINE}`,
     description:
-      "Reach out to T-Solutionz to discuss scalable web applications, AI integrations, and DevOps solutions built for long-term growth and high performance.",
+      "Reach out to Codeperia to discuss scalable web applications, AI integrations, and DevOps solutions built for long-term growth and high performance.",
     url: `${BASE_URL}/contact`,
     images: { url: "opengraph-image" },
     type: "website",
@@ -47,7 +47,7 @@ const ContactPage = () => {
             "@type": "ContactPoint",
             "contactType": "customer support",
             "telephone": "+92-3257030523",
-            "email": "support@t-solutionz.com"
+            "email": "support@Codeperia.com"
           },
           "availableLanguage": ["English", "Urdu"],
           "areaServed": "Worldwide",

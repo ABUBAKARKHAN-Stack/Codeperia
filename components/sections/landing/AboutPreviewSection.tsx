@@ -68,7 +68,7 @@ const AboutPreviewSection = () => {
               <div className="overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={"/assets/about-preview.jpg"}
-                  alt="T-Solutionz team collaborating in a modern office"
+                  alt="Codeperia team collaborating in a modern office"
                   className="h-125 w-full object-cover"
                   width={500}
                   height={500}

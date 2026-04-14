@@ -68,7 +68,7 @@ const MaskedBrandName = () => {
       >
         <div className="relative">
           {/* Outline layer */}
-          <h2 className="font-playfair text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.05)]">
+          <h2 className="font-playfair text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.025)]">
             {APP_NAME}
           </h2>
 
@@ -78,7 +78,7 @@ const MaskedBrandName = () => {
             className="font-playfair pointer-events-none absolute inset-0 bg-clip-text text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(180deg, #ABC7A3 0%, rgba(144, 179, 137, 0.4) 100%)",
+                "linear-gradient(120deg, #DAB2FF 0%, #9810FA 100%)",
               WebkitMaskImage: maskImage,
               maskImage: maskImage,
             }}

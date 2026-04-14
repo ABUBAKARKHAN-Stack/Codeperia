@@ -9,7 +9,7 @@ const PortfolioPageHero = () => {
           Our <span className="text-accent italic">Portfolio</span>
         </>
       }
-      description="Discover T-Solutionz projects where engineering precision meets business impact, scalable, high-performance systems built for growth."
+      description="Discover Codeperia projects where engineering precision meets business impact, scalable, high-performance systems built for growth."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
     />
   );

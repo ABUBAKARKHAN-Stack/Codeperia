@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Audiowide, Inter, Orbitron, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import {
   APP_NAME,
@@ -17,16 +17,17 @@ export const inter = Inter({
   variable: "--font-inter",
 });
 
-export const playfair = Playfair_Display({
+export const playfair = Audiowide({
   subsets: ["latin"],
   display: "swap",
+  weight: ["400"],
   variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: `${APP_NAME} | T Solutions | ${TAGLINE}`,
+    default: `${APP_NAME} | ${TAGLINE}`,
     template: `%s | ${TAGLINE}`,
   },
   description: BRAND_DESCRIPTION,
@@ -90,7 +91,7 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: `${APP_NAME} | T Solutions | ${TAGLINE}`,
+    title: `${APP_NAME} | ${TAGLINE}`,
     siteName: APP_NAME,
     description: BRAND_DESCRIPTION,
     url: BASE_URL,

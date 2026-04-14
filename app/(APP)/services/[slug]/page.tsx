@@ -117,8 +117,8 @@ const ServiceDetail = async ({ params }: Params) => {
           "description": service.description,
           "provider": {
             "@type": "Organization",
-            "name": "T-Solutionz",
-            "url": "https://t-solutionz.com"
+            "name": "Codeperia",
+            "url": "https://Codeperia.com"
           },
           "areaServed": "Worldwide"
         }}

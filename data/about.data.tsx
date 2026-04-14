@@ -6,7 +6,7 @@ export const milestones = [
     year: "2026",
     title: "Foundation",
     description:
-      "T-Solutionz was founded with a clear vision to transform ideas into scalable, high-performance systems.",
+      "Codeperia was founded with a clear vision to transform ideas into scalable, high-performance systems.",
   },
   {
     year: "2026",

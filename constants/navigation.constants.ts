@@ -19,14 +19,14 @@ export const navLinks = [
 export const contactInfo = [
   {
     label: "Mail",
-    value: "info@t-solutionz.com",
-    link: "mailto:info@t-solutionz.com",
+    value: "info@Codeperia.com",
+    link: "mailto:info@Codeperia.com",
     icon: Mail,
   },
   {
     label: "Help & Support",
-    value: "support@t-solutionz.com",
-    link: "mailto:support@t-solutionz.com",
+    value: "support@Codeperia.com",
+    link: "mailto:support@Codeperia.com",
     icon: Headphones,
   },
   {
@@ -56,6 +56,6 @@ export const socials = [
   {
     label: "LinkedIn",
     icon: LinkedinIcon,
-    url: "https://linkedin.com/company/t-solutionz",
+    url: "https://linkedin.com/company/Codeperia",
   },
 ];
