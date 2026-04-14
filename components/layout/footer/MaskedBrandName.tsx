@@ -67,8 +67,9 @@ const MaskedBrandName = () => {
         viewport={{ once: true }}
       >
         <div className="relative">
+
           {/* Outline layer */}
-          <h2 className="font-playfair text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.025)]">
+          <h2 className="font-playfair text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.02)]">
             {APP_NAME}
           </h2>
 

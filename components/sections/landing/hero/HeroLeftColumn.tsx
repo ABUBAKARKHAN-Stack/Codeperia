@@ -30,7 +30,7 @@ const HeroLeftColumn = () => {
       </motion.div>
 
       {/* Headline */}
-      <h1 className="text-foreground mb-8 text-5xl leading-[0.92] font-bold tracking-[-0.01em] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem]">
+      <h1 className="text-foreground mb-8 text-5xl leading-[0.92] font-bold tracking-[-0.01em] sm:text-6xl md:text-7xl">
         {heroContent.headline.map((word, i) => (
           <span key={word} className="block">
             <motion.span

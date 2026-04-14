@@ -1,5 +1,4 @@
 import {
-  ALTERNATE_NAME,
   APP_NAME,
   BASE_URL,
   BRAND_DESCRIPTION,
@@ -17,7 +16,6 @@ const defaultSchema = {
       "@type": "Organization",
       "@id": `${BASE_URL}/#organization`,
       name: APP_NAME,
-      alternateName: ALTERNATE_NAME,
       url: BASE_URL,
       logo: `${BASE_URL}/assets/brand/favicons/android-chrome-512x512.png`,
       description: BRAND_DESCRIPTION,

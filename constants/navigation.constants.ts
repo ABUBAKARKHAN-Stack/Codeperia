@@ -19,20 +19,20 @@ export const navLinks = [
 export const contactInfo = [
   {
     label: "Mail",
-    value: "info@Codeperia.com",
-    link: "mailto:info@Codeperia.com",
+    value: "info@codeperia.com",
+    link: "mailto:info@codeperia.com",
     icon: Mail,
   },
   {
     label: "Help & Support",
-    value: "support@Codeperia.com",
-    link: "mailto:support@Codeperia.com",
+    value: "support@codeperia.com",
+    link: "mailto:info@codeperia.com",
     icon: Headphones,
   },
   {
     label: "Phone",
-    value: "+92-3257030523",
-    link: "tel:+923257030523",
+    value: "+92-3713711615",
+    link: "tel:+923713711615",
     icon: Phone,
   },
 ];
@@ -41,21 +41,21 @@ export const socials = [
   {
     label: "Facebook",
     icon: FacebookIcon,
-    url: "https://www.facebook.com/profile.php?id=61582284143059",
+    url: "https://web.facebook.com/people/CodePeria/61581253827191/",
   },
   {
     label: "Instagram",
     icon: InstagramIcon,
-    url: "https://www.instagram.com/official.tsolutionz",
+    url: "https://www.instagram.com/codeperia",
   },
   {
     label: "Twitter (X)",
     icon: TwitterIcon,
-    url: "https://x.com/T_Solutionz",
+    url: "https://x.com/codeperia",
   },
   {
     label: "LinkedIn",
     icon: LinkedinIcon,
-    url: "https://linkedin.com/company/Codeperia",
+    url: "https://www.linkedin.com/company/codeperia",
   },
 ];
