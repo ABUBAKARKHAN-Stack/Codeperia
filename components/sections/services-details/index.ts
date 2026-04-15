@@ -1,9 +1,0 @@
-export { default as ServiceNotFoundSection } from "./ServiceNotFoundSection";
-export { default as ServicePageHero } from "./ServicePageHero";
-export { default as ServiceOverviewAndDeliverablesSection } from "./ServiceOverviewAndDeliverablesSection";
-export { default as TechnologiesSection } from "./TechnologiesSection";
-export { default as ApproachSection } from "./ApproachSection";
-export { default as DifferentiatorsSection } from "./DifferentiatorsSection";
-export { default as ServiceFAQsSection } from "./ServiceFAQsSection";
-export { default as OtherServicesSection } from "./OtherServicesSection";
-export { default as ServiceCTASection } from "./ServiceCTASection";

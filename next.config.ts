@@ -2,9 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  images: { remotePatterns: [{ hostname: "cdn.sanity.io" }] },
-  experimental: {
-    optimizePackageImports: ["lucide-react"],
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "www.google.com" },
+      { protocol: "https", hostname: "cdn.sanity.io" },
+    ],
   },
 };
 
