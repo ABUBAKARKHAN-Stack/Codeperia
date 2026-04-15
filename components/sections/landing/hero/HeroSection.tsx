@@ -1,7 +1,6 @@
 import { ContainerLayout } from "@/components/layout/";
 import GrainNoiseOverlay from "./GrainNoiseOverlay";
 import AnimatedGradientMesh from "./AnimatedGradientMesh";
-import DecorativeVerticalLine from "./DecorativeVerticalLine";
 import HeroLeftColumn from "./HeroLeftColumn";
 import HeroRightColumn from "./HeroRightColumn";
 
@@ -13,9 +12,6 @@ const HeroSection = () => {
 
       {/* Animated gradient mesh */}
       <AnimatedGradientMesh />
-
-      {/* Decorative vertical line */}
-      <DecorativeVerticalLine />
 
       <ContainerLayout className="relative z-10">
         <div>

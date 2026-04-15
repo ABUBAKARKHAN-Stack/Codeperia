@@ -68,13 +68,13 @@ const AboutPreviewSection = () => {
               <div className="overflow-hidden rounded-3xl shadow-2xl">
                 <Image
                   src={"/assets/about-preview.jpg"}
-                  alt="Codeperia team collaborating in a modern office"
+                  alt="Codeperia About Preview Image"
                   className="h-125 w-full object-cover"
                   width={500}
                   height={500}
                   loading="lazy"
                 />
-                <div className="from-foreground/30 absolute inset-0 rounded-3xl bg-linear-to-t via-transparent to-transparent" />
+                <div className="from-accent/30 absolute inset-0 rounded-3xl bg-linear-to-t via-transparent to-transparent" />
               </div>
 
               {/* Floating stats overlay */}

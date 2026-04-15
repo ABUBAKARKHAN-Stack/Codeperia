@@ -7,23 +7,40 @@ export const stats = [
 
 export const team = [
   {
-    name: "Usama Aijaz",
+    name: "Sardar Ubaidullah",
     role: "CEO & Co-Founder",
-    initials: "UA",
-    image: "/assets/team/usama.jpeg",
-    bio: "DevOps and Cloud Engineer specializing in designing and managing scalable, production-grade infrastructure across AWS and Azure. Strong background in Linux system administration, automation, and building reliable, high-performance environments.",
-    linkedin: "https://www.linkedin.com/in/usama-aijaz-712b361b0/",
+    initials: "SU",
+    image: "/assets/team/ubaid.jpg",
+    linkedin: "https://www.linkedin.com/in/sardar-ubaidullah-51b593375",
     twitter: "#",
-    email: "usama@Codeperia.com",
+    email: "dev.sardarubaid@gmail.com",
   },
   {
     name: "Abubakar Aijaz",
     role: "CTO & Co-Founder",
     initials: "AA",
     image: "/assets/team/abubakar.png",
-    bio: "Full-Stack Engineer and technology leader specializing in scalable software architecture, distributed systems, and modern web platforms. Experienced in building enterprise-grade applications using JavaScript/TypeScript and Python ecosystems, with strong expertise in microservices, Kafka, and cloud-ready system design.",
     linkedin: "https://www.linkedin.com/in/abubakar-aijaz-dev",
     twitter: "https://x.com/abubakar_stacky",
-    email: "abubakar@Codeperia.com",
+    email: "abubakarxd7@gmail.com",
   },
+  {
+    name: "Muhammad Hanzala",
+    role: "Business Manager",
+    initials: "MH",
+    image: "/assets/team/hanzla.png",
+    linkedin: "https://www.linkedin.com/in/muhammad-hanzala-18b4793b9",
+    twitter: "#",
+    email: "hanzala232c@gmail.com"
+  },
+  {
+    name: "Ounisa M.Waseem",
+    role: "Brand Manager",
+    initials: "OM",
+    image: "",
+    linkedin: "https://www.linkedin.com/in/ounisa-m-waseem-2aa852301/",
+    twitter: "#",
+    email: "#"
+  },
+
 ];
