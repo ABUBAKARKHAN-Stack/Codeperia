@@ -12,7 +12,7 @@ const HighlightedBrandName = ({ animate = false, once = false }) => {
   return animate ? (
     <span ref={containerRef} className="relative inline-block">
       <motion.span
-        className="text-accent-foreground font-playfair relative z-10 px-0.5 py-px font-extrabold"
+        className="text-accent-foreground font-playfair relative z-10 px-0.5 py-px"
         initial={{
           filter: "blur(10px)",
           scale: 0.8,
@@ -61,7 +61,7 @@ const HighlightedBrandName = ({ animate = false, once = false }) => {
     </span>
   ) : (
     <span className="relative inline-block">
-      <span className="text-accent-foreground font-playfair relative z-10 px-0.5 py-px font-extrabold">
+      <span className="text-accent-foreground font-playfair relative z-10 px-0.5 py-px">
         {APP_NAME}
       </span>
       <span className="bg-accent absolute inset-0" />
