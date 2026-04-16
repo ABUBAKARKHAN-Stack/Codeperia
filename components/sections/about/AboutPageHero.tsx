@@ -10,7 +10,7 @@ const AboutPageHero = () => {
           About <span className="text-accent italic">{APP_NAME}</span>
         </>
       }
-      description={`${APP_NAME} was founded in 2026 with a clear purpose, to build digital systems that are not only functional, but scalable, intelligent, and future-ready.`}
+      description={`${APP_NAME} was established in 2025, with a singular mission: to engineer high-performance digital systems that are built for reliability, intelligence, and sustainable scalability.`}
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
     />
   );

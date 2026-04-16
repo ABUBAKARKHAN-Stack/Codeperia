@@ -26,7 +26,7 @@ const CTASection = ({
       <div className="bg-accent/10 absolute top-0 right-1/4 h-100 w-100 rounded-full blur-[150px]" />
       <ContainerLayout className="relative z-10 text-center">
         <AnimatedSection>
-          <h2 className="text-foreground mb-6 text-4xl leading-tight font-bold md:text-5xl">
+          <h2 className="text-foreground mx-auto mb-6 max-w-2xl text-4xl leading-tight font-bold md:text-5xl">
             {title}
           </h2>
           <p className="text-muted-foreground mx-auto mb-10 max-w-md text-lg font-light">

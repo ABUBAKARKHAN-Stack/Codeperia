@@ -5,12 +5,12 @@ const AboutCTASection = () => {
     <CTASection
       title={
         <>
-          Let's discuss your{" "}
-          <span className="text-accent italic">next move</span>
+          Ready to engineer your{" "}
+          <span className="text-accent italic">digital future?</span>
         </>
       }
-      description="Whether you're planning a new build or scaling an existing platform, we're ready to help."
-      buttonText="Get in Touch"
+      description="Partner with Codeperia to transform complex challenges into high-performance, scalable systems built for sustainable business success."
+      buttonText="Schedule a Consultation"
     />
   );
 };

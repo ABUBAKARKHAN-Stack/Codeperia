@@ -19,7 +19,7 @@ const AboutPreviewSection = () => {
 
       <ContainerLayout className="relative z-10">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
-          {/* Left — text content */}
+          {/* Left - text content */}
           <AnimatedSection direction="left">
             <p className="text-accent mb-4 text-xs font-medium tracking-[0.3em] uppercase">
               About Us
@@ -61,7 +61,7 @@ const AboutPreviewSection = () => {
             </MagneticButton>
           </AnimatedSection>
 
-          {/* Right — image + overlaid stats */}
+          {/* Right - image + overlaid stats */}
           <AnimatedSection direction="right" delay={0.2}>
             <div className="relative">
               {/* Main image */}

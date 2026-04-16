@@ -3,39 +3,40 @@ import { Award, Eye, Heart, Target } from "lucide-react";
 
 export const milestones = [
   {
-    year: "2026",
-    title: "Foundation",
+    year: "2025",
+    title: "Strategic Foundation",
     description:
-      "Codeperia was founded with a clear vision to transform ideas into scalable, high-performance systems.",
+      "Codeperia was established on October 1, 2025, with a singular mission: to deliver premium digital solutions through engineering excellence and strategic innovation.",
   },
   {
     year: "2026",
-    title: "First Major Deployment",
+    title: "Market Validation",
     description:
-      "Successfully delivered our first large-scale production system built for reliability, performance, and growth.",
+      "Successfully delivered our first 8+ high-performance projects, achieving a 100% client satisfaction rate through technical precision and on-time delivery.",
   },
   {
     year: "2026",
-    title: "Cloud & DevOps Expansion",
+    title: "Expansion & Scaling",
     description:
-      "Strengthened our cloud-native and CI/CD capabilities to support seamless deployment and scaling.",
+      "Scaled our operations to support enterprise-level clients, integrating AI systems and intelligent automation to drive measurable business ROI.",
   },
   {
     year: "2026",
-    title: "Intelligent Systems Integration",
+    title: "Engineering Authority",
     description:
-      "Integrated AI-powered features and automation into client platforms to enhance performance and decision-making.",
+      "Recognized as a strategic technology partner, building resilient architectures and future-ready digital foundations for modern global businesses.",
   },
 ];
 
 export const ourMission = {
   para1:
-    "We believe technology should do more than function. It should create clarity, unlock momentum, and support long-term progress. Every system we design is built with intention, precision, and scalability at its core.",
+    "We believe technology should do more than function-it should create clarity, unlock momentum, and support long-term progress. Every system we design is built with intention, precision, and scalability at its core to ensure business success.",
   para2: (
     <>
-      From architecture to optimization, we focus on building resilient digital
-      foundations that adapt to change and perform under pressure. At{" "}
-      <HighlightedBrandName />, growth is not accidental. It is designed.
+      From strategic architecture to performance optimization, we focus on 
+      building resilient digital foundations that adapt to change and excel 
+      under pressure. At <HighlightedBrandName />, growth is not accidental. 
+      It is designed.
     </>
   ),
 };
@@ -43,26 +44,26 @@ export const ourMission = {
 export const values = [
   {
     icon: Target,
-    title: "Purposeful Execution",
+    title: "Strategic Execution",
     description:
-      "Every solution is designed with clear objectives, measurable outcomes, and long-term scalability in mind.",
+      "Every solution is designed with clear business objectives, measurable outcomes, and long-term scalability in mind.",
   },
   {
     icon: Eye,
-    title: "Radical Transparency",
+    title: "Professional Integrity",
     description:
-      "We communicate openly about progress, trade-offs, and performance so every decision is informed.",
+      "We maintain full transparency through clear communication and strategic reporting, ensuring every decision is data-driven and informed.",
   },
   {
     icon: Heart,
-    title: "Ownership Mentality",
+    title: "Engineering Excellence",
     description:
-      "We treat every system we build as if it were our own, prioritizing reliability, performance, and sustainability.",
+      "We prioritize technical authority, clean architecture, and high-performance standards in every digital experience we deliver.",
   },
   {
     icon: Award,
-    title: "Engineering Excellence",
+    title: "Value-Driven Growth",
     description:
-      "We pursue precision, clean architecture, and high-performance standards in everything we deliver.",
+      "We focus on creating measurable impact and sustainable ROI, treating every client project as a strategic partnership for long-term success.",
   },
 ];

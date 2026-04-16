@@ -11,7 +11,7 @@ const OurJourneySection = () => {
       <ContainerLayout>
         <SectionHeader
           eyebrow="Our Journey"
-          title="From Vision to Scalable Systems"
+          title="From Vision to Reality"
           centered
         />
 

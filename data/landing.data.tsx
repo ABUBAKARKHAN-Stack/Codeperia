@@ -4,8 +4,6 @@ import {
   Layers,
   Code2,
   Smartphone,
-  Cloud,
-  Container,
   Brain,
   Globe,
   Target,
@@ -20,44 +18,45 @@ import {
   Shield,
   Sparkles,
   Clock,
+  ShoppingCart,
+  Palette,
 } from "lucide-react";
 
 export const heroContent = {
-  eyebrow: "Idea · Code · Deploy · Scale · Monitor",
+  eyebrow: "Engineering · Strategy · Systems · Scale",
 
-  headline: ["Building", "Future-Ready", "Systems"],
+  headline: ["Building", "Resilient", "Digital Systems"],
 
   subtexts: [
-    "We builds modern, high-performance software solutions designed to help businesses scale with confidence. From custom web applications to enterprise software systems, we engineer technology that delivers measurable results.",
+    "We engineer modern, high-performance software solutions designed to support your business growth. From custom enterprise systems to scalable web applications, we deliver technology that drives measurable results.",
     <>
-      At <HighlightedBrandName animate once />, we transform ideas into scalable
-      systems through a complete development lifecycle from idea validation and
-      architecture to deployment, scaling, and continuous monitoring, we build
-      resilient, future-ready software designed for sustainable growth and
-      operational excellence.
+      At <HighlightedBrandName animate once />, we transform complex ideas into 
+      high-performance digital experiences. Through a strategic development 
+      lifecycle-from architecture validation to seamless scaling-we build 
+      resilient software designed for sustainable excellence and long-term impact.
     </>,
   ],
 
   cta: {
-    primary: "Our Services",
-    secondary: "Get in Touch",
+    primary: "Explore Our Services",
+    secondary: "Start Your Project",
   },
 
   mission: {
     title: "Our Mission",
     quote:
-      "Transforming ideas into scalable systems that drive growth and measurable impact.",
+      "Empowering modern businesses through scalable technology and innovative digital transformation.",
   },
 
   accentCards: [
     {
-      label: "Quality First",
-      sub: "Engineered with Precision",
+      label: "Engineering Excellence",
+      sub: "Built for Performance",
       icon: ShieldCheck,
     },
     {
-      label: "Scalable by Design",
-      sub: "Built for Long-Term Growth",
+      label: "Strategic Growth",
+      sub: "Designed to Scale",
       icon: Layers,
     },
   ],
@@ -66,44 +65,44 @@ export const heroContent = {
 export const featuresContent = [
   {
     icon: Code2,
-    title: "Full Stack Apps",
+    title: "Full-Stack Application Development",
     description:
-      "End-to-end web applications built with modern frameworks and scalable architecture.",
+      "We deliver scalable, end-to-end solutions emphasizing high-performance architecture, reliability, and long-term maintenance.",
     num: "01",
   },
   {
     icon: Smartphone,
-    title: "Mobile First",
+    title: "Mobile Application Development",
     description:
-      "Cross-platform mobile apps with native performance and beautiful user experiences.",
+      "Engineered for speed and usability, our cross-platform mobile apps provide seamless user experiences with modern design.",
     num: "02",
   },
   {
-    icon: Cloud,
-    title: "Cloud Native",
+    icon: ShoppingCart,
+    title: "E-Commerce Solutions",
     description:
-      "Scalable cloud infrastructure on AWS, Azure, designed for growth.",
+      "Drive business growth with secure, scalable e-commerce platforms focused on customer experience and high conversions.",
     num: "03",
   },
   {
-    icon: Container,
-    title: "DevOps Pipeline",
+    icon: Brain,
+    title: "AI Systems and Intelligent Automation",
     description:
-      "Automated CI/CD, containerization, and infrastructure as code for rapid delivery.",
+      "Optimize efficiency and smart decision-making with innovative, future-ready AI systems and intelligent automation.",
     num: "04",
   },
   {
-    icon: Brain,
-    title: "AI Integration",
+    icon: Globe,
+    title: "SEO & Digital Visibility",
     description:
-      "Smart automation, predictive analytics, and LLM-powered features for your products.",
+      "Maximize business exposure with traffic growth strategies and measurable SEO results that dominate the digital landscape.",
     num: "05",
   },
   {
-    icon: Globe,
-    title: "Global Scale",
+    icon: Palette,
+    title: "UI/UX Design",
     description:
-      "Distributed systems and edge computing to serve users worldwide with low latency.",
+      "User-centered design focused on clarity and engagement, delivering modern aesthetics with intuitive digital experiences.",
     num: "06",
   },
 ];
@@ -119,20 +118,20 @@ export const partners = [
 export const aboutPreviewData = {
   para1: (
     <>
-      Founded with a vision to build meaningful digital experiences,{" "}
-      <HighlightedBrandName animate={false} /> combines strategic thinking with
-      modern technology. We help startups and growing businesses scale through
-      smart, reliable, and performance-driven solutions.
+      Codeperia is a forward-thinking digital solutions provider dedicated to
+      building modern, scalable software. We combine strategic thinking with
+      advanced technology to help businesses achieve sustainable growth through
+      reliable and innovative solutions.
     </>
   ),
-  para2: `Our multidisciplinary team blends strategy, design,
-              and development to create systems that are scalable, efficient, and built
-              for long-term growth. We focus on delivering real-world impact, not just
-              ideas.`,
+  para2: `Our multidisciplinary team leverages deep expertise in engineering 
+              and strategy to create systems that are high-performance, secure, 
+              and built for the future. We focus on delivering value-driven outcomes 
+              that empower your long-term success.`,
   highlights: [
-    { icon: Target, label: "Purpose-Driven" },
-    { icon: Users, label: "Dedicated Team" },
-    { icon: Globe, label: "Global Impact" },
+    { icon: Target, label: "Strategy-Driven" },
+    { icon: Users, label: "Expert Engineering" },
+    { icon: Globe, label: "Global Reach" },
   ],
 };
 
@@ -140,7 +139,7 @@ export const blogPosts = [
   {
     title: "The Future of AI in Enterprise Software",
     excerpt:
-      "How artificial intelligence is reshaping the way businesses build, deploy, and maintain software at scale.",
+      "Discover how intelligent automation is reshaping modern business architecture and driving operational efficiency at scale.",
     category: "AI & Innovation",
     date: "Feb 10, 2026",
     readTime: "5 min read",
@@ -148,24 +147,24 @@ export const blogPosts = [
     image: "/assets/blog-ai.jpg",
   },
   {
-    title: "Why Sustainable Tech Matters More Than Ever",
+    title: "Scaling Modern Tech: From Architecture to ROI",
     excerpt:
-      "Exploring the intersection of environmental responsibility and cutting-edge technology solutions.",
-    category: "Sustainability",
-    date: "Jan 28, 2026",
-    readTime: "4 min read",
-    slug: "sustainable-tech-matters",
-    image: "/assets/blog-sustainability.jpg",
-  },
-  {
-    title: "Scaling Startups: From MVP to Market Leader",
-    excerpt:
-      "A proven framework for transforming minimum viable products into industry-defining platforms.",
+      "A strategic framework for building scalable digital solutions that support long-term business growth and sustainable impact.",
     category: "Strategy",
     date: "Jan 15, 2026",
     readTime: "6 min read",
     slug: "scaling-startups-mvp",
     image: "/assets/blog-scaling.jpg",
+  },
+  {
+    title: "Sustainable Digital Transformation",
+    excerpt:
+      "Why long-term scalability and engineering excellence are critical for modern businesses in an evolving digital landscape.",
+    category: "Business",
+    date: "Jan 28, 2026",
+    readTime: "4 min read",
+    slug: "sustainable-tech-matters",
+    image: "/assets/blog-sustainability.jpg",
   },
 ];
 
@@ -173,134 +172,134 @@ export const approachSteps = [
   {
     num: "01",
     icon: Search,
-    title: "Idea",
+    title: "Strategic Intelligence",
     description:
-      "We explore your vision, business goals, and user needs to define a clear, actionable solution.",
+      "We analyze target objectives and market dynamics to architect a high-level roadmap designed for technical authority and measurable impact.",
   },
   {
     num: "02",
     icon: Lightbulb,
-    title: "Code",
+    title: "Scalable Engineering",
     description:
-      "Our engineers implement scalable, maintainable systems with modern frameworks and best practices.",
+      "Our engineers design resilient, cloud-native architectures using modern frameworks that prioritize performance, security, and long-term scalability.",
   },
   {
     num: "03",
     icon: Rocket,
-    title: "Deploy",
+    title: "Precision Deployment",
     description:
-      "We deliver software with automated pipelines, CI/CD, and thorough testing for smooth launches.",
+      "We implement high-performance code with automated CI/CD pipelines to ensure a seamless, high-velocity transition from development to production.",
   },
   {
     num: "04",
     icon: Zap,
-    title: "Scale",
+    title: "Performance Refinement",
     description:
-      "We optimize performance, add features, and ensure your system grows seamlessly with demand.",
+      "Continuous system optimization and data-driven tuning ensure your digital foundation adapts and excels under evolving business demands.",
   },
   {
     num: "05",
     icon: Monitor,
-    title: "Monitor",
+    title: "Strategic Scaling",
     description:
-      "Continuous monitoring and analytics help us maintain reliability, performance, and measurable outcomes.",
+      "We provide proactive monitoring and architectural support to ensure your technology supports sustainable growth and long-term success.",
   },
 ];
 
 export const whyChooseUsReasons = [
   {
     icon: Award,
-    title: "Proven Expertise",
+    title: "Engineering Excellence",
     description:
-      "Our engineers and strategists bring deep experience building scalable, high-performance systems across industries.",
+      "We prioritize clean architecture, high-performance standards, and scalable solutions in everything we build.",
   },
   {
     icon: Target,
-    title: "Results-Oriented",
+    title: "Strategy-Driven",
     description:
-      "Every project is designed to deliver measurable impact, growth, and operational efficiency.",
+      "Every project is aligned with your business objectives to deliver measurable impact and sustainable growth.",
   },
   {
     icon: HeartHandshake,
-    title: "Collaborative Approach",
+    title: "Premium Partnerships",
     description:
-      "We partner closely with your team throughout the lifecycle from idea to monitoring to ensure success.",
+      "We collaborate closely with your team to ensure every digital experience reflects your brand vision and values.",
   },
   {
     icon: Clock,
-    title: "Agile & Iterative",
+    title: "Agile Adaptability",
     description:
-      "Fast, adaptive delivery with continuous feedback so value is realized from the very first sprint.",
+      "Our iterative approach ensures rapid delivery and flexibility, allowing your systems to adapt to changing markets.",
   },
   {
     icon: Shield,
-    title: "Transparent & Reliable",
+    title: "Reliable & Secure",
     description:
-      "Clear communication, full visibility, and robust systems you can trust.",
+      "We build robust systems using secure practices, providing you with full transparency and peace of mind.",
   },
   {
     icon: Sparkles,
     title: "Innovation-Focused",
     description:
-      "We leverage modern tools, emerging technologies, and scalable architectures to keep your systems future-ready.",
+      "We leverage emerging technologies and smart automation to keep your business ahead in a competitive landscape.",
   },
 ];
 
 export const faqs = [
   {
-    q: "What industries do you serve?",
-    a: "We work across technology, finance, healthcare, energy, and consumer goods. Every solution is tailored to your market and designed to scale.",
+    q: "How do you ensure the scalability of your solutions?",
+    a: "We architect every system with long-term growth in mind, utilizing cloud-native infrastructures and modular designs that adapt to increasing demands.",
   },
   {
-    q: "How long does a typical project take?",
-    a: "Projects usually range from 4 to 16 weeks depending on scope. We start with discovery and provide a clear timeline upfront.",
+    q: "What is your typical project timeline?",
+    a: "Timelines range from 4 to 16 weeks depending on complexity. We focus on clear milestones and high-performance delivery at every stage.",
   },
   {
-    q: "Do you work with startups or enterprises?",
-    a: "Both. We help startups launch scalable solutions and guide enterprises through digital transformation. Our approach adapts to any stage.",
+    q: "Do you specialize in startups or enterprises?",
+    a: "We serve both. We help startups build scalable foundations and guide enterprises through successful digital transformation and automation.",
   },
   {
-    q: "How do you ensure long-term impact?",
-    a: "We define KPIs from day one and track performance throughout the project. Regular check-ins and dashboards keep results measurable and transparent.",
+    q: "How do you measure project success?",
+    a: "We define clear KPIs from the start, focusing on performance metrics, user engagement, and measurable business growth.",
   },
   {
-    q: "Can we start with a small pilot?",
-    a: "Absolutely. Many clients begin with a focused pilot to experience our methodology before expanding into larger initiatives.",
+    q: "Can we collaborate on specific project modules?",
+    a: "Absolutely. We offer flexible engagement models, including dedicated team support for specific digital initiatives and full-scale systems development.",
   },
   {
-    q: "What sets your solutions apart?",
-    a: "We build scalable, high-performance systems with a full lifecycle approach. Every solution is designed for reliability, growth, and measurable results.",
+    q: "What sets Codeperia apart?",
+    a: "Our commitment to engineering excellence and strategic innovation. We don't just build software; we build high-performance systems for business success.",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "T-Solutions brought a fresh perspective to our sustainability roadmap. Their energy and dedication were exactly what our team needed.",
+      "Codeperia brought a strategic perspective to our digital roadmap. Their commitment to engineering excellence was exactly what our team needed.",
     name: "Sarah Mitchell",
     role: "Founder, EcoSphere",
   },
   {
     quote:
-      "Working with a young, hungry team made all the difference. They treated our project like their own and delivered beyond expectations.",
+      "The team at Codeperia treated our project with absolute ownership. They delivered a high-performance system that significantly exceeded our expectations.",
     name: "James Chen",
     role: "CTO, TechVault",
   },
   {
     quote:
-      "Their strategic framework helped us find clarity during a pivotal growth phase. Highly recommend for any startup or scaling business.",
+      "Their strategic framework helped us find clarity during a critical growth phase. Highly recommended for any business looking for scalable solutions.",
     name: "Elena Rodriguez",
     role: "Director, NovaBridge",
   },
   {
     quote:
-      "What they lack in decades, they make up for in insight and hustle. T-Solutions is the real deal.",
+      "Codeperia combines deep technical insight with incredible hustle. They are professional, reliable, and truly focused on delivering measurable impact.",
     name: "Marcus Liu",
     role: "Co-founder, PeakPoint",
   },
   {
     quote:
-      "They challenged our assumptions in the best way possible. A truly collaborative experience from start to finish.",
+      "They challenged our assumptions and improved our vision. A premium collaborative experience from initial architecture to final deployment.",
     name: "Aisha Patel",
     role: "CEO, Horizon Inc",
   },

@@ -13,12 +13,14 @@ export const metadata: Metadata = {
   title: "About Codeperia",
 
   description:
-    "Learn about Codeperia, a scalable software development agency building high-performance web applications and enterprise systems.",
+    "Codeperia is a premium software development agency providing scalable engineering, strategic technology consulting, and high-performance digital solutions for modern enterprises.",
 
   keywords: [
     "About Codeperia",
-    "Scalable Software Development Agency",
-    "Technology Partner for Businesses",
+    "Scalable Software Engineering",
+    "Enterprise Technology Partner",
+    "High-Performance Digital Transformation",
+    "Reliable Software Solutions architecture",
   ],
 
   alternates: {
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     siteName: APP_NAME,
     title: `About Codeperia | ${TAGLINE}`,
     description:
-      "Discover how Codeperia engineers scalable software systems, enterprise applications, and growth-driven digital solutions for modern businesses.",
+      "Learn how Codeperia bridges the gap between complex digital challenges and high-performance, scalable solutions through engineering excellence and strategic innovation.",
     url: `${BASE_URL}/about`,
     images: { url: "opengraph-image" },
     type: "website",

@@ -7,22 +7,21 @@ import { APP_NAME, BASE_URL } from "@/constants/app.constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: { absolute: `Software Development Services | ${APP_NAME}` },
+  title: { absolute: `High-Performance Software Services | ${APP_NAME}` },
 
   description:
-    "Codeperia delivers full-stack and mobile apps, AI systems, e-commerce platforms, DevOps, cloud, and SEO solutions for lasting digital growth and business impact.",
+    "Codeperia delivers premium engineering services including full-stack and mobile applications, e-commerce solutions, AI systems, SEO, and UI/UX design built for performance and measurable growth.",
 
   keywords: [
     "Software Development Services",
     "Full-Stack Application Development",
     "Mobile Application Development",
-    "AI Systems and Intelligent Automation",
     "E-Commerce Solutions Development",
-    "DevOps and Cloud Infrastructure",
-    "SEO and Digital Visibility Services",
-    "Scalable Web and Mobile Applications",
-    "Enterprise Software Engineering",
-    "High-Performance Digital Systems",
+    "AI Systems and Intelligent Automation",
+    "SEO & Digital Visibility Services",
+    "UI/UX Design Agency",
+    "Scalable Enterprise Systems",
+    "Custom Software Engineering",
   ],
 
   alternates: {
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     siteName: APP_NAME,
-    title: `Software Development Services | ${APP_NAME}`,
+    title: `Premium Software Development Services | ${APP_NAME}`,
     description:
-      "Codeperia delivers full-stack and mobile application development, AI systems and intelligent automation, scalable e-commerce platforms, DevOps & cloud infrastructure, and SEO-driven digital growth solutions engineered for performance and long-term business impact.",
+      "Codeperia engineers high-performance digital environments across full-stack systems, mobile apps, e-commerce, AI automation, and strategic digital visibility solutions.",
     url: `${BASE_URL}/services`,
     images: { url: "opengraph-image" },
     type: "website",

@@ -9,24 +9,25 @@ const FounderQuoteSection = () => {
         <AnimatedSection className="mx-auto max-w-3xl text-center">
           <Quote className="text-accent/30 mx-auto mb-6 h-8 w-8" />
           <blockquote className="font-playfair text-foreground mb-6 text-xl leading-relaxed font-light italic md:text-2xl">
-            "We started T-Solutions because we saw a gap between strategic
-            advice and technical execution. Too many organisations receive
-            recommendations they can't act on. We exist to close that gap."
+            "We founded Codeperia with a singular commitment to engineering
+            excellence. Our goal is to bridge the gap between complex digital
+            challenges and high-performance, scalable solutions that drive
+            measurable business success."
           </blockquote>
           <div className="flex items-center justify-center gap-3">
             <div className="border-border/30 h-10 w-10 overflow-hidden rounded-full border">
               <img
-                src="/team-alexandra.jpg"
-                alt="Alexandra Reed"
+                src="/assets/team/ubaid - Copy.jpg"
+                alt="Sardar Ubaidullah"
                 className="h-full w-full object-cover"
               />
             </div>
             <div className="text-left">
               <p className="text-foreground text-sm font-semibold">
-                Alexandra Reed
+                Sardar Ubaidullah
               </p>
               <p className="text-muted-foreground text-[10px] tracking-wider uppercase">
-                Managing Director
+                CEO & Co-Founder
               </p>
             </div>
           </div>

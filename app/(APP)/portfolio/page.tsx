@@ -9,15 +9,13 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Codeperia Portfolio",
   description:
-    "Explore Codeperia’s portfolio of high-performance web apps, AI systems, and enterprise software designed for scalability and impact.",
+    "Explore the Codeperia portfolio of high-performance digital systems, enterprise applications, and strategic AI integrations built for measurable business growth.",
   keywords: [
-    "Codeperia Portfolio",
-    "Software Development Case Studies",
-    "AI & LLM Project Showcase",
-    "Full-Stack Applications Portfolio",
-    "Enterprise Software Examples",
-    "Scalable Systems Showcase",
-    "Web Application Development Projects",
+    "Codeperia Project Gallery",
+    "Software Engineering Case Studies",
+    "High-Performance System Architecture",
+    "Custom Digital Solutions Portfolio",
+    "Enterprise Software Development Examples",
   ],
   alternates: {
     canonical: `${BASE_URL}/portfolio`,
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
     siteName: APP_NAME,
     title: `Codeperia Portfolio | ${TAGLINE}`,
     description:
-      "View Codeperia’s projects, from scalable web applications to AI-driven enterprise systems, demonstrating innovation, performance, and measurable business results.",
+      "Witness how Codeperia solves complex business challenges through technical precision, scalable architecture, and strategic digital transformation.",
     url: `${BASE_URL}/portfolio`,
     images: { url: "opengraph-image" },
     type: "website",

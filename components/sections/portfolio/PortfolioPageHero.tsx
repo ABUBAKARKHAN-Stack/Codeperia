@@ -9,7 +9,7 @@ const PortfolioPageHero = () => {
           Our <span className="text-accent italic">Portfolio</span>
         </>
       }
-      description="Discover Codeperia projects where engineering precision meets business impact, scalable, high-performance systems built for growth."
+      description="Explore the Codeperia portfolio: where technical precision meets strategic business impact through high-performance, scalable systems engineered for growth."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Portfolio" }]}
     />
   );

@@ -1,4 +1,3 @@
-import HighlightedBrandName from "@/components/shared/HighlightedBrandName";
 import Logo from "@/components/shared/Logo";
 import MagneticButton from "@/components/shared/MagneticButton";
 import { socials } from "@/constants/navigation.constants";
@@ -7,13 +6,12 @@ import { cn } from "@/lib/utils";
 const BrandInfo = () => {
   return (
     <div className="lg:col-span-4">
-      <Logo className="xsm:h-13 h-11 lg:h-15" />
+      <Logo className="xsm:h-13 h-11 lg:h-15 drop-shadow-lg drop-shadow-accent/10" />
       <p className="text-foreground/50 mt-4 max-w-sm text-sm leading-relaxed">
-        Modern software solutions built to scale with your business. We create
-        reliable, high-performance systems that deliver measurable impact.
-        <br className="mt-1 block" />
-        <HighlightedBrandName /> is sometimes searched as T Solutions, T-Solutions, or
-        TSolutions.
+        Building modern, scalable software solutions designed to support
+        sustainable business growth. We combine strategic engineering with
+        innovative technology to deliver measurable results and high-performance
+        digital experiences.
       </p>
 
       <div className="mt-6 flex gap-2.5">

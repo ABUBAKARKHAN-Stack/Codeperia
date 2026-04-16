@@ -43,7 +43,7 @@ const HeroLeftColumn = () => {
                 delay: 0.15 + i * 0.1,
               }}
             >
-              {word.toLowerCase().trim().includes("future-ready") ? (
+              {word.toLowerCase().trim().includes("resilient") ? (
                 <motion.span
                   className="text-accent text-nowrap italic"
                   initial={{ opacity: 0, filter: "blur(8px)" }}

@@ -9,8 +9,8 @@ const OurTeamSection = () => {
       <ContainerLayout>
         <SectionHeader
           eyebrow="Our Team"
-          title="Our Leadership"
-          description="A focused team of strategists and engineers committed to building scalable, high-performance systems."
+          title="Meet Our Dedicated Team"
+          description="A focused team of strategists and engineers committed to excellence and innovation."
           centered
         />
         <div className="mx-auto max-w-2xl">

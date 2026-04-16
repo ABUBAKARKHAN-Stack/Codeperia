@@ -5,13 +5,12 @@ const ServicesCTASection = () => {
     <CTASection
       title={
         <>
-          Need a custom
-          <br />
-          <span className="text-accent italic">solution?</span>
+          Need a strategic{" "}
+          <span className="text-accent italic">partnership?</span>
         </>
       }
-      description="Every business is unique. Let's talk about how we can tailor our services to your needs."
-      buttonText="Get in Touch"
+      description="Beyond code, we provide strategic engineering to help your business scale. Let's discuss a custom digital architecture tailored to your unique objectives."
+      buttonText="Start a Strategic Conversation"
     />
   );
 };

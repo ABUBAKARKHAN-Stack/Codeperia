@@ -27,7 +27,7 @@ const TermsSection = () => {
                 1. Acceptance of Terms
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                By accessing and using the T-Solutions website and services, you
+                By accessing and using the Codeperia website and services, you
                 accept and agree to be bound by these Terms of Service. If you
                 do not agree to these terms, please do not use our services.
               </p>
@@ -38,11 +38,11 @@ const TermsSection = () => {
                 2. Services
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                T-Solutions provides business consulting services including
-                strategic planning, digital transformation, sustainability
-                consulting, market research, compliance advisory, and growth
-                acceleration. The scope of services will be defined in
-                individual service agreements.
+                Codeperia provides premium digital solutions including 
+                full-stack application development, mobile application development, 
+                e-commerce solutions, AI systems and intelligent automation, 
+                SEO & digital visibility, and UI/UX design. The scope of 
+                services will be defined in individual service agreements.
               </p>
             </div>
 
@@ -52,7 +52,7 @@ const TermsSection = () => {
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 All content, logos, trademarks, and materials on this website
-                are the property of T-Solutions and are protected by
+                are the property of Codeperia and are protected by
                 intellectual property laws. You may not reproduce, distribute,
                 or create derivative works without our prior written consent.
               </p>
@@ -75,7 +75,7 @@ const TermsSection = () => {
                 5. Limitation of Liability
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                T-Solutions shall not be liable for any indirect, incidental,
+                Codeperia shall not be liable for any indirect, incidental,
                 special, or consequential damages arising from the use of our
                 website or services. Our total liability shall not exceed the
                 amount paid for the specific service giving rise to the claim.
@@ -123,7 +123,7 @@ const TermsSection = () => {
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 For any questions regarding these Terms of Service, please
-                contact us at hello@t-solutions.com or +1 (555) 123-4567.
+                contact us at hello@codeperia.com.
               </p>
             </div>
           </div>
