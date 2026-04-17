@@ -67,7 +67,7 @@ export const featuresContent = [
     icon: Code2,
     title: "Full-Stack Application Development",
     description:
-      "We deliver scalable, end-to-end solutions emphasizing high-performance architecture, reliability, and long-term maintenance.",
+      "We deliver scalable, end-to-end web and mobile applications emphasizing high-performance architecture, reliability, and long-term maintenance.",
     num: "01",
   },
   {
@@ -104,6 +104,13 @@ export const featuresContent = [
     description:
       "User-centered design focused on clarity and engagement, delivering modern aesthetics with intuitive digital experiences.",
     num: "06",
+  },
+  {
+    icon: Users,
+    title: "Social Media Management",
+    description:
+      "Drive brand visibility and measurable growth with data-driven social media strategies focused on community engagement and high-ROI content.",
+    num: "07",
   },
 ];
 

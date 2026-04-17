@@ -9,7 +9,7 @@ const ServicesPageHero = () => {
           What we <span className="text-accent italic">do best</span>
         </>
       }
-      description="We deliver high-performance digital environments across full-stack applications, mobile systems, scalable e-commerce platforms, AI-driven automation, strategic SEO, and user-centered UI/UX design."
+      description="We deliver high-performance digital environments across full-stack applications, mobile systems, e-commerce, AI automation, strategic SEO, user-centered UI/UX design, and social media management."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
     />
   );

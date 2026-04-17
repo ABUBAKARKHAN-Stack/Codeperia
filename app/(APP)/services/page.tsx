@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: { absolute: `High-Performance Software Services | ${APP_NAME}` },
 
   description:
-    "Codeperia delivers premium engineering services including full-stack and mobile applications, e-commerce solutions, AI systems, SEO, and UI/UX design built for performance and measurable growth.",
+    "Codeperia delivers premium engineering and growth services including full-stack and mobile applications, e-commerce solutions, AI systems, SEO, UI/UX design, and social media management built for performance.",
 
   keywords: [
     "Software Development Services",
@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     "AI Systems and Intelligent Automation",
     "SEO & Digital Visibility Services",
     "UI/UX Design Agency",
+    "Social Media Management",
+    "Strategic Social Media Growth",
     "Scalable Enterprise Systems",
     "Custom Software Engineering",
   ],

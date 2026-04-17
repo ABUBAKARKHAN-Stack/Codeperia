@@ -41,8 +41,8 @@ const TermsSection = () => {
                 Codeperia provides premium digital solutions including 
                 full-stack application development, mobile application development, 
                 e-commerce solutions, AI systems and intelligent automation, 
-                SEO & digital visibility, and UI/UX design. The scope of 
-                services will be defined in individual service agreements.
+                SEO & digital visibility, UI/UX design, and social media management. 
+                The scope of services will be defined in individual service agreements.
               </p>
             </div>
 

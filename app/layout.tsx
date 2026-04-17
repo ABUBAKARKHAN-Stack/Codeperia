@@ -76,6 +76,8 @@ export const metadata: Metadata = {
     "AI Systems and Intelligent Automation",
     "SEO & Digital Visibility",
     "UI/UX Design",
+    "Social Media Management",
+    "Strategic Social Media Growth",
     "Scalable Digital Solutions",
     "Custom Software Engineering",
     "Digital Transformation Agency",
