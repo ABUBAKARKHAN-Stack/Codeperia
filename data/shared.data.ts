@@ -10,7 +10,7 @@ export const team = [
     name: "Sardar Ubaidullah",
     role: "CEO & Co-Founder",
     initials: "SU",
-    image: "/assets/team/ubaid - Copy.jpg",
+    image: "/assets/team/ubaid.jpg",
     linkedin: "https://www.linkedin.com/in/sardar-ubaidullah-51b593375",
     twitter: "#",
     email: "dev.sardarubaid@gmail.com",
