@@ -8,8 +8,8 @@ const ContactLinks = () => {
         Contact
       </h4>
       <ul className="space-y-4">
-        {contactInfo.map((item) => (
-          <li key={item.link}>
+        {contactInfo.map((item,i) => (
+          <li key={item.link+i}>
             <a
               href={item.link}
               className="text-foreground/60 hover:text-accent group flex items-center gap-3 text-sm transition-colors duration-300"
