@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Audiowide, Inter, Orbitron, Playfair_Display } from "next/font/google";
+import { Audiowide, Inter } from "next/font/google";
 import "./globals.css";
 import {
   APP_NAME,
