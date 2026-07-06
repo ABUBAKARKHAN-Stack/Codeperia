@@ -11,15 +11,15 @@ export const sendEmail = async (data: ContactFormValues) => {
   try {
     const resps = await Promise.all([
       resendClient.emails.send({
-        from: `Codeperia Contact Team <info@Codeperia.com>`,
-        to: "info@Codeperia.com",
+        from: `Codeperia Contact Team <info@codeperia.com>`,
+        to: "info@codeperia.com",
         replyTo: data.email,
         subject: "New Contact Form Submission",
         html: buildInternalEmailHtml({ ...data }),
       }),
 
       resendClient.emails.send({
-        from: `Codeperia <info@Codeperia.com>`,
+        from: `Codeperia <info@codeperia.com>`,
         to: data.email,
         subject: "We've Received Your Message",
         html: buildCustomerEmailHtml({ ...data }),
