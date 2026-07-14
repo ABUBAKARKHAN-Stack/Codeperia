@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden">
       {/* Grain noise overlay */}
-      <GrainNoiseOverlay />
+      {/* <GrainNoiseOverlay /> */}
 
       {/* Animated gradient mesh */}
       <AnimatedGradientMesh />
