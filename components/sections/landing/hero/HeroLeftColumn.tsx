@@ -65,7 +65,7 @@ const HeroLeftColumn = () => {
       {heroContent.subtexts.map((p, i) => (
         <motion.p
           key={i}
-          className="text-muted-foreground mb-4 max-w-xl text-base leading-[1.8] font-light md:text-lg"
+          className="text-muted-foreground mb-4 max-w-2xl text-base leading-[1.8] font-light md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}

@@ -15,12 +15,12 @@ const HeroSection = () => {
 
       <ContainerLayout className="relative z-10">
         <div>
-          <div className="lgx:pt-32 lgx:mb-20 lgx:grid-cols-12 lgx:gap-16 lgx:pb-24 mb-16 grid grid-cols-1 items-start gap-8 pt-28 pb-16">
+          <div className="lgx:pt-32 lgx:mb-20 lgx:grid-cols-1 lgx:gap-16 lgx:pb-24 mb-16 grid grid-cols-1 items-start gap-8 pt-28 pb-16">
             {/* Left column - main content */}
             <HeroLeftColumn />
 
             {/* Right column - services preview + mission */}
-            <HeroRightColumn />
+            {/* <HeroRightColumn /> */}
           </div>
         </div>
       </ContainerLayout>
