@@ -16,7 +16,7 @@ const Logo = ({ className = "", link = false }) => {
 const LogoImage = ({ className = "" }) => {
   return (
     <Image
-      src={"/assets/brand/logo.png"}
+      src={"/assets/brand/logo-pk.png"}
       className={cn(className, "w-auto resize object-contain")}
       height={50}
       width={50}
