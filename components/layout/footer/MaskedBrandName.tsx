@@ -79,7 +79,7 @@ const MaskedBrandName = () => {
             className="font-playfair pointer-events-none absolute inset-0 bg-clip-text text-center text-[clamp(4rem,14vw,12rem)] leading-[0.85] font-semibold tracking-wider whitespace-nowrap text-transparent"
             style={{
               backgroundImage:
-                "linear-gradient(120deg, #DAB2FF 0%, #9810FA 100%)",
+                "linear-gradient(120deg, #C6F2C7 0%, #005C02 100%)",
               WebkitMaskImage: maskImage,
               maskImage: maskImage,
             }}

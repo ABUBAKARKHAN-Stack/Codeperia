@@ -31,44 +31,11 @@ export const metadata: Metadata = {
     template: `%s | ${TAGLINE}`,
   },
   description: BRAND_DESCRIPTION,
-  icons: {
-    icon: [
-      { url: "/assets/brand/favicons/favicon.ico", type: "image/x-icon" },
-      { url: "/assets/brand/favicons/favicon.svg", type: "image/svg+xml" },
-      {
-        url: "/assets/brand/favicons/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/favicon-48x48.png",
-        sizes: "48x48",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/favicon-32x32.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "/assets/brand/favicons/favicon-16x16.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-    ],
-    apple: [
-      {
-        url: "/assets/brand/favicons/apple-touch-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
+  applicationName: APP_NAME,
+  appleWebApp: {
+    title: APP_NAME
   },
+
   keywords: [
     "Full-Stack Application Development",
     "Mobile Application Development",

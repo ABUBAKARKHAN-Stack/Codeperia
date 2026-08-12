@@ -67,7 +67,7 @@ const AboutPreviewSection = () => {
               {/* Main image */}
               <div className="overflow-hidden rounded-3xl shadow-2xl">
                 <Image
-                  src={"/assets/about-preview.jpg"}
+                  src={"/assets/about-preview.png"}
                   alt="Codeperia About Preview Image"
                   className="h-125 w-full object-cover"
                   width={500}

@@ -1,4 +1,5 @@
 export const APP_NAME = "Codeperia";
+export const APP_SHORT_NAME = "CP"
 export const BASE_URL = "https://codeperia.com";
 export const TAGLINE = "Creating Digital Awesomeness With Innovative Tech";
 export const BRAND_DESCRIPTION =
